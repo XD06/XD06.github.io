@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>追逐</title>
   
-  
+  <subtitle>个人博客</subtitle>
   <link href="http://xd06.github.io/atom.xml" rel="self"/>
   
   <link href="http://xd06.github.io/"/>
@@ -10,7 +10,7 @@
   <id>http://xd06.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>DSK</name>
     
   </author>
   
