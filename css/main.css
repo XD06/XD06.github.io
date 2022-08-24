@@ -429,8 +429,8 @@ td {
 }
 .highlight,
 pre {
-  background: #002b36;
-  color: #93a1a1;
+  background: #000;
+  color: #eaeaea;
   line-height: 1.6;
   margin: 0 auto 20px;
 }
@@ -447,7 +447,7 @@ code {
   word-wrap: break-word;
 }
 .highlight *::selection {
-  background: #073642;
+  background: #424242;
 }
 .highlight pre {
   border: 0;
@@ -464,8 +464,8 @@ code {
   padding: 0;
 }
 .highlight figcaption {
-  background: #002b36;
-  color: #93a1a1;
+  background: #292929;
+  color: #eaeaea;
   display: flex;
   font-size: 0.875em;
   justify-content: space-between;
@@ -473,10 +473,10 @@ code {
   padding: 0.5em;
 }
 .highlight figcaption a {
-  color: #93a1a1;
+  color: #eaeaea;
 }
 .highlight figcaption a:hover {
-  border-bottom-color: #93a1a1;
+  border-bottom-color: #eaeaea;
 }
 .highlight .gutter {
   -moz-user-select: none;
@@ -485,14 +485,14 @@ code {
   user-select: none;
 }
 .highlight .gutter pre {
-  background: #002b36;
-  color: #586e75;
+  background: #292929;
+  color: #666;
   padding-left: 10px;
   padding-right: 10px;
   text-align: right;
 }
 .highlight .code pre {
-  background: #002b36;
+  background: #000;
   padding-left: 10px;
   width: 100%;
 }
@@ -508,7 +508,7 @@ pre {
 }
 pre code {
   background: none;
-  color: #93a1a1;
+  color: #eaeaea;
   font-size: 0.875em;
   padding: 0;
   text-shadow: none;
@@ -520,14 +520,14 @@ pre .addition {
   background: #008000;
 }
 pre .meta {
-  color: #b58900;
+  color: #e7c547;
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
 }
 pre .comment {
-  color: #586e75;
+  color: #969896;
 }
 pre .variable,
 pre .attribute,
@@ -542,7 +542,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #dc322f;
+  color: #d54e53;
 }
 pre .number,
 pre .preprocessor,
@@ -552,7 +552,7 @@ pre .literal,
 pre .params,
 pre .constant,
 pre .command {
-  color: #cb4b16;
+  color: #e78c45;
 }
 pre .ruby .class .title,
 pre .css .rules .attribute,
@@ -565,11 +565,11 @@ pre .ruby .symbol,
 pre .xml .cdata,
 pre .special,
 pre .formula {
-  color: #859900;
+  color: #b9ca4a;
 }
 pre .title,
 pre .css .hexcolor {
-  color: #2aa198;
+  color: #70c0b1;
 }
 pre .function,
 pre .python .decorator,
@@ -579,11 +579,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #268bd2;
+  color: #7aa6da;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #6c71c4;
+  color: #c397d8;
 }
 .blockquote-center {
   border-left: none;
@@ -1149,6 +1149,31 @@ pre .javascript .function {
 .use-motion .menu-item {
   opacity: 0;
 }
+.book-mark-link {
+  border-bottom: none;
+  display: inline-block;
+  position: fixed;
+  right: 30px;
+  top: -10px;
+  transition: 0.3s;
+}
+@media (max-width: 991px) {
+  .book-mark-link {
+    display: none;
+  }
+}
+.book-mark-link::before {
+  color: #222;
+  content: '\f02e';
+  font-size: 32px;
+  line-height: 1;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+.book-mark-link:hover,
+.book-mark-link-fixed {
+  top: -2px;
+}
 .github-corner :hover .octo-arm {
   animation: octocat-wave 560ms ease-in-out;
 }
@@ -1291,7 +1316,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #817cff;
+  background: #0e0d28;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1618,10 +1643,7 @@ pre .javascript .function {
   position: fixed;
   transition-property: bottom;
   z-index: 1300;
-  width: 24px;
-}
-.back-to-top span {
-  display: none;
+  width: initial;
 }
 .back-to-top:hover {
   color: #fc6423;
@@ -2393,11 +2415,11 @@ ul.breadcrumb li + li:last-child {
   padding: 0;
   position: absolute;
   top: 0;
-  width: 240px;
+  width: 300px;
 }
 @media (min-width: 1200px) {
   .header-inner {
-    width: 240px;
+    width: 300px;
   }
 }
 @media (max-width: 991px) {
@@ -2424,7 +2446,7 @@ ul.breadcrumb li + li:last-child {
   box-shadow: initial;
   box-sizing: border-box;
   padding: 40px;
-  width: calc(100% - 252px);
+  width: calc(100% - 312px);
 }
 @media (max-width: 991px) {
   .content-wrap {
@@ -2566,7 +2588,7 @@ ul.breadcrumb li + li:last-child {
   box-shadow: none;
   margin-top: 100%;
   position: static;
-  width: 240px;
+  width: 300px;
 }
 @media (max-width: 991px) {
   .sidebar {
@@ -2582,7 +2604,7 @@ ul.breadcrumb li + li:last-child {
   box-shadow: initial;
   box-sizing: border-box;
   color: var(--text-color);
-  width: 240px;
+  width: 300px;
   opacity: 0;
 }
 .sidebar-inner.affix {
@@ -2671,56 +2693,27 @@ body {
   background-position: 50% 20%;
 }
 .content-wrap {
-  background: #faffff;
+  opacity: 0.8;
 }
-.site-brand-container {
-  background: rgba(250,250,255,0.5);
-}
-.site-meta .site-title {
-  font-weight: bold;
-  color: #ffc8c8;
-}
-.headband {
-  background: rgba(240,200,230,0.8);
+.sidebar-inner {
+  background: rgba(255,255,255,0.7) none repeat scroll !important;
 }
 .header-inner {
-  background: rgba(250,250,255,0.5);
+  background: rgba(255,255,255,0.8);
 }
-.sidebar {
-  opacity: 1;
+.popup {
+  opacity: 0.8;
 }
-.main-inner .post-block {
-  border-radius: 10px;
-  -webkit-box-shadow: 3px 3px 7px #c06f98;
-  -moz-box-shadow: 3px 3px 7px rgba(238,162,164,0.5);
+.post-block {
+  background: rgba(255,255,255,0.7) none repeat scroll !important;
 }
-.post-body p a {
-  color: #eea2a4;
-  border-bottom: none;
+.comments {
+  background: rgba(255,255,255,0.7) none repeat scroll !important;
 }
-.post-body p a:hover {
-  color: #0593d3;
-  text-decoration: underline;
-}
-*-------彩色标签云-------*/,
-.tag-cloud-tags {
-/*font-family: Helvetica, Tahoma, Arial;*/
-/*font-weight: 100;*/
-  text-align: center;
-  counter-reset: tags;
-}
-.tag-cloud-tags a {
-  border-radius: 6px;
-  padding-right: 5px;
-  padding-left: 5px;
-  margin: 8px 5px 0px 0px;
-}
-.tag-cloud-tags a:before {
-  content: "☁";
-}
-.tag-cloud-tags a:hover {
-  box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.4);
-  transform: scale(1.1);
-/*box-shadow: 10px 10px 15px 2px rgba(0,0,0,.12), 0 0 6px 0 rgba(104, 104, 105, 0.1);*/
-  transition-duration: 0.15s;
+.post {
+  margin-top: 60px;
+  padding: 20px;
+  margin-bottom: 60px;
+  -webkit-box-shadow: 0 0 5px #788072;
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
