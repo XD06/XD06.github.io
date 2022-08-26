@@ -1,9 +1,0 @@
-User-agent: *
-Allow: /
-Allow: /
-Allow: /
-Allow: /
-Disallow: /
-Disallow: /
-sitemap: http://rogn.top/sitemap.xml
-sitemap: http://rogn.top/baidusitemap.xml
