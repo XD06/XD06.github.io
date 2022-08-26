@@ -35,19 +35,19 @@
 </tr>
 <tr>
 <td style="text-align:center">千字节</td>
-<td>KB=2^10^B</td>
+<td>KB=2<sup>10<sup>B</sup></sup></td>
 </tr>
 <tr>
 <td style="text-align:center">兆字节</td>
-<td>MB=K*KB=2^20^B</td>
+<td>MB=K*KB=2<sup>20<sup>B</sup></sup></td>
 </tr>
 <tr>
 <td style="text-align:center">吉字节</td>
-<td>GB=K*MB=2^30^B</td>
+<td>GB=K*MB=2<sup>30<sup>B</sup></sup></td>
 </tr>
 <tr>
 <td style="text-align:center">太字节</td>
-<td>TB=K*GB=2^40^B</td>
+<td>TB=K*GB=2<sup>40<sup>B</sup></sup></td>
 </tr>
 </tbody>
 </table>
@@ -73,26 +73,26 @@
 </tr>
 <tr>
 <td style="text-align:center">千比特/秒</td>
-<td>kb/s=10^3^b/s</td>
+<td>kb/s=10<sup>3</sup>b/s</td>
 </tr>
 <tr>
 <td style="text-align:center">兆比特/秒</td>
-<td>Mb/s=K*Kb/s=10^6^b/s</td>
+<td>Mb/s=K*Kb/s=10<sup>6</sup>b/s</td>
 </tr>
 <tr>
 <td style="text-align:center">吉比特/秒</td>
-<td>Gb/s=k*Mb/s=10^9^b/s</td>
+<td>Gb/s=k*Mb/s=10<sup>9</sup>b/s</td>
 </tr>
 <tr>
 <td style="text-align:center">太比特/秒</td>
-<td>Tb/s=K*Gb/s=10^12^b/s</td>
+<td>Tb/s=K*Gb/s=10<sup>12</sup>b/s</td>
 </tr>
 </tbody>
 </table>
 </div>
 <ul>
-<li>数据量单位中的K、 M、G、T的数值分别为2^10^、2^20^、 2 ^30^、2 ^40^.</li>
-<li>速率单位中的K、M、 G、T的数值分别为10^3^、10^6^、10^9^、10^12^。</li>
+<li>数据量单位中的K、 M、G、T的数值分别为2<sup>10</sup>、2<sup>20</sup>、 2 <sup>30</sup>、2 <sup>40</sup>.</li>
+<li>速率单位中的K、M、 G、T的数值分别为10<sup>3</sup>、10<sup>6</sup>、10<sup>9</sup>、10<sup>12</sup>。</li>
 </ul>
 <h5 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h5><ol>
 <li><h5 id="有一个待发送的数据块大小为100MB，网卡的发送速率为100-Mbps，则网卡的发送完该数据会需要多少时间？"><a href="#有一个待发送的数据块大小为100MB，网卡的发送速率为100-Mbps，则网卡的发送完该数据会需要多少时间？" class="headerlink" title="有一个待发送的数据块大小为100MB，网卡的发送速率为100 Mbps，则网卡的发送完该数据会需要多少时间？"></a>有一个待发送的数据块大小为100MB，网卡的发送速率为100 Mbps，则网卡的发送完该数据会需要多少时间？</h5></li>
@@ -187,8 +187,8 @@ D=\dfrac{D_0}{1-U}</script></li>
 </tr>
 <tr>
 <td style="text-align:center">网络层</td>
-<td>物理层</td>
 <td></td>
+<td>物理层</td>
 </tr>
 <tr>
 <td style="text-align:center">数据链路层</td>
@@ -215,6 +215,15 @@ D=\dfrac{D_0}{1-U}</script></li>
       </categories>
       <tags>
         <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>又是一个不眠之夜</title>
+    <url>/2022/08/27/%E5%8F%88%E6%98%AF%E4%B8%80%E4%B8%AA%E4%B8%8D%E7%9C%A0%E4%B9%8B%E5%A4%9C/</url>
+    <content><![CDATA[<pre><code>晚上遇到一个麻烦的问题，想着解决就睡觉，结果天就亮了.......
+</code></pre>]]></content>
+      <tags>
+        <tag>日常</tag>
       </tags>
   </entry>
   <entry>
