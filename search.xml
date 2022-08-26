@@ -35,19 +35,19 @@
 </tr>
 <tr>
 <td style="text-align:center">千字节</td>
-<td>KB=2<sup>10<sup>B</sup></sup></td>
+<td>KB=2<sup>10</sup>B</td>
 </tr>
 <tr>
 <td style="text-align:center">兆字节</td>
-<td>MB=K*KB=2<sup>20<sup>B</sup></sup></td>
+<td>MB=K*KB=2<sup>20</sup>B</td>
 </tr>
 <tr>
 <td style="text-align:center">吉字节</td>
-<td>GB=K*MB=2<sup>30<sup>B</sup></sup></td>
+<td>GB=K*MB=2<sup>30</sup>B</td>
 </tr>
 <tr>
 <td style="text-align:center">太字节</td>
-<td>TB=K*GB=2<sup>40<sup>B</sup></sup></td>
+<td>TB=K*GB=2<sup>40</sup>B</td>
 </tr>
 </tbody>
 </table>
@@ -220,8 +220,7 @@ D=\dfrac{D_0}{1-U}</script></li>
   <entry>
     <title>又是一个不眠之夜</title>
     <url>/2022/08/27/%E5%8F%88%E6%98%AF%E4%B8%80%E4%B8%AA%E4%B8%8D%E7%9C%A0%E4%B9%8B%E5%A4%9C/</url>
-    <content><![CDATA[<pre><code>晚上遇到一个麻烦的问题，想着解决就睡觉，结果天就亮了.......
-</code></pre>]]></content>
+    <content><![CDATA[<h3 id="晚上遇到一个麻烦的问题，想着解决就睡觉，结果天就亮了……"><a href="#晚上遇到一个麻烦的问题，想着解决就睡觉，结果天就亮了……" class="headerlink" title="晚上遇到一个麻烦的问题，想着解决就睡觉，结果天就亮了……."></a>晚上遇到一个麻烦的问题，想着解决就睡觉，结果天就亮了…….</h3>]]></content>
       <tags>
         <tag>日常</tag>
       </tags>
