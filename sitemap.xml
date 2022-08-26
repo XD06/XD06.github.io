@@ -65,24 +65,6 @@
   </url>
   
   <url>
-    <loc>http://xd06.github.io/hexo-leancloud-counter-security/README.html</loc>
-    
-    <lastmod>2022-08-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://xd06.github.io/hexo-leancloud-counter-security/package.json</loc>
-    
-    <lastmod>2022-08-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://xd06.github.io/categories/index.html</loc>
     
     <lastmod>2022-08-23</lastmod>
