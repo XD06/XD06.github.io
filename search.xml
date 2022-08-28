@@ -7,6 +7,160 @@
 <h1 id="这个博客站正式成立了！"><a href="#这个博客站正式成立了！" class="headerlink" title="这个博客站正式成立了！"></a>这个博客站正式成立了！</h1>]]></content>
   </entry>
   <entry>
+    <title>计算机网络体系（8-28）</title>
+    <url>/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(8-28)/</url>
+    <content><![CDATA[<h1 id="计算机网络-物理层（8-29）"><a href="#计算机网络-物理层（8-29）" class="headerlink" title="计算机网络-物理层（8-29）"></a>计算机网络-物理层（8-29）</h1><h3 id="1-物理层功能"><a href="#1-物理层功能" class="headerlink" title="1.物理层功能"></a>1.物理层功能</h3><ul>
+<li><p>物理层的功能是在各种传输媒体上传输比特0和1，给上层提供“透明”传输比特流。<strong>（透明的意思是数据链路层看不见，也无需看见物理层究竟使用的是什么方法来传递比特流。数据链路只用享受物理层提供的比特流传输服务即可）</strong></p>
+<img data-src="/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(8-28)/1.png" class title="This is an image">
+<span id="more"></span>
+<h3 id="2-物理层接口特性"><a href="#2-物理层接口特性" class="headerlink" title="2.物理层接口特性"></a>2.物理层接口特性</h3></li>
+<li><p>机械特性</p>
+</li>
+<li>电气特性</li>
+<li>功能特性</li>
+<li>过程特性</li>
+</ul>
+<img data-src="/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(8-28)/2.png" class title="This is an image">
+<h2 id="物理层下面的传输媒体"><a href="#物理层下面的传输媒体" class="headerlink" title="物理层下面的传输媒体"></a>物理层下面的传输媒体</h2><ol>
+<li>传输媒体是计算机网络设备之间的物理通路，也称为传输介质或传输媒介。</li>
+<li>传输媒体并不包括在计算机网络体系中。</li>
+</ol>
+<ul>
+<li><p>传输媒体的分类 </p>
+<img data-src="/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(8-28)/3.png" class title="This is an image">
+<ol>
+<li><p>导向型传输媒体</p>
+<ol>
+<li><p>同轴电缆</p>
+
+</li>
+<li><p>双绞线</p>
+<img data-src="/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(8-28)/5.png" class title="This is an image">
+</li>
+<li><p>光纤</p>
+<img data-src="/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(8-28)/6.png" class title="This is an image">
+<img data-src="/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(8-28)/7.png" class title="This is an image">
+<img data-src="/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(8-28)/8.png" class title="This is an image">
+</li>
+</ol>
+</li>
+<li><p>非导向型传输媒体</p>
+<ol>
+<li>无线电波 1.以地面波的形式在地球表面传播。依靠电离层的反射再回到地球表面。</li>
+<li>红外线 <ol>
+<li>红外通信的特点（点对点无线传输、直线传播，中间不能有障碍物，传输距离短、传输速率低）</li>
+</ol>
+</li>
+<li>微波 空间直线传播，会穿透电离层进入宇宙空间常用方式（地面微波接力通信和卫星传播）</li>
+<li>激光 （大气激光通信和光纤通信）</li>
+<li>可见光。可见光通信-今后的热点。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="传输方式"><a href="#传输方式" class="headerlink" title="传输方式"></a>传输方式</h2><ol>
+<li><p>串行传输和并行传输（数据以比特为单位传输）</p>
+<ul>
+<li><p>串行传输：在发送端和接收端之间的数据传输线路上逐比特的依次传输。</p>
+<img data-src="/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(8-28)/9.png" class title="This is an image">
+</li>
+<li><p>并行传输：在发送端和接收端之间的有多条数据传输线路，多个比特安排在各个线路同时传输。</p>
+<p>对误差的修正：</p>
+<img data-src="/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(8-28)/10.png" class title="This is an image">
+</li>
+</ul>
+</li>
+<li><p>同步传输和异步传输</p>
+<ul>
+<li><p>同步传输：数据块以比特流的方式传输，字节之间没有间隔，也没有起始位。接收方在比特信号的中间时刻进行采样，以判别是比特1还是比特0，这就要求收发双方对表示比特信号的时间长度达成一致，即是同步。</p>
+<img data-src="/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(8-28)/11.png" class title="This is an image">
+</li>
+<li><p>异步传输（数据以字节为单位传输）</p>
+<img data-src="/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(8-28)/12.png" class title="This is an image">
+</li>
+</ul>
+</li>
+<li><p>单向通信、双向交替通信和双向同时通信</p>
+<img data-src="/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(8-28)/13.png" class title="This is an image">
+<p>注：(单工电台的单工通信表示的<strong>是双向交替通信</strong>，<strong>不是单向通信</strong>)</p>
+</li>
+</ol>
+<h1 id="注：（以上内容来自中国MOOC摹课湖南科技大学计算机网络"><a href="#注：（以上内容来自中国MOOC摹课湖南科技大学计算机网络" class="headerlink" title="注：（以上内容来自中国MOOC摹课湖南科技大学计算机网络)"></a>注：（以上内容来自<a href="https://www.icourse163.org/learn/HNKJ-1461816178?tid=1468294445#/learn/announce">中国MOOC摹课湖南科技大学计算机网络</a>)</h1>]]></content>
+      <categories>
+        <category>机网</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络体系（8-27）</title>
+    <url>/2022/08/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E5%88%86%E5%B1%82%E6%80%9D%E6%83%B3(8-27)/</url>
+    <content><![CDATA[<h3 id="3-分层思想"><a href="#3-分层思想" class="headerlink" title="3.分层思想"></a>3.分层思想</h3><img data-src="/2022/08/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E5%88%86%E5%B1%82%E6%80%9D%E6%83%B3(8-27)/1.png" class title="This is an image">
+<ul>
+<li>用户在主机中使用浏览器访问web服务器，主机会向WEB服务器发送一个请求报文，web服务器收到报文后，执行相关操作，向主机发送响应报文，接收后由浏览器负责解析和渲染显示。（简化示意过程）<span id="more"></span></li>
+</ul>
+<ol>
+<li><p>从应用层开始，主机中的应用层。根据HTTP协议，构建HTTP请求报文。然后向下传递交付给运输层，而运输层给HTTP请求报文添加一个TCP首部，将其封装成TCP报文段（区分应用进程，实现可靠传输），运输层将封装好的报文段向下交给网络层，而网络层将添加IP头，封装成IP数据报（ip寻址和路由），再向下交付给链路层，而链路层会给报文添加一个头部和一个尾部，将其封装成帧（又称以太帧，MAC和帧校验），再向下到物理层将其转换成电信号发送给路由器，</p>
+</li>
+<li><p>路由器逐层向上去掉所增加的头部尾部，到达网络层之后，会提取处该报文的ip，此时路由器会根据IP地址查表转发该ip数据报，确定后又向下逐层封装，发送到指定IP地址的web服务器，再次逐层向上去掉相应的头部尾部，到达网络层之后又进行发送响应报文，然后重复此过程，到达主机的应用层被浏览器解析和渲染。</p>
+</li>
+</ol>
+<h3 id="4-专用术语"><a href="#4-专用术语" class="headerlink" title="4.专用术语"></a>4.专用术语</h3><h4 id="1-实体"><a href="#1-实体" class="headerlink" title="1.实体"></a>1.实体</h4><ul>
+<li><p>实体是指任何可发送或接受信息的硬件或软件进程。</p>
+</li>
+<li><p>对等实体是指通信双方相同层次中的实体</p>
+</li>
+</ul>
+<img data-src="/2022/08/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E5%88%86%E5%B1%82%E6%80%9D%E6%83%B3(8-27)/2.png" class title="This is an image">
+<h4 id="2-协议"><a href="#2-协议" class="headerlink" title="2. 协议"></a>2. 协议</h4><ul>
+<li><p>协议是控制两个对等实体在”水平方向“进行”逻辑通信“的规则的集合。</p>
+</li>
+<li><p>协议的三要素</p>
+<ol>
+<li>语法 定义所交换信息的格式</li>
+<li>语义 定义通信双方所要完成的操作</li>
+<li>同步 定义双方的时序关系</li>
+</ol>
+</li>
+</ul>
+<img data-src="/2022/08/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E5%88%86%E5%B1%82%E6%80%9D%E6%83%B3(8-27)/3.png" class="屏幕截图" title="This is an image">
+<h4 id="3-服务"><a href="#3-服务" class="headerlink" title="3.服务"></a>3.服务</h4><ul>
+<li><p>在协议的控制下，两个对等实体在水平方向上的逻辑通信使得本层能够像上一层提供服务。</p>
+</li>
+<li><p>要实现本层协议，还需要使用下面一层所提供的服务</p>
+</li>
+</ul>
+<img data-src="/2022/08/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E5%88%86%E5%B1%82%E6%80%9D%E6%83%B3(8-27)/4.png" class="屏幕截图" title="This is an image">
+<ul>
+<li><p>在同一系统中相邻的两层实体交换信息的逻辑接口成为服务访问点SAP，它被用于区分不同的服务类型。</p>
+</li>
+<li><p>上层使用下层所提供的服务，必须通过与下层交换一些命令，这些命令称为服务原语。</p>
+</li>
+</ul>
+<img data-src="/2022/08/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E5%88%86%E5%B1%82%E6%80%9D%E6%83%B3(8-27)/5.png" class title="This is an image">
+<ul>
+<li>对等层次之间传送的数据包称为该层的协议数据单元（PDU）.</li>
+</ul>
+<h1 id="第一章思维导图"><a href="#第一章思维导图" class="headerlink" title="第一章思维导图"></a>第一章思维导图</h1><img data-src="/2022/08/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E5%88%86%E5%B1%82%E6%80%9D%E6%83%B3(8-27)/6.png" class title="This is an image"> 
+<h1 id="注：（以上内容来自中国MOOC摹课湖南科技大学计算机网络"><a href="#注：（以上内容来自中国MOOC摹课湖南科技大学计算机网络" class="headerlink" title="注：（以上内容来自中国MOOC摹课湖南科技大学计算机网络)"></a>注：（以上内容来自<a href="https://www.icourse163.org/learn/HNKJ-1461816178?tid=1468294445#/learn/announce">中国MOOC摹课湖南科技大学计算机网络</a>)</h1>]]></content>
+      <categories>
+        <category>机网</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>又是一个不眠之夜</title>
+    <url>/2022/08/27/%E5%8F%88%E6%98%AF%E4%B8%80%E4%B8%AA%E4%B8%8D%E7%9C%A0%E4%B9%8B%E5%A4%9C/</url>
+    <content><![CDATA[<h3 id="晚上遇到一个麻烦的问题，想着解决就睡觉，结果天就亮了……"><a href="#晚上遇到一个麻烦的问题，想着解决就睡觉，结果天就亮了……" class="headerlink" title="晚上遇到一个麻烦的问题，想着解决就睡觉，结果天就亮了……."></a>晚上遇到一个麻烦的问题，想着解决就睡觉，结果天就亮了…….</h3>]]></content>
+      <tags>
+        <tag>日常</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>计算机网络性能和体系结构（8.26）</title>
     <url>/2022/08/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%80%A7%E8%83%BD%E5%92%8C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%EF%BC%888.26%EF%BC%89/</url>
     <content><![CDATA[<h1 id="计算机网络性能和体系结构（8-26）"><a href="#计算机网络性能和体系结构（8-26）" class="headerlink" title="计算机网络性能和体系结构（8.26）"></a>计算机网络性能和体系结构（8.26）</h1><h1 id="一、计算机网络性能"><a href="#一、计算机网络性能" class="headerlink" title="一、计算机网络性能"></a>一、计算机网络性能</h1><span id="more"></span>
@@ -209,96 +363,12 @@ D=\dfrac{D_0}{1-U}</script></li>
 <li>解决数据包在一个网络或一段链路上传输的问题——数据链路层</li>
 <li>解决使用何种信号来表示比特0和1的问题——物理层</li>
 </ul>
-]]></content>
+<h1 id="注：（以上内容来自中国MOOC摹课湖南科技大学计算机网络"><a href="#注：（以上内容来自中国MOOC摹课湖南科技大学计算机网络" class="headerlink" title="注：（以上内容来自中国MOOC摹课湖南科技大学计算机网络)"></a>注：（以上内容来自<a href="https://www.icourse163.org/learn/HNKJ-1461816178?tid=1468294445#/learn/announce">中国MOOC摹课湖南科技大学计算机网络</a>)</h1>]]></content>
       <categories>
         <category>机网</category>
       </categories>
       <tags>
         <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机网络体系（8-27）</title>
-    <url>/2022/08/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E5%88%86%E5%B1%82%E6%80%9D%E6%83%B3(8-27)/</url>
-    <content><![CDATA[<h3 id="3-分层思想"><a href="#3-分层思想" class="headerlink" title="3.分层思想"></a>3.分层思想</h3><img data-src="/2022/08/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E5%88%86%E5%B1%82%E6%80%9D%E6%83%B3(8-27)/1.png" class title="This is an image">
-<ul>
-<li>用户在主机中使用浏览器访问web服务器，主机会向WEB服务器发送一个请求报文，web服务器收到报文后，执行相关操作，向主机发送响应报文，接收后由浏览器负责解析和渲染显示。（简化示意过程）<span id="more"></span></li>
-</ul>
-<ol>
-<li><p>从应用层开始，主机中的应用层。根据HTTP协议，构建HTTP请求报文。然后向下传递交付给运输层，而运输层给HTTP请求报文添加一个TCP首部，将其封装成TCP报文段（区分应用进程，实现可靠传输），运输层将封装好的报文段向下交给网络层，而网络层将添加IP头，封装成IP数据报（ip寻址和路由），再向下交付给链路层，而链路层会给报文添加一个头部和一个尾部，将其封装成帧（又称以太帧，MAC和帧校验），再向下到物理层将其转换成电信号发送给路由器，</p>
-</li>
-<li><p>路由器逐层向上去掉所增加的头部尾部，到达网络层之后，会提取处该报文的ip，此时路由器会根据IP地址查表转发该ip数据报，确定后又向下逐层封装，发送到指定IP地址的web服务器，再次逐层向上去掉相应的头部尾部，到达网络层之后又进行发送响应报文，然后重复此过程，到达主机的应用层被浏览器解析和渲染。</p>
-</li>
-</ol>
-<h3 id="4-专用术语"><a href="#4-专用术语" class="headerlink" title="4.专用术语"></a>4.专用术语</h3><h4 id="1-实体"><a href="#1-实体" class="headerlink" title="1.实体"></a>1.实体</h4><ul>
-<li><p>实体是指任何可发送或接受信息的硬件或软件进程。</p>
-</li>
-<li><p>对等实体是指通信双方相同层次中的实体</p>
-</li>
-</ul>
-<img data-src="/2022/08/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E5%88%86%E5%B1%82%E6%80%9D%E6%83%B3(8-27)/2.png" class title="This is an image">
-<h4 id="2-协议"><a href="#2-协议" class="headerlink" title="2. 协议"></a>2. 协议</h4><ul>
-<li><p>协议是控制两个对等实体在”水平方向“进行”逻辑通信“的规则的集合。</p>
-</li>
-<li><p>协议的三要素</p>
-<ol>
-<li>语法 定义所交换信息的格式</li>
-<li>语义 定义通信双方所要完成的操作</li>
-<li>同步 定义双方的时序关系</li>
-</ol>
-</li>
-</ul>
-<img data-src="/2022/08/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E5%88%86%E5%B1%82%E6%80%9D%E6%83%B3(8-27)/3.png" class="屏幕截图" title="This is an image">
-<h4 id="3-服务"><a href="#3-服务" class="headerlink" title="3.服务"></a>3.服务</h4><ul>
-<li><p>在协议的控制下，两个对等实体在水平方向上的逻辑通信使得本层能够像上一层提供服务。</p>
-</li>
-<li><p>要实现本层协议，还需要使用下面一层所提供的服务</p>
-</li>
-</ul>
-<img data-src="/2022/08/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E5%88%86%E5%B1%82%E6%80%9D%E6%83%B3(8-27)/4.png" class="屏幕截图" title="This is an image">
-<ul>
-<li><p>在同一系统中相邻的两层实体交换信息的逻辑接口成为服务访问点SAP，它被用于区分不同的服务类型。</p>
-</li>
-<li><p>上层使用下层所提供的服务，必须通过与下层交换一些命令，这些命令称为服务原语。</p>
-</li>
-</ul>
-<img data-src="/2022/08/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E5%88%86%E5%B1%82%E6%80%9D%E6%83%B3(8-27)/5.png" class title="This is an image">
-<ul>
-<li>对等层次之间传送的数据包称为该层的协议数据单元（PDU）.</li>
-</ul>
-<h1 id="第一章思维导图"><a href="#第一章思维导图" class="headerlink" title="第一章思维导图"></a>第一章思维导图</h1><img data-src="/2022/08/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E5%88%86%E5%B1%82%E6%80%9D%E6%83%B3(8-27)/6.png" class title="This is an image"> 
-]]></content>
-      <categories>
-        <category>机网</category>
-      </categories>
-      <tags>
-        <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>又是一个不眠之夜</title>
-    <url>/2022/08/27/%E5%8F%88%E6%98%AF%E4%B8%80%E4%B8%AA%E4%B8%8D%E7%9C%A0%E4%B9%8B%E5%A4%9C/</url>
-    <content><![CDATA[<h3 id="晚上遇到一个麻烦的问题，想着解决就睡觉，结果天就亮了……"><a href="#晚上遇到一个麻烦的问题，想着解决就睡觉，结果天就亮了……" class="headerlink" title="晚上遇到一个麻烦的问题，想着解决就睡觉，结果天就亮了……."></a>晚上遇到一个麻烦的问题，想着解决就睡觉，结果天就亮了…….</h3>]]></content>
-      <tags>
-        <tag>日常</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/08/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <tags>
-        <tag>第一篇</tag>
       </tags>
   </entry>
   <entry>
@@ -314,5 +384,23 @@ D=\dfrac{D_0}{1-U}</script></li>
 <img data-src="/2022/08/25/%E5%A3%81%E7%BA%B81-1/wallhaven-rdkyx1_2560x1440.png" class title="This is an image">
 <p>注：（取自<a href="https://www.wallhaven.cc">wallhaven</a>你懂的)</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/08/20/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <tags>
+        <tag>第一篇</tag>
+      </tags>
   </entry>
 </search>
