@@ -49,19 +49,37 @@
     var CONFIG = {"hostname":"xd06.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":300,"display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":"fasle","nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="没有追逐的人生毫无意义">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://xd06.github.io/categories/index.html">
+  <meta name="description" content="数据链路（8-30）数据链路层在网络体系结构中所处的地位 数据链路层在五层协议的网络结构体系中处于第二层（自下而上）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络-数据链路(一)8-30">
+<meta property="og:url" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/index.html">
 <meta property="og:site_name" content="还不开学">
-<meta property="og:description" content="没有追逐的人生毫无意义">
+<meta property="og:description" content="数据链路（8-30）数据链路层在网络体系结构中所处的地位 数据链路层在五层协议的网络结构体系中处于第二层（自下而上）。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-23T18:41:19.000Z">
-<meta property="article:modified_time" content="2022-08-23T18:43:09.000Z">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/1.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/2.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/3.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/fzcz.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/tm.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/byte.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/bite.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/12.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/13.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/jo.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/xunhuan.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/xunhuan2.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/xunhuan3.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/xunhuan4.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/xunhuan5.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/xunhuan6.png">
+<meta property="article:published_time" content="2022-08-30T15:22:00.000Z">
+<meta property="article:modified_time" content="2022-08-30T15:45:25.149Z">
 <meta property="article:author" content="DSK">
+<meta property="article:tag" content="网络">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/1.png">
 
-<link rel="canonical" href="http://xd06.github.io/categories/">
+<link rel="canonical" href="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/">
 
 
 <script id="page-configurations">
@@ -69,13 +87,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>分类 | 还不开学
-</title>
+  <title>计算机网络-数据链路(一)8-30 | 还不开学</title>
   
 
 
@@ -235,55 +252,248 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">分类
-</h1>
-
-<div class="post-meta">
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/time.jpg">
+      <meta itemprop="name" content="DSK">
+      <meta itemprop="description" content="没有追逐的人生毫无意义">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="还不开学">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机网络-数据链路(一)8-30
+        </h1>
+
+        <div class="post-meta">
+
+
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-30 23:22:00" itemprop="dateCreated datePublished" datetime="2022-08-30T23:22:00+08:00">2022-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%BA%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">机网</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/" class="post-meta-item leancloud_visitors" data-flag-title="计算机网络-数据链路(一)8-30" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="数据链路（8-30）"><a href="#数据链路（8-30）" class="headerlink" title="数据链路（8-30）"></a>数据链路（8-30）</h1><h2 id="数据链路层在网络体系结构中所处的地位"><a href="#数据链路层在网络体系结构中所处的地位" class="headerlink" title="数据链路层在网络体系结构中所处的地位"></a>数据链路层在网络体系结构中所处的地位</h2><ul>
+<li>数据链路层在五层协议的网络结构体系中处于第二层（自下而上）。</li>
+</ul>
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/1.png" class title="This is an image">
+<span id="more"></span>
+<h2 id="链路、数据链路和帧"><a href="#链路、数据链路和帧" class="headerlink" title="链路、数据链路和帧"></a>链路、数据链路和帧</h2><ul>
+<li>链路（Link）是指从一个节点到相邻节点的一段物理线路（有线或无线），而中间没有任何其他的交换节点。</li>
+<li>数据链路（Data Link）是基于链路的，当一条链路传输数据时，不仅需要链路本身，还需要有一些必要的通信协议来控制这些数据的传输，把实现这些协议的硬件和软件加到链路上，就构成了数据链路。</li>
+<li>计算机中的网络适配器（网卡），和其相应软件驱动就实现了这些协议，一些网络适配器都包含了物理层和数据链路这两层的功能。</li>
+</ul>
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/2.png" class title="This is an image">
+<ul>
+<li>帧是数据链路对等实体之间在水平方向上进行逻辑通信的协议数据单元。</li>
+</ul>
+<h2 id="数据链路的三个重要问题"><a href="#数据链路的三个重要问题" class="headerlink" title="数据链路的三个重要问题"></a>数据链路的三个重要问题</h2><p><strong>封装成帧和透明传输</strong></p>
+<ol>
+<li><p>封装成帧：是指在数据传输的过程中数据链路给上层交付下来的协议数据单元PDU添加一个首部和尾部，使之成为帧。</p>
+<ol>
+<li>帧的首部和尾部中包含着一些重要的控制信息。比如：目的地址、源地址、类型、FCS等。(不同类型的帧首部尾部所包含的可能不尽相同)</li>
+</ol>
+</li>
+</ol>
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/3.png" class title="This is an image">
+<ol>
+<li>帧的尾部和首部的作用之一就是帧定界。(有些没有帧定界，比如以太网V2的MAC帧发送每一个帧会有一个帧间间隔，以这个间隔作为鉴定一个帧，而不是以头部和尾部作为帧定界)</li>
+</ol>
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/fzcz.png" class title="This is an image">
+<ol>
+<li>透明传输：是指数据链路层对上层交付下来的协议单元PDU没有任何限制，就好像数据链路层不存在。</li>
+</ol>
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/tm.png" class title="This is an image">
+<ol>
+<li><p>面向字节的物理链路使用的字节填充的方法实现透明传输，（一般原理方法）</p>
+<p>使用转义符，消除数据中的“敏感字符”（比如转义符、帧定界符）</p>
+</li>
+</ol>
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/byte.png" class title="This is an image">
+<ol>
+<li>面向比特的物理链路使用比特填充的方法实现透明传输。（一般原理方法）通过在五个连续的比特1后面加入比特0，来消除数据中帧定界符的影响。再向上层交付时删除比特0即可。</li>
+</ol>
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/bite.png" class title="This is an image">
+<h1 id="真题"><a href="#真题" class="headerlink" title="真题"></a>真题</h1><img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/12.png" class title="This is an image">
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/13.png" class title="This is an image">
+<p><strong>差错检测</strong></p>
+<ul>
+<li>实际的通信中是会出现各种差错的（称为比特差错）即比特1可能变成比特0，反之亦然</li>
+<li>在一段时间内，传输错误的比特数量占所传输比特总数的比率称为误码率。</li>
+<li>提高链路的信噪比，可以减低误码率。现实中是使用差错检测技术来检测是否出现比特差错。</li>
+</ul>
+<h4 id="在帧的尾部放一个检错码用来检测是否出现误码"><a href="#在帧的尾部放一个检错码用来检测是否出现误码" class="headerlink" title="在帧的尾部放一个检错码用来检测是否出现误码"></a><strong>在帧的尾部放一个检错码用来检测是否出现误码</strong></h4><p>​    1.奇偶校验<br><img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/jo.png" class title="This is an image"></p>
+<p>​    2.循环冗余校验</p>
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/xunhuan.png" class title="This is an image">
+
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/xunhuan2.png" class title="This is an image">
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/xunhuan3.png" class title="This is an image">
+<p>例题:</p>
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/xunhuan4.png" class title="This is an image">
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/xunhuan5.png" class title="This is an image">
+<p>以上两种的差错检测只能检测差错不能定位差错</p>
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/xunhuan6.png" class title="This is an image">
+<p><strong>可靠传输</strong></p>
+<ul>
+<li>不可传输服务：直接丢弃有误码的帧</li>
+<li>可传输服务：实现发送方发送什么，接收方最终都能正确收到。（例如检测到误码后接受方向发送方发送重新传输的请求，直到接收方正确接收帧。）</li>
+</ul>
+<p>下一篇详细介绍可靠传输。</p>
+<p>注：（以上内容来自<a target="_blank" rel="noopener" href="https://www.icourse163.org/learn/HNKJ-1461816178?tid=1468294445#/learn/announce">中国MOOC慕课湖南科技大学计算机网络</a>)</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>Thank you.</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    捐助
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/s.jpg" alt="DSK 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
 </div>
 
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="category-all-page">
-            <div class="category-all-title">
-              目前共计 1 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%BA%E7%BD%91/">机网</a><span class="category-list-count">5</span></li></ul>
-            </div>
-          </div>
         
-      </div>
-      
-      
-      
-    </div>
-    
 
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>DSK
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/" title="计算机网络-数据链路(一)8-30">http://xd06.github.io/2022/08/30/计算机网络-数据链路(一)8-30/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+     
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag"><i class="fa fa-tag"></i># 网络</a>
+          </div>
+<div>
+  
+    <div>
     
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
     
+</div>
+
+  
+</div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/" rel="prev" title="计算机网络-物理层(二)8-29">
+      <i class="fa fa-chevron-left"></i> 计算机网络-物理层(二)8-29
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
     
+  </article>
+  
+  
+  
+
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -330,6 +540,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%EF%BC%888-30%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">数据链路（8-30）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E5%9C%A8%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E4%B8%AD%E6%89%80%E5%A4%84%E7%9A%84%E5%9C%B0%E4%BD%8D"><span class="nav-number">1.1.</span> <span class="nav-text">数据链路层在网络体系结构中所处的地位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%B7%AF%E3%80%81%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%92%8C%E5%B8%A7"><span class="nav-number">1.2.</span> <span class="nav-text">链路、数据链路和帧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E7%9A%84%E4%B8%89%E4%B8%AA%E9%87%8D%E8%A6%81%E9%97%AE%E9%A2%98"><span class="nav-number">1.3.</span> <span class="nav-text">数据链路的三个重要问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9C%9F%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">真题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E5%B8%A7%E7%9A%84%E5%B0%BE%E9%83%A8%E6%94%BE%E4%B8%80%E4%B8%AA%E6%A3%80%E9%94%99%E7%A0%81%E7%94%A8%E6%9D%A5%E6%A3%80%E6%B5%8B%E6%98%AF%E5%90%A6%E5%87%BA%E7%8E%B0%E8%AF%AF%E7%A0%81"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">在帧的尾部放一个检错码用来检测是否出现误码</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
