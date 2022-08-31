@@ -1317,7 +1317,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ba7f17;
+  background: #324a0b;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2353,6 +2353,7 @@ ul.breadcrumb li + li:last-child {
 .tag-cloud a {
   display: inline-block;
   margin: 10px;
+  font-family: Zhi Mang Xing;
 }
 .tag-cloud a:hover {
   color: var(--link-hover-color) !important;
@@ -2823,4 +2824,7 @@ h3 {
 h4 {
   font-size: 0.7em;
   font-weight: bold;
+}
+.tag-cloud a {
+  font-size: 20px !important;
 }
