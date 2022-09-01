@@ -6,7 +6,7 @@
   <link href="http://xd06.github.io/atom.xml" rel="self"/>
   
   <link href="http://xd06.github.io/"/>
-  <updated>2022-08-30T15:45:25.149Z</updated>
+  <updated>2022-09-01T04:55:12.237Z</updated>
   <id>http://xd06.github.io/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算机网络-数据链路(二)8-31</title>
+    <link href="http://xd06.github.io/2022/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%BA%8C)8-31/"/>
+    <id>http://xd06.github.io/2022/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%BA%8C)8-31/</id>
+    <published>2022-08-31T15:22:00.000Z</published>
+    <updated>2022-09-01T04:55:12.237Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="可靠传输-—（8-30）"><a href="#可靠传输-—（8-30）" class="headerlink" title="可靠传输 —（8-30）"></a>可靠传输 —（8-30）</h1><h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><ol><li><p>使用差错检测技术（例如循环冗余校验CRC），接收方的数据链层就可以检测出帧在传输过程中是否产生了误码（比特差错）。</p></li><li><p>数据链层向其上层提供的服务类型</p><ul><li><p>不可靠传输服务：仅仅丢弃误码的帧，其他什么也不做</p></li><li><p>可靠传输服务：通过某种机制实现发送方发送什么，接收方最总终就能收到什么。</p></li></ul></li></ol><span id="more"></span><h2 id="传输差错的类型："><a href="#传输差错的类型：" class="headerlink" title="传输差错的类型："></a>传输差错的类型：</h2><ol><li>误码（比特差错）：出现在数据链路层及其下层</li><li>分组丢失     ——-&gt;</li><li>分组失序     ——-&gt;         出现在数据链路层的上层</li><li><p>分组重复     ——-&gt;</p></li><li><p>可靠传输服务并不局限于数据链路层，其他各层均可选择实现可靠传输。</p></li></ol><img data-src="/2022/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%BA%8C)8-31/1.png" class title="This is an image"><h2 id="实现机制"><a href="#实现机制" class="headerlink" title="实现机制"></a>实现机制</h2><ol><li>停止-等待（Stop-and-Wait,SW）协议</li></ol><img data-src="/2022/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%BA%8C)8-31/2.png" class title="This is an image"><ul><li>原理：收发双方通过因特网进行通信，首先发送方发送一个数据分组（DATA），接收方进行差错检测，确认无误码之后接受，并向接收方发送确认分组（ACK），发送方发送下一个数据分组，这次出现误码，接收方检测到误码后，直接丢弃，并向发送方发送否认分组（NAK），发送方收到之后重传之前的数据分组，再次重复前面的工作。</li><li>后面应对特殊的情况又增加了超时传输和确认丢失分组需要编号。</li></ul><img data-src="/2022/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%BA%8C)8-31/3.png" class title="This is an image"><img data-src="/2022/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%BA%8C)8-31/3-1.png" class title="This is an image"><img data-src="/2022/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%BA%8C)8-31/3-2.png" class title="This is an image"><img data-src="/2022/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%BA%8C)8-31/4.png" class title="This is an image"><script type="math/tex; mode=display">T^D是发送数据分组所消耗的发送时延，RTT是信号往返传播的时间，T^A是接收方发送确认分组消耗的时间\\\\信道利用率：U\approx\dfrac{T^D}{T^D+RTT+T^A}\quad TA<<T^D\quad\longrightarrow U\approx\dfrac{T^D}{T^D+RTT}\\\\RTT>>T^D \longrightarrow U很低，例如卫星链路的RTT很大\\\\ RTT<<T^D \longrightarrow U比较高，例如无线局域网的RTT远小于T^D</script><ul><li>列题：</li></ul><img data-src="/2022/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%BA%8C)8-31/5.png" class title="This is an image"><ol><li><p>回退N帧（Go-back-N,GBN）协议</p><ol><li>原理：使用流水线传输可以显著提高信道的利用率，并且利用发送窗口来限制发送方连续发送数据分组的数量，这是属于连续ARQ协议。</li><li>运行机制：发送方需要维护一个发送窗口W<sup>T</sup>，在没收到接收方确认分组的情况下，发送发可将序号落入W<sup>T</sup>内的所有数据分组连续发送出去。<ul><li>采用n个比特给分组编序号，W<sup>T</sup>的取值范围是1～（2<sup>n</sup>-1）.</li></ul></li></ol></li></ol><img data-src="/2022/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%BA%8C)8-31/6.png" class title="This is an image"><img data-src="/2022/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%BA%8C)8-31/7.png" class title="This is an image"><img data-src="/2022/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%BA%8C)8-31/8.png" class title="This is an image"><h3 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h3><img data-src="/2022/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%BA%8C)8-31/9.png" class title="This is an image"><script type="math/tex; mode=display">   发送时延=\dfrac{发送分组大小（b）}{发送速率（b/s）}</script><img data-src="/2022/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%BA%8C)8-31/10.png" class title="This is an image"><ol><li>选择重传（Selective Repeat, SR）协议</li></ol><img data-src="/2022/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%BA%8C)8-31/11.png" class title="This is an image"><p>原理：哪一个分组没有正确接受就重新发送该分组。但是还是需要保证发送窗口W<sup>T</sup>的取值范围是1～（2<sup>n</sup>-1）。</p><img data-src="/2022/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%BA%8C)8-31/12.png" class title="This is an image"><h2 id="注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络"><a href="#注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络" class="headerlink" title="注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络)"></a>注：（以上内容来自<a href="https://www.icourse163.org/learn/HNKJ-1461816178?tid=1468294445#/learn/announce">中国MOOC慕课湖南科技大学计算机网络</a>)</h2>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;可靠传输-—（8-30）&quot;&gt;&lt;a href=&quot;#可靠传输-—（8-30）&quot; class=&quot;headerlink&quot; title=&quot;可靠传输 —（8-30）&quot;&gt;&lt;/a&gt;可靠传输 —（8-30）&lt;/h1&gt;&lt;h2 id=&quot;相关概念&quot;&gt;&lt;a href=&quot;#相关概念&quot; class=&quot;headerlink&quot; title=&quot;相关概念&quot;&gt;&lt;/a&gt;相关概念&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;使用差错检测技术（例如循环冗余校验CRC），接收方的数据链层就可以检测出帧在传输过程中是否产生了误码（比特差错）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;数据链层向其上层提供的服务类型&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不可靠传输服务：仅仅丢弃误码的帧，其他什么也不做&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;可靠传输服务：通过某种机制实现发送方发送什么，接收方最总终就能收到什么。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="机网" scheme="http://xd06.github.io/categories/%E6%9C%BA%E7%BD%91/"/>
+    
+    
+    <category term="网络" scheme="http://xd06.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>分享壁纸（二）</title>
+    <link href="http://xd06.github.io/2022/08/31/%E5%88%86%E4%BA%AB%E5%A3%81%E7%BA%B8(%E4%BA%8C)/"/>
+    <id>http://xd06.github.io/2022/08/31/%E5%88%86%E4%BA%AB%E5%A3%81%E7%BA%B8(%E4%BA%8C)/</id>
+    <published>2022-08-31T12:22:00.000Z</published>
+    <updated>2022-09-01T04:34:17.822Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="人物"><a href="#人物" class="headerlink" title="人物"></a>人物</h2><p><img data-src="https://w.wallhaven.cc/full/j3/wallhaven-j3mk8y.jpg" alt></p><span id="more"></span><p><img data-src="https://w.wallhaven.cc/full/8o/wallhaven-8ozl91.png" alt></p><p><img data-src="https://w.wallhaven.cc/full/v9/wallhaven-v9wr9m.jpg" alt></p><p><img data-src="https://w.wallhaven.cc/full/72/wallhaven-72yo3e.jpg" alt></p><p><img data-src="https://w.wallhaven.cc/full/z8/wallhaven-z8lpww.jpg" alt></p><p><img data-src="https://w.wallhaven.cc/full/v9/wallhaven-v9w3v3.jpg" alt></p><p><img data-src="https://w.wallhaven.cc/full/m9/wallhaven-m9xlmy.jpg" alt></p><p><img data-src="https://w.wallhaven.cc/full/57/wallhaven-572k81.png" alt></p><p><img data-src="https://w.wallhaven.cc/full/72/wallhaven-72y2zo.jpg" alt></p><p><img data-src="https://w.wallhaven.cc/full/1k/wallhaven-1k9k83.png" alt></p><h2 id="注：（以上图均来自wallhaven）"><a href="#注：（以上图均来自wallhaven）" class="headerlink" title="注：（以上图均来自wallhaven）"></a>注：（以上图均来自<a href="https://wallhaven.cc">wallhaven</a>）</h2>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;人物&quot;&gt;&lt;a href=&quot;#人物&quot; class=&quot;headerlink&quot; title=&quot;人物&quot;&gt;&lt;/a&gt;人物&lt;/h2&gt;&lt;p&gt;&lt;img data-src=&quot;https://w.wallhaven.cc/full/j3/wallhaven-j3mk8y.jpg&quot; alt&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="壁纸" scheme="http://xd06.github.io/categories/%E5%A3%81%E7%BA%B8/"/>
+    
+    
+    <category term="养眼" scheme="http://xd06.github.io/tags/%E5%85%BB%E7%9C%BC/"/>
+    
+  </entry>
   
   <entry>
     <title>计算机网络-数据链路(一)8-30</title>
@@ -155,19 +208,23 @@
   </entry>
   
   <entry>
-    <title>壁纸1-1</title>
-    <link href="http://xd06.github.io/2022/08/25/%E5%A3%81%E7%BA%B81-1/"/>
-    <id>http://xd06.github.io/2022/08/25/%E5%A3%81%E7%BA%B81-1/</id>
+    <title>分享壁纸(一)</title>
+    <link href="http://xd06.github.io/2022/08/25/%E5%88%86%E4%BA%AB%E5%A3%81%E7%BA%B8(%E4%B8%80)/"/>
+    <id>http://xd06.github.io/2022/08/25/%E5%88%86%E4%BA%AB%E5%A3%81%E7%BA%B8(%E4%B8%80)/</id>
     <published>2022-08-25T08:44:44.000Z</published>
-    <updated>2022-08-30T03:30:26.622Z</updated>
+    <updated>2022-09-01T04:59:06.742Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="分享几张好看的图片"><a href="#分享几张好看的图片" class="headerlink" title="分享几张好看的图片"></a>分享几张好看的图片</h1><img data-src="/2022/08/25/%E5%A3%81%E7%BA%B81-1/abc.jpg" class title="This is an image"> <span id="more"></span><p><img data-src="https://w.wallhaven.cc/full/8o/wallhaven-8old52.jpg" alt><br><img data-src="https://w.wallhaven.cc/full/z8/wallhaven-z8lgwg.jpg" alt><br><img data-src="https://w.wallhaven.cc/full/9m/wallhaven-9mqqq8.png" alt><br><img data-src="https://w.wallhaven.cc/full/6o/wallhaven-6oveq7.png" alt><br><img data-src="https://w.wallhaven.cc/full/28/wallhaven-285e6x.png" alt><br><img data-src="https://w.wallhaven.cc/full/x8/wallhaven-x83jkv.jpg" alt><br><img data-src="https://w.wallhaven.cc/full/pk/wallhaven-pke293.jpg" alt><br><img data-src="https://w.wallhaven.cc/full/1k/wallhaven-1k961v.png" alt><br><img data-src="https://w.wallhaven.cc/full/rd/wallhaven-rdkke7.png" alt><br><img data-src="https://w.wallhaven.cc/full/y8/wallhaven-y8z7wx.jpg" alt><br><img data-src="https://w.wallhaven.cc/full/96/wallhaven-96w8e8.png" alt><br><img data-src="https://w.wallhaven.cc/full/pk/wallhaven-pkgkkp.png" alt><br><img data-src="https://w.wallhaven.cc/full/l3/wallhaven-l3zmwy.jpg" alt><br><img data-src="https://w.wallhaven.cc/full/ym/wallhaven-ymz61d.jpg" alt><br><img data-src="https://w.wallhaven.cc/full/j3/wallhaven-j3m8y5.png" alt><br>注：（取自<a href="https://www.wallhaven.cc">wallhaven</a>你懂的)</p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;分享几张好看的图片&quot;&gt;&lt;a href=&quot;#分享几张好看的图片&quot; class=&quot;headerlink&quot; title=&quot;分享几张好看的图片&quot;&gt;&lt;/a&gt;分享几张好看的图片&lt;/h1&gt;&lt;img data-src=&quot;/2022/08/25/%E5%A3%81%E7%BA%B81-1/abc.jpg&quot; class title=&quot;This is an image&quot;&gt;</summary>
+    <content type="html"><![CDATA[<h1 id="分享几张好看的图片"><a href="#分享几张好看的图片" class="headerlink" title="分享几张好看的图片"></a>分享几张好看的图片</h1> <span id="more"></span><p><img data-src="https://w.wallhaven.cc/full/8o/wallhaven-8old52.jpg" alt><br><img data-src="https://w.wallhaven.cc/full/z8/wallhaven-z8lgwg.jpg" alt><br><img data-src="https://w.wallhaven.cc/full/9m/wallhaven-9mqqq8.png" alt><br><img data-src="https://w.wallhaven.cc/full/6o/wallhaven-6oveq7.png" alt><br><img data-src="https://w.wallhaven.cc/full/28/wallhaven-285e6x.png" alt><br><img data-src="https://w.wallhaven.cc/full/x8/wallhaven-x83jkv.jpg" alt><br><img data-src="https://w.wallhaven.cc/full/pk/wallhaven-pke293.jpg" alt><br><img data-src="https://w.wallhaven.cc/full/1k/wallhaven-1k961v.png" alt><br><img data-src="https://w.wallhaven.cc/full/rd/wallhaven-rdkke7.png" alt><br><img data-src="https://w.wallhaven.cc/full/y8/wallhaven-y8z7wx.jpg" alt><br><img data-src="https://w.wallhaven.cc/full/96/wallhaven-96w8e8.png" alt><br><img data-src="https://w.wallhaven.cc/full/pk/wallhaven-pkgkkp.png" alt><br><img data-src="https://w.wallhaven.cc/full/l3/wallhaven-l3zmwy.jpg" alt><br><img data-src="https://w.wallhaven.cc/full/ym/wallhaven-ymz61d.jpg" alt><br><img data-src="https://w.wallhaven.cc/full/j3/wallhaven-j3m8y5.png" alt><br>注：（取自<a href="https://www.wallhaven.cc">wallhaven</a>你懂的)</p>]]></content>
     
     
+    <summary type="html">&lt;h1 id=&quot;分享几张好看的图片&quot;&gt;&lt;a href=&quot;#分享几张好看的图片&quot; class=&quot;headerlink&quot; title=&quot;分享几张好看的图片&quot;&gt;&lt;/a&gt;分享几张好看的图片&lt;/h1&gt;</summary>
     
+    
+    
+    <category term="壁纸" scheme="http://xd06.github.io/categories/%E5%A3%81%E7%BA%B8/"/>
+    
+    
+    <category term="养眼" scheme="http://xd06.github.io/tags/%E5%85%BB%E7%9C%BC/"/>
     
   </entry>
   
