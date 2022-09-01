@@ -6,7 +6,7 @@
   <link href="http://xd06.github.io/atom.xml" rel="self"/>
   
   <link href="http://xd06.github.io/"/>
-  <updated>2022-09-01T04:55:12.237Z</updated>
+  <updated>2022-09-01T16:14:58.985Z</updated>
   <id>http://xd06.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算机网络-数据链路(三)9-1</title>
+    <link href="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/"/>
+    <id>http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/</id>
+    <published>2022-09-01T14:22:00.000Z</published>
+    <updated>2022-09-01T16:14:58.985Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="点对点协议PPP"><a href="#点对点协议PPP" class="headerlink" title="点对点协议PPP"></a>点对点协议PPP</h2><ol><li>点对点协议PPP概述<ul><li>点对点协议（Point-to-Point Protocol,PPP）是目前使用最广泛的点对点数据链路层协议。</li><li>点对点协议PPP是因特网工程任务组（Internet Engineering Task Force,IETF）于1992年制定的，目前已经成为因特网的正式标准。</li><li>广泛应用：因特网用户通过点对点链路连接到某个ISP，进而接入因特网。此外还广泛应用于广域网路由器之间的专用线路。</li><li>协议字段为0021时为IP数据报，为C021时为LCP分组。为8021时为NCP分组。</li></ul></li></ol><span id="more"></span><img data-src="/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/1.png" class title="This is an image"><ol><li>PPP的帧格式</li></ol><img data-src="/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/2.png" class title="This is an image"><ol><li>PPP帧的透明传输</li></ol><ul><li>面向字节的异步传输链路使用字节填充来实现透明传输</li></ul><img data-src="/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/3.png" class title="This is an image"><ol><li>PPP帧的差错检测</li></ol><img data-src="/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/4.png" class title="This is an image"><ul><li>接收方每收到一个ppp帧，就进行CRC检验。若CRC检验正确，就收下这个帧，否则，就丢弃这个帧，使用PPP的数据链路层，向上提供是不可靠数据传输服务。</li></ul><ol><li>PPP的工作状态</li></ol><img data-src="/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/5.png" class title="This is an image"><h2 id="共享式以太网"><a href="#共享式以太网" class="headerlink" title="共享式以太网"></a>共享式以太网</h2><ul><li>以太网（Ethernet-1975年）以曾经被假想的电磁波传播介质-以太（Ether）命名</li><li>以太网最初采用无源电缆（不包含电源线）作为共享总线来传输帧，属于几基带总线局域网，传输速率为2.94Mb/s</li><li>以太网已经从传统式的共享式发展成了交换式以太网，传输速率提高到了100Mb/s、1Gb/s甚至10Gb/s。</li></ul><img data-src="/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/6.png" class title="This is an image"><h2 id="网络适配器和MAC地址"><a href="#网络适配器和MAC地址" class="headerlink" title="网络适配器和MAC地址"></a>网络适配器和MAC地址</h2><ol><li><p>网络适配器</p><ul><li>要将计算机连接到以太网，需要使用相应的网络适配器（Adapter），网络适配器一般简称为“网卡”。</li><li>网卡与CPU之间的通信，一般通过IO总线以并行传输方式进行的。</li><li>网卡与外部以太网（局域网）之间的通信，一般是通过传输媒体（同轴电缆、双绞线、光纤）以串行的方式</li><li>网卡除了实现物理层和数据链路层的功能，还有就是并行传输和串行传输的转换。，网卡的核心芯片中会包含用于缓存数据的存储器，是因为网络的传输速率和计算机内部总线上的传输速率并不相同。</li><li>网卡正常之外，还需要在计算机的操作系统中安装驱动程序，她负责驱动网卡发送和接受帧。</li></ul></li></ol><img data-src="/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/7.png" class title="This is an image"><ol><li>MAC地址</li></ol><img data-src="/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/8.png" class title="This is an image"><img data-src="/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/9.png" class title="This is an image"><ul><li><p>一般情况下，普通用户计算机中往往会包含两块网卡</p><ul><li>一块是用于接入有线局域网的以太网卡</li><li>一块是用于介入无线局域网的Wi-Fi网卡</li></ul></li><li><p>每块网卡都有一个全球唯一的MAC地址</p></li><li>交换机和路由器往往具有更多的网络接口，所以会有更多的MAC地址。（MAC地址是对网络上各接口的唯一标识，而不是对网络上各设备的唯一标识）</li></ul><img data-src="/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/10.png" class title="This is an image"><img data-src="/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/11.png" class title="This is an image"><ul><li><p>MAC地址的发送顺序</p><ul><li>字节发送顺序：第1字节——&gt; 第六字节</li><li>字节内的比特发送顺序：b0——&gt; b7</li></ul></li><li><p>单播MAC地址：</p></li></ul><img data-src="/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/12.png" class title="This is an image"><ul><li>广播MAC地址与其上一样。</li></ul><img data-src="/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/13.png" class title="This is an image"><p>注：全球单播MAC地址如同个人身份证号一样，具有唯一性，与用户的个人信息相连结，应该尽量确保自己的全球单播MAC地址不被泄露，目前大多数移动设备采用随机MAC技术。</p><h2 id="注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络"><a href="#注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络" class="headerlink" title="注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络)"></a>注：（以上内容来自<a href="https://www.icourse163.org/learn/HNKJ-1461816178?tid=1468294445#/learn/announce">中国MOOC慕课湖南科技大学计算机网络</a>)</h2>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;点对点协议PPP&quot;&gt;&lt;a href=&quot;#点对点协议PPP&quot; class=&quot;headerlink&quot; title=&quot;点对点协议PPP&quot;&gt;&lt;/a&gt;点对点协议PPP&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;点对点协议PPP概述&lt;ul&gt;
+&lt;li&gt;点对点协议（Point-to-Point Protocol,PPP）是目前使用最广泛的点对点数据链路层协议。&lt;/li&gt;
+&lt;li&gt;点对点协议PPP是因特网工程任务组（Internet Engineering Task Force,IETF）于1992年制定的，目前已经成为因特网的正式标准。&lt;/li&gt;
+&lt;li&gt;广泛应用：因特网用户通过点对点链路连接到某个ISP，进而接入因特网。此外还广泛应用于广域网路由器之间的专用线路。&lt;/li&gt;
+&lt;li&gt;协议字段为0021时为IP数据报，为C021时为LCP分组。为8021时为NCP分组。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="机网" scheme="http://xd06.github.io/categories/%E6%9C%BA%E7%BD%91/"/>
+    
+    
+    <category term="网络" scheme="http://xd06.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>计算机网络-数据链路(二)8-31</title>
