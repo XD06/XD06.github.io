@@ -3,8 +3,84 @@
   <entry>
     <title>开端</title>
     <url>/2022/08/24/%E5%BC%80%E7%AB%AF/</url>
-    <content><![CDATA[<h1 id="一切事都是有始有终！而这件事从这儿开始"><a href="#一切事都是有始有终！而这件事从这儿开始" class="headerlink" title="一切事都是有始有终！而这件事从这儿开始"></a>一切事都是有始有终！而这件事从这儿开始</h1><span id="more"></span>
+    <content><![CDATA[<p>&nbsp;&nbsp;# 一切事都是有始有终！而这件事从这儿开始</p>
+<span id="more"></span>
 <h1 id="这个博客站正式成立了！"><a href="#这个博客站正式成立了！" class="headerlink" title="这个博客站正式成立了！"></a>这个博客站正式成立了！</h1>]]></content>
+  </entry>
+  <entry>
+    <title>计算机网络-数据链路(四)</title>
+    <url>/2022/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E5%9B%9B)/</url>
+    <content><![CDATA[<h1 id="CSMA-CD协议"><a href="#CSMA-CD协议" class="headerlink" title="CSMA/CD协议"></a>CSMA/CD协议</h1><h2 id="CSMA-CD协议的基本原理"><a href="#CSMA-CD协议的基本原理" class="headerlink" title="CSMA/CD协议的基本原理"></a>CSMA/CD协议的基本原理</h2><ul>
+<li>在以太网发展初期，将多个站点连接到一条总线上来构建共享总线以太网。</li>
+<li>共享以太网具有天然的广播特性，即使是总线上某个站点给另一个站点发送单播帧，表示帧的信号也会沿着总线传播到总线上其他站点。在某一站点发送帧时，总线资源会被其独占，这时其他站点也发送帧，会出现信号碰撞。</li>
+</ul>
+<span id="more"></span>
+<ul>
+<li><p>为了解决上述的问题，共享以太网使用了一种专用的协议CSMA/CD，它是载波监听多址接入/碰撞检测（Carrier Sense Multiple Access Collision Detection）的英文缩写。</p>
+<img data-src="/2022/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E5%9B%9B)/1.png" class title="This is an image">
+</li>
+<li><p>发送帧的站点一旦检测碰撞，除了立即停止发送帧外，还要继续发送32比特或48比特的人为干扰信号，保证有足够多的碰撞信号使所有站点都能检测出的碰撞。</p>
+</li>
+<li>载波监听检测到总线空闲，但总线不一定空闲。</li>
+<li>在使用CSMA/CD协议时，由于正在发送帧的站点必须“边发送帧，边检测碰撞”，因此站点不能同时发送和接收。也就是不可能进行全双工通信，二只能进行半双工通信（双向交替通信）。</li>
+</ul>
+<h2 id="共享是以太网的争用期"><a href="#共享是以太网的争用期" class="headerlink" title="共享是以太网的争用期"></a>共享是以太网的争用期</h2><ul>
+<li>站点从发送帧开始，最多经过时长2τ（即δ趋近于0）就可检测所发送的帧是否遭遇了碰撞。</li>
+<li><p>因此，共享总线以太网的端到端往返的时间2τ被称为争用期，或者碰撞窗口。</p>
+<ul>
+<li>站点从发送帧开始，经过争用期2τ这段时间还没有检测到碰撞，就可以肯定这次发送不会发生碰撞。</li>
+</ul>
+</li>
+<li><p>总线的长度越长（单端到端的传播时延越大），网络中的站点数量越多，发生碰撞的概率就越大。</p>
+</li>
+<li>10Mb/s共享是以太网（传统的以太网）规定：争用期2τ的值为512比特的发送时间，即51.2μs。</li>
+</ul>
+<img data-src="/2022/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E5%9B%9B)/2.png" class title="This is an image">
+<script type="math/tex; mode=display">
+争用期：2τ=\dfrac{512b}{10Mb/s}=\dfrac{512b}{10\times10^6b/s}=51.2μs</script><script type="math/tex; mode=display">
+单程端到端传播时延τ=\dfrac{51.2μs}{2}=25.6μs</script><script type="math/tex; mode=display">
+假设信号的传播速率为2\times10^8m/s</script><script type="math/tex; mode=display">
+则总线的长度为2\times10^8m/s \times25.6μs=5120m</script><img data-src="/2022/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E5%9B%9B)/3.png" class title="This is an image">
+<h2 id="共享式以太网的最小帧长和最大帧长"><a href="#共享式以太网的最小帧长和最大帧长" class="headerlink" title="共享式以太网的最小帧长和最大帧长"></a>共享式以太网的最小帧长和最大帧长</h2><ul>
+<li><p>为了确保共享式以太网上每一个站点再发送完一个完整的帧之前，能够检测出是否发生了碰撞，帧的发送时延就不能少于共享总线以太网到端的往返时间，即一个争用期2τ.</p>
+</li>
+<li><p>对于10Mb/s的共享式以太网，其争用期为51.2μs，最小帧长为512b，即64B</p>
+<ul>
+<li>当某个站点发送帧时，如果帧的前64B没有遭遇碰撞，那么后续的部分也就不会遭遇碰撞，如果遭遇碰撞一定是在帧的前64B知内。所以当接收站点接收到长度小于64B的帧，就可以判定这是一个遭遇了碰撞而异常中止的无效帧。</li>
+</ul>
+</li>
+</ul>
+<img data-src="/2022/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E5%9B%9B)/4.png" class title="This is an image">
+<p>例题：</p>
+<img data-src="/2022/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E5%9B%9B)/5.png" class title="This is an image">
+<h2 id="共享式以太网的退避算法"><a href="#共享式以太网的退避算法" class="headerlink" title="共享式以太网的退避算法"></a>共享式以太网的退避算法</h2><ul>
+<li><p>使用CSMA/CD协议的共享总线以太网中，一边发送帧的站点还要一边检测碰撞，检测到后，会立即停止发送。退避一段时间后重新发送，在此协议的共享以太网各站点采用截断二进制指数退避（Truncated Binary Exponential Backoff）算法来选择退避的随机时间。</p>
+<img data-src="/2022/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E5%9B%9B)/6.png" class title="This is an image">
+</li>
+<li><p>上述的算法可使重传的需要推迟的平均时间随重传次数而增大（即动态退避），来减少产生碰撞的概率。重传16次不成功时，就放弃重传并向高层报告。</p>
+</li>
+</ul>
+<h2 id="共享式以太网的信道利用率"><a href="#共享式以太网的信道利用率" class="headerlink" title="共享式以太网的信道利用率"></a>共享式以太网的信道利用率</h2><img data-src="/2022/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E5%9B%9B)/7.png" class title="This is an image">
+<script type="math/tex; mode=display">
+极限信道利用率 S_{max}=\dfrac{T_0}{T_0+τ}=\dfrac{1}{1+\dfrac{τ}{T_0}}=\dfrac{1}{1+a}参数a的值应尽量小，以提高信道利用率</script><script type="math/tex; mode=display">
+a=\dfrac{τ}{T_0}  共享式以太网端到端的距离不应太长</script><p>例题：</p>
+<img data-src="/2022/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E5%9B%9B)/8.png" class title="This is an image">
+<h2 id="使用集线器的共享式以太网"><a href="#使用集线器的共享式以太网" class="headerlink" title="使用集线器的共享式以太网"></a>使用集线器的共享式以太网</h2><ul>
+<li><p>早期的以太网是使用出同轴电缆的共享式以太网，实践证明使用无源电缆线和大量机械接口的总线型以太网并不像人们想象的那么可靠。</p>
+<img data-src="/2022/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E5%9B%9B)/9.png" class title="This is an image">
+<img data-src="/2022/09/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E5%9B%9B)/10.png" class title="This is an image">
+</li>
+</ul>
+<p>例题：</p>
+<p>【2019年题34】100BaseT快速以太网的导向传输介质是（）</p>
+<p>A.双绞线 &nbsp;&nbsp;&nbsp;B.单模光纤&nbsp;&nbsp;&nbsp;C.多模光纤&nbsp;&nbsp;&nbsp;D.同轴电缆</p>
+<h2 id="注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络"><a href="#注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络" class="headerlink" title="注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络)"></a>注：（以上内容来自<a href="https://www.icourse163.org/learn/HNKJ-1461816178?tid=1468294445#/learn/announce">中国MOOC慕课湖南科技大学计算机网络</a>)</h2>]]></content>
+      <categories>
+        <category>机网</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
+      </tags>
   </entry>
   <entry>
     <title>计算机网络-数据链路(三)9-1</title>
@@ -270,8 +346,7 @@ RTT<<T^D \longrightarrow U比较高，例如无线局域网的RTT远小于T^D</s
 <li>可传输服务：实现发送方发送什么，接收方最终都能正确收到。（例如检测到误码后接受方向发送方发送重新传输的请求，直到接收方正确接收帧。）</li>
 </ul>
 <p>下一篇详细介绍可靠传输。</p>
-<p>注：（以上内容来自<a href="https://www.icourse163.org/learn/HNKJ-1461816178?tid=1468294445#/learn/announce">中国MOOC慕课湖南科技大学计算机网络</a>)</p>
-]]></content>
+<h2 id="注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络"><a href="#注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络" class="headerlink" title="注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络)"></a>注：（以上内容来自<a href="https://www.icourse163.org/learn/HNKJ-1461816178?tid=1468294445#/learn/announce">中国MOOC慕课湖南科技大学计算机网络</a>)</h2>]]></content>
       <categories>
         <category>机网</category>
       </categories>
@@ -369,8 +444,7 @@ RTT<<T^D \longrightarrow U比较高，例如无线局域网的RTT远小于T^D</s
 </code></pre><img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/23.png" class title="This is an image">
 <img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/24.png" class title="This is an image">
 <img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/25.png" class title="This is an image">
-<p><strong>注：</strong>（以上内容来自<a href="https://www.icourse163.org/learn/HNKJ-1461816178?tid=1468294445#/learn/announce">中国MOOC慕课湖南科技大学计算机网络</a>)</p>
-]]></content>
+<h2 id="注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络"><a href="#注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络" class="headerlink" title="注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络)"></a><strong>注：</strong>（以上内容来自<a href="https://www.icourse163.org/learn/HNKJ-1461816178?tid=1468294445#/learn/announce">中国MOOC慕课湖南科技大学计算机网络</a>)</h2>]]></content>
       <categories>
         <category>机网</category>
       </categories>
@@ -459,8 +533,7 @@ RTT<<T^D \longrightarrow U比较高，例如无线局域网的RTT远小于T^D</s
 </ol>
 <img data-src="/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/13.png" class title="This is an image">
 <p>   注：(单工电台的单工通信表示的<strong>是双向交替通信</strong>，<strong>不是单向通信</strong>)</p>
-<p> 注：（以上内容来自<a href="https://www.icourse163.org/learn/HNKJ-1461816178?tid=1468294445#/learn/announce">中国MOOC慕课湖南科技大学计算机网络</a>)</p>
-]]></content>
+<h2 id="注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络"><a href="#注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络" class="headerlink" title="注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络)"></a>注：（以上内容来自<a href="https://www.icourse163.org/learn/HNKJ-1461816178?tid=1468294445#/learn/announce">中国MOOC慕课湖南科技大学计算机网络</a>)</h2>]]></content>
       <categories>
         <category>机网</category>
       </categories>
@@ -518,7 +591,7 @@ RTT<<T^D \longrightarrow U比较高，例如无线局域网的RTT远小于T^D</s
 <li>对等层次之间传送的数据包称为该层的协议数据单元（PDU）.</li>
 </ul>
 <h1 id="第一章思维导图"><a href="#第一章思维导图" class="headerlink" title="第一章思维导图"></a>第一章思维导图</h1><img data-src="/2022/08/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E5%88%86%E5%B1%82%E6%80%9D%E6%83%B3(8-27)/6.png" class title="This is an image"> 
-<h1 id="注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络"><a href="#注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络" class="headerlink" title="注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络)"></a>注：（以上内容来自<a href="https://www.icourse163.org/learn/HNKJ-1461816178?tid=1468294445#/learn/announce">中国MOOC慕课湖南科技大学计算机网络</a>)</h1>]]></content>
+<h2 id="注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络"><a href="#注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络" class="headerlink" title="注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络)"></a>注：（以上内容来自<a href="https://www.icourse163.org/learn/HNKJ-1461816178?tid=1468294445#/learn/announce">中国MOOC慕课湖南科技大学计算机网络</a>)</h2>]]></content>
       <categories>
         <category>机网</category>
       </categories>
