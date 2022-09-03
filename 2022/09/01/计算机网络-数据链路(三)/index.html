@@ -52,31 +52,31 @@
   <meta name="description" content="点对点协议PPP 点对点协议PPP概述 点对点协议（Point-to-Point Protocol,PPP）是目前使用最广泛的点对点数据链路层协议。 点对点协议PPP是因特网工程任务组（Internet Engineering Task Force,IETF）于1992年制定的，目前已经成为因特网的正式标准。 广泛应用：因特网用户通过点对点链路连接到某个ISP，进而接入因特网。此外还广泛应用于广域">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络-数据链路(三)9-1">
-<meta property="og:url" content="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/index.html">
+<meta property="og:url" content="https://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/index.html">
 <meta property="og:site_name" content="未曾停下脚步">
 <meta property="og:description" content="点对点协议PPP 点对点协议PPP概述 点对点协议（Point-to-Point Protocol,PPP）是目前使用最广泛的点对点数据链路层协议。 点对点协议PPP是因特网工程任务组（Internet Engineering Task Force,IETF）于1992年制定的，目前已经成为因特网的正式标准。 广泛应用：因特网用户通过点对点链路连接到某个ISP，进而接入因特网。此外还广泛应用于广域">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/1.png">
-<meta property="og:image" content="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/2.png">
-<meta property="og:image" content="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/3.png">
-<meta property="og:image" content="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/4.png">
-<meta property="og:image" content="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/5.png">
-<meta property="og:image" content="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/6.png">
-<meta property="og:image" content="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/7.png">
-<meta property="og:image" content="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/8.png">
-<meta property="og:image" content="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/9.png">
-<meta property="og:image" content="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/10.png">
-<meta property="og:image" content="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/11.png">
-<meta property="og:image" content="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/12.png">
-<meta property="og:image" content="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/13.png">
+<meta property="og:image" content="https://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/1.png">
+<meta property="og:image" content="https://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/2.png">
+<meta property="og:image" content="https://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/3.png">
+<meta property="og:image" content="https://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/4.png">
+<meta property="og:image" content="https://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/5.png">
+<meta property="og:image" content="https://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/6.png">
+<meta property="og:image" content="https://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/7.png">
+<meta property="og:image" content="https://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/8.png">
+<meta property="og:image" content="https://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/9.png">
+<meta property="og:image" content="https://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/10.png">
+<meta property="og:image" content="https://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/11.png">
+<meta property="og:image" content="https://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/12.png">
+<meta property="og:image" content="https://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/13.png">
 <meta property="article:published_time" content="2022-09-01T14:22:00.000Z">
 <meta property="article:modified_time" content="2022-09-01T16:14:58.985Z">
 <meta property="article:author" content="DSK">
 <meta property="article:tag" content="网络">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/1.png">
+<meta name="twitter:image" content="https://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/1.png">
 
-<link rel="canonical" href="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/">
+<link rel="canonical" href="https://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/">
 
 
 <script id="page-configurations">
@@ -257,7 +257,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/">
+    <link itemprop="mainEntityOfPage" href="https://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/time.jpg">
@@ -455,7 +455,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/" title="计算机网络-数据链路(三)9-1">http://xd06.github.io/2022/09/01/计算机网络-数据链路(三)/</a>
+    <a href="https://xd06.github.io/2022/09/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%89)/" title="计算机网络-数据链路(三)9-1">https://xd06.github.io/2022/09/01/计算机网络-数据链路(三)/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -888,7 +888,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       lang       : '' || 'zh-cn',
       path       : location.pathname,
       recordIP   : true,
-      serverURLs : 'https://gzGzoHsz.api.lncldglobal.com'
+      serverURLs : ''
     });
   }, window.Valine);
 });

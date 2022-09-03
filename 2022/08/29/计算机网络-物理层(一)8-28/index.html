@@ -52,30 +52,30 @@
   <meta name="description" content="计算机网络-物理层1.物理层功能 物理层的功能是在各种传输媒体上传输比特0和1，给上层提供“透明”传输比特流。（透明的意思是数据链路层看不见，也无需看见物理层究竟使用的是什么方法来传递比特流。数据链路只用享受物理层提供的比特流传输服务即可）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络体系-物理层（8-28）">
-<meta property="og:url" content="http://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/index.html">
+<meta property="og:url" content="https://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/index.html">
 <meta property="og:site_name" content="未曾停下脚步">
 <meta property="og:description" content="计算机网络-物理层1.物理层功能 物理层的功能是在各种传输媒体上传输比特0和1，给上层提供“透明”传输比特流。（透明的意思是数据链路层看不见，也无需看见物理层究竟使用的是什么方法来传递比特流。数据链路只用享受物理层提供的比特流传输服务即可）">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/1.png">
-<meta property="og:image" content="http://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/2.png">
-<meta property="og:image" content="http://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/3.png">
-<meta property="og:image" content="http://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/5.png">
-<meta property="og:image" content="http://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/6.png">
-<meta property="og:image" content="http://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/7.png">
-<meta property="og:image" content="http://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/8.png">
-<meta property="og:image" content="http://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/9.png">
-<meta property="og:image" content="http://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/10.png">
-<meta property="og:image" content="http://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/11.png">
-<meta property="og:image" content="http://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/12.png">
-<meta property="og:image" content="http://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/13.png">
+<meta property="og:image" content="https://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/1.png">
+<meta property="og:image" content="https://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/2.png">
+<meta property="og:image" content="https://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/3.png">
+<meta property="og:image" content="https://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/5.png">
+<meta property="og:image" content="https://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/6.png">
+<meta property="og:image" content="https://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/7.png">
+<meta property="og:image" content="https://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/8.png">
+<meta property="og:image" content="https://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/9.png">
+<meta property="og:image" content="https://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/10.png">
+<meta property="og:image" content="https://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/11.png">
+<meta property="og:image" content="https://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/12.png">
+<meta property="og:image" content="https://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/13.png">
 <meta property="article:published_time" content="2022-08-28T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-09-02T16:48:56.088Z">
 <meta property="article:author" content="DSK">
 <meta property="article:tag" content="网络">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/1.png">
+<meta name="twitter:image" content="https://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/1.png">
 
-<link rel="canonical" href="http://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/">
+<link rel="canonical" href="https://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/">
 
 
 <script id="page-configurations">
@@ -256,7 +256,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/">
+    <link itemprop="mainEntityOfPage" href="https://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/time.jpg">
@@ -447,7 +447,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/" title="计算机网络体系-物理层（8-28）">http://xd06.github.io/2022/08/29/计算机网络-物理层(一)8-28/</a>
+    <a href="https://xd06.github.io/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/" title="计算机网络体系-物理层（8-28）">https://xd06.github.io/2022/08/29/计算机网络-物理层(一)8-28/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -880,7 +880,7 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       lang       : '' || 'zh-cn',
       path       : location.pathname,
       recordIP   : true,
-      serverURLs : 'https://gzGzoHsz.api.lncldglobal.com'
+      serverURLs : ''
     });
   }, window.Valine);
 });
