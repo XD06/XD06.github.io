@@ -1,4 +1,12 @@
-<!DOCTYPE html><html lang=zh-CN><head><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=2"><script src=//cdn.bootcss.com/pace/1.0.2/pace.min.js></script><link href=//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css rel=stylesheet><script>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<script>
     (function(){
         if(''){
             if (prompt('请输入文章密码') !== ''){
@@ -7,7 +15,8 @@
             }
         }
     })();
-</script><style>
+</script>
+<style>
     .pace .pace-progress {
         background: #1E92FB; /*进度条颜色*/
         height: 3px;
@@ -19,10 +28,69 @@
         border-top-color: #1E92FB;    /*上边框颜色*/
         border-left-color: #1E92FB;    /*左边框颜色*/
     }
-</style><meta name=theme-color content=#222><meta name=generator content="Hexo 6.2.0"><link rel=apple-touch-icon sizes=180x180 href=/images/time1.jpg><link rel=icon type=image/png sizes=32x32 href=/images/time1.jpg><link rel=icon type=image/png sizes=16x16 href=/images/12.ico><link rel=mask-icon href=/images/12.ico color=#222><link rel=stylesheet href=/css/main.css><link rel=stylesheet href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic|Zhi Mang Xing:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext"><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css><link rel=stylesheet href=//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css><script src=//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js></script><script id=hexo-configurations>
+</style>
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/time1.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/time1.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/12.ico">
+  <link rel="mask-icon" href="/images/12.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic|Zhi Mang Xing:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+
+<script id="hexo-configurations">
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"xd06.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":300,"display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"buttons","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script><meta name=description content="1.编码与调制的基本概念 编码（基带调试）：是对数字基带的波形进行变换，使其能够与信道特性相适应，是把数字信号转换成另一种数字信号 调制（带通）：是将数字基带信号的频率范围搬移到较高的频段，转换成模拟信号，并使其能够在模拟信道中传输。"><meta property=og:type content=article><meta property=og:title content=计算机网络-物理层(二)8-29><meta property=og:url content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/index.html><meta property=og:site_name content=未曾停下脚步><meta property=og:description content="1.编码与调制的基本概念 编码（基带调试）：是对数字基带的波形进行变换，使其能够与信道特性相适应，是把数字信号转换成另一种数字信号 调制（带通）：是将数字基带信号的频率范围搬移到较高的频段，转换成模拟信号，并使其能够在模拟信道中传输。"><meta property=og:locale content=zh_CN><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/1.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/2.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/3.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/4.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/5.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/6.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/7.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/8.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/9.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/10.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/11.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/12.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/14.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/15.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/16.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/17.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/18.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/19.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/20.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/21.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/22.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/23.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/24.png><meta property=og:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/25.png><meta property=article:published_time content=2022-08-29T16:00:00.000Z><meta property=article:modified_time content=2022-09-02T16:48:34.065Z><meta property=article:author content=DSK><meta property=article:tag content=网络><meta name=twitter:card content=summary><meta name=twitter:image content=http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/1.png><link rel=canonical href="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/"><script id=page-configurations>
+  </script>
+
+  <meta name="description" content="1.编码与调制的基本概念 编码（基带调试）：是对数字基带的波形进行变换，使其能够与信道特性相适应，是把数字信号转换成另一种数字信号  调制（带通）：是将数字基带信号的频率范围搬移到较高的频段，转换成模拟信号，并使其能够在模拟信道中传输。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络-物理层(二)8-29">
+<meta property="og:url" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/index.html">
+<meta property="og:site_name" content="未曾停下脚步">
+<meta property="og:description" content="1.编码与调制的基本概念 编码（基带调试）：是对数字基带的波形进行变换，使其能够与信道特性相适应，是把数字信号转换成另一种数字信号  调制（带通）：是将数字基带信号的频率范围搬移到较高的频段，转换成模拟信号，并使其能够在模拟信道中传输。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/1.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/2.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/3.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/4.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/5.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/6.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/7.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/8.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/9.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/10.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/11.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/12.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/14.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/15.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/16.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/17.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/18.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/19.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/20.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/21.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/22.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/23.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/24.png">
+<meta property="og:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/25.png">
+<meta property="article:published_time" content="2022-08-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-09-02T16:48:34.065Z">
+<meta property="article:author" content="DSK">
+<meta property="article:tag" content="网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/1.png">
+
+<link rel="canonical" href="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/">
+
+
+<script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -30,7 +98,18 @@
     isPost : true,
     lang   : 'zh-CN'
   };
-</script><title>计算机网络-物理层(二)8-29 | 未曾停下脚步</title><noscript><style>
+</script>
+
+  <title>计算机网络-物理层(二)8-29 | 未曾停下脚步</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -49,9 +128,405 @@
 
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
-  </style></noscript><link rel=alternate href=/atom.xml title=未曾停下脚步 type=application/atom+xml></head><body itemscope itemtype=http://schema.org/WebPage><div class=container><div class=headband></div><header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle aria-label=切换导航栏><span class="toggle-line toggle-line-first"></span> <span class="toggle-line toggle-line-middle"></span> <span class="toggle-line toggle-line-last"></span></div></div><div class=site-meta><a href="/" class=brand rel=start><span class=logo-line-before><i></i></span><h1 class=site-title>未曾停下脚步</h1><span class=logo-line-after><i></i></span></a><p class=site-subtitle itemprop=description>个人博客</p></div><div class=site-nav-right><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul id=menu class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel=section><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel=section><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel=section><i class="fa fa-tags fa-fw"></i>标签<span class=badge>4</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel=section><i class="fa fa-th fa-fw"></i>分类<span class=badge>2</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel=section><i class="fa fa-archive fa-fw"></i>归档<span class=badge>14</span></a></li><li class="menu-item menu-item-友情链接"><a href="/links/" rel=section><i class="fa fa-link fa-fw"></i>友情链接</a></li><li class="menu-item menu-item-message"><a href="/message/" rel=section><i class="fa fa-envelope-open-text fa-fw"></i>留言</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel=section><i class="fa fa-camera fa-fw"></i>photos</a></li><li class="menu-item menu-item-search"><a role=button class=popup-trigger><i class="fa fa-search fa-fw"></i>搜索</a></li></ul></nav><div class=search-pop-overlay><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container><input autocomplete=off autocapitalize=off placeholder=搜索... spellcheck=false type=search class=search-input></div><span class=popup-btn-close><i class="fa fa-times-circle"></i></span></div><div id=search-result><div id=no-result><i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i></div></div></div></div></div></header><div class=back-to-top><i class="fa fa-arrow-up"></i> <span>0%</span></div><a role=button class="book-mark-link book-mark-link-fixed"></a> <a href=https://github.com/XD06 class=github-corner title="Follow me on GitHub" aria-label="Follow me on GitHub" rel=noopener target=_blank><svg width=80 height=80 viewbox="0 0 250 250" aria-hidden=true><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill=currentColor style="transform-origin: 130px 106px;" class=octo-arm></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill=currentColor class=octo-body></path></svg></a><main class=main><div class=main-inner><div class=content-wrap><div class="content post posts-expand"><article itemscope itemtype=http://schema.org/Article class=post-block lang=zh-CN><link itemprop=mainEntityOfPage href="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/"><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content=/images/time.jpg><meta itemprop=name content=DSK><meta itemprop=description content=没有追逐的人生毫无意义></span> <span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content=未曾停下脚步></span><header class=post-header><h1 class=post-title itemprop="name headline">计算机网络-物理层(二)8-29</h1><div class=post-meta><span class=post-meta-item><span class=post-meta-item-icon><i class="far fa-calendar"></i></span> <span class=post-meta-item-text>发表于</span><time title="创建时间：2022-08-30 00:00:00" itemprop="dateCreated datePublished" datetime=2022-08-30T00:00:00+08:00>2022-08-30</time></span> <span class=post-meta-item><span class=post-meta-item-icon><i class="far fa-folder"></i></span> <span class=post-meta-item-text>分类于</span> <span itemprop=about itemscope itemtype=http://schema.org/Thing><a href="/categories/%E6%9C%BA%E7%BD%91/" itemprop=url rel=index><span itemprop=name>机网</span></a></span></span> <span id="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/" class="post-meta-item leancloud_visitors" data-flag-title=计算机网络-物理层(二)8-29 title=阅读次数><span class=post-meta-item-icon><i class="fa fa-eye"></i></span> <span class=post-meta-item-text>阅读次数：</span> <span class=leancloud-visitors-count></span></span> <span class=post-meta-item><span class=post-meta-item-icon><i class="far fa-comment"></i></span> <span class=post-meta-item-text>Valine：</span> <a title=valine href=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/#valine-comments itemprop=discussionUrl><span class="post-comments-count valine-comment-count" data-xid="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/" itemprop=commentCount></span></a></span><br><span class=post-meta-item title=本文字数><span class=post-meta-item-icon><i class="far fa-file-word"></i></span> <span class=post-meta-item-text>本文字数：</span> <span>1.1k</span></span> <span class=post-meta-item title=阅读时长><span class=post-meta-item-icon><i class="far fa-clock"></i></span> <span class=post-meta-item-text>阅读时长 &asymp;</span> <span>1 分钟</span></span></div></header><div class=post-body itemprop=articleBody><h2 id=1-编码与调制的基本概念><a href=#1-编码与调制的基本概念 class=headerlink title=1.编码与调制的基本概念></a>1.编码与调制的基本概念</h2><ul><li><p>编码（基带调试）：是对数字基带的波形进行变换，使其能够与信道特性相适应，是把数字信号转换成另一种数字信号</p></li><li><p>调制（带通）：是将数字基带信号的频率范围搬移到较高的频段，转换成模拟信号，并使其能够在模拟信道中传输。</p><span id=more></span> <img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/1.png title="This is an image"></li><li><p>码元：在使用时间域的波形表示信号时，代表不同的离散数值的基本波形称为码元。</p><img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/2.png title="This is an image"></li></ul><h2 id=2-常用的编码方式><a href=#2-常用的编码方式 class=headerlink title=2.常用的编码方式></a>2.常用的编码方式</h2><img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/3.png title="This is an image"><ul><li><p>双极性不归零编码：需要给收发双方再添加一条时钟信号线，在收发数据的同时，还要接收发送时钟信号。按照接收发送的时钟信号的节拍，来采样确定码元的个数。但是实际上，对于计算机网络利用这根传输线，宁愿传输数据信号而不会传输时钟信号。</p></li><li><p>双极性归零编码：信号在每个码元期间会回归到零电平，接收方只要在信号归零后采样即可。采用归零编码的信号，被称为”自同步信号“。</p></li><li><p>曼彻斯特编码：曼彻斯特编码。是在码元的中间时段进行电平跳变。既可让正跳变表示表示0也可表示1，可以自行定义.（属于自同步信号）</p></li><li><p>差分曼特斯编码：在码元的中间时段进行跳变仅表示时钟信号而不表示数据。数据的表示在于每一个码元开始处是否有电平跳变，只要跳变则为0，不跳变则是1.</p><img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/4.png title="This is an image"></li></ul><p>真题：</p><img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/5.png title="This is an image"> <img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/6.png title="This is an image"> <img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/7.png title="This is an image"><h2 id=3-基本的带通调制方法和混合调制方法><a href=#3-基本的带通调制方法和混合调制方法 class=headerlink title=3.基本的带通调制方法和混合调制方法></a>3.基本的带通调制方法和混合调制方法</h2><img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/8.png title="This is an image"><ul><li>相位和振幅：通常情况下，载波的相位和振幅可以结合起来一起调制，例如正交振幅调制Q.</li></ul><img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/9.png title="This is an image"><h2 id=信道的极限容量><a href=#信道的极限容量 class=headerlink title=信道的极限容量></a>信道的极限容量</h2><ol><li>造成信号失真的主要因素<img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/10.png title="This is an image"> <img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/11.png title="This is an image"></li></ol><h3 id=奈氏准测><a href=#奈氏准测 class=headerlink title=奈氏准测></a>奈氏准测</h3><img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/12.png title="This is an image"><ul><li>码元传输速率又称为波特率、调制速率、波形速率或符号速率。</li><li>波特率与比特率有一定的关系：<ol><li>当一个码元只携带1比特的信息量时，波特率（码元/秒）与比特率（比特/秒）在数值上是相等的。</li><li>当1个码元只携带n个比特的信息量时，波特率（码元/秒）转换成比特率（比特/秒）时，数值是要乘以n.</li></ol></li></ul><h3 id=香农公式><a href=#香农公式 class=headerlink title=香农公式></a>香农公式</h3><img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/14.png title="This is an image"><h2 id=真题><a href=#真题 class=headerlink title=真题></a>真题</h2><img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/15.png title="This is an image"> <img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/16.png title="This is an image"> <img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/17.png title="This is an image"> <img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/18.png title="This is an image"> <img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/19.png title="This is an image"><h2 id=信道复用技术><a href=#信道复用技术 class=headerlink title=信道复用技术></a>信道复用技术</h2><p>​<img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/20.png title="This is an image"></p><ul><li><p>常用的信道复用技术</p><ol><li>频分复用FDM<ul><li>将传输媒体的总信道划分成多个子信道，每个子频带所为一个子信道，每个用户使用一个子信道进行通讯，各自信道之间会留出隔离频带防止个子信道之间干扰，频分复用的所有用户同时占有不同的频带资源发送数据。</li></ul></li><li>时分复用TDM<ul><li>时分复用的所有用户在不同的时间占用同样的频带。</li></ul></li><li>波分复用WDM</li></ol></li></ul><img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/21.png title="This is an image"><ol><li><p>码分复用CDM</p><ul><li><p>码分复用常称为码分多址，它是在扩频通信技术的基础上发展的一种无线通信技术。</p></li><li><p>与FDM和TDM不同，CDMA的每个用户可以在相同的时间使用相同的频带进行通信。</p></li><li><p>CDMA最初用于军事通信，这种系统发射的信号有很强的抗干扰能力，其频道类似于白噪声，不宜让敌人发现。</p></li></ul></li></ol><img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/22.png title="This is an image"><pre><code> * 分给每个站的码片序列必须各不相同，实际常采用的是伪随机码序列。
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="未曾停下脚步" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">未曾停下脚步</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">个人博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">14</span></a>
+
+  </li>
+        <li class="menu-item menu-item-友情链接">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友情链接</a>
+
+  </li>
+        <li class="menu-item menu-item-message">
+
+    <a href="/message/" rel="section"><i class="fa fa-envelope-open-text fa-fw"></i>留言</a>
+
+  </li>
+        <li class="menu-item menu-item-photos">
+
+    <a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>photos</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/XD06" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/time.jpg">
+      <meta itemprop="name" content="DSK">
+      <meta itemprop="description" content="没有追逐的人生毫无意义">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="未曾停下脚步">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机网络-物理层(二)8-29
+        </h1>
+
+        <div class="post-meta">
+
+
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-30 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-30T00:00:00+08:00">2022-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%BA%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">机网</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/" class="post-meta-item leancloud_visitors" data-flag-title="计算机网络-物理层(二)8-29" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="1-编码与调制的基本概念"><a href="#1-编码与调制的基本概念" class="headerlink" title="1.编码与调制的基本概念"></a>1.编码与调制的基本概念</h2><ul>
+<li><p>编码（基带调试）：是对数字基带的波形进行变换，使其能够与信道特性相适应，是把数字信号转换成另一种数字信号</p>
+</li>
+<li><p>调制（带通）：是将数字基带信号的频率范围搬移到较高的频段，转换成模拟信号，并使其能够在模拟信道中传输。</p>
+<span id="more"></span> 
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/1.png" class title="This is an image">
+</li>
+<li><p>码元：在使用时间域的波形表示信号时，代表不同的离散数值的基本波形称为码元。</p>
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/2.png" class title="This is an image">
+</li>
+</ul>
+<h2 id="2-常用的编码方式"><a href="#2-常用的编码方式" class="headerlink" title="2.常用的编码方式"></a>2.常用的编码方式</h2><img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/3.png" class title="This is an image">
+<ul>
+<li><p>双极性不归零编码：需要给收发双方再添加一条时钟信号线，在收发数据的同时，还要接收发送时钟信号。按照接收发送的时钟信号的节拍，来采样确定码元的个数。但是实际上，对于计算机网络利用这根传输线，宁愿传输数据信号而不会传输时钟信号。</p>
+</li>
+<li><p>双极性归零编码：信号在每个码元期间会回归到零电平，接收方只要在信号归零后采样即可。采用归零编码的信号，被称为”自同步信号“。</p>
+</li>
+<li><p>曼彻斯特编码：曼彻斯特编码。是在码元的中间时段进行电平跳变。既可让正跳变表示表示0也可表示1，可以自行定义.（属于自同步信号）</p>
+</li>
+<li><p>差分曼特斯编码：在码元的中间时段进行跳变仅表示时钟信号而不表示数据。数据的表示在于每一个码元开始处是否有电平跳变，只要跳变则为0，不跳变则是1.</p>
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/4.png" class title="This is an image">
+</li>
+</ul>
+<p>真题：</p>
+ <img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/5.png" class title="This is an image">
+ <img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/6.png" class title="This is an image">
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/7.png" class title="This is an image">
+<h2 id="3-基本的带通调制方法和混合调制方法"><a href="#3-基本的带通调制方法和混合调制方法" class="headerlink" title="3.基本的带通调制方法和混合调制方法"></a>3.基本的带通调制方法和混合调制方法</h2><img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/8.png" class title="This is an image">
+<ul>
+<li>相位和振幅：通常情况下，载波的相位和振幅可以结合起来一起调制，例如正交振幅调制Q.</li>
+</ul>
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/9.png" class title="This is an image">
+<h2 id="信道的极限容量"><a href="#信道的极限容量" class="headerlink" title="信道的极限容量"></a>信道的极限容量</h2><ol>
+<li>造成信号失真的主要因素<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/10.png" class title="This is an image">
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/11.png" class title="This is an image">
+</li>
+</ol>
+<h3 id="奈氏准测"><a href="#奈氏准测" class="headerlink" title="奈氏准测"></a>奈氏准测</h3><img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/12.png" class title="This is an image">
+<ul>
+<li>码元传输速率又称为波特率、调制速率、波形速率或符号速率。</li>
+<li>波特率与比特率有一定的关系：<ol>
+<li>当一个码元只携带1比特的信息量时，波特率（码元/秒）与比特率（比特/秒）在数值上是相等的。</li>
+<li>当1个码元只携带n个比特的信息量时，波特率（码元/秒）转换成比特率（比特/秒）时，数值是要乘以n.</li>
+</ol>
+</li>
+</ul>
+<h3 id="香农公式"><a href="#香农公式" class="headerlink" title="香农公式"></a>香农公式</h3><img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/14.png" class title="This is an image">
+<h2 id="真题"><a href="#真题" class="headerlink" title="真题"></a>真题</h2><img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/15.png" class title="This is an image">
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/16.png" class title="This is an image">
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/17.png" class title="This is an image">
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/18.png" class title="This is an image">
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/19.png" class title="This is an image">
+<h2 id="信道复用技术"><a href="#信道复用技术" class="headerlink" title="信道复用技术"></a>信道复用技术</h2><p>​<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/20.png" class title="This is an image"></p>
+<ul>
+<li><p>常用的信道复用技术</p>
+<ol>
+<li>频分复用FDM<ul>
+<li>将传输媒体的总信道划分成多个子信道，每个子频带所为一个子信道，每个用户使用一个子信道进行通讯，各自信道之间会留出隔离频带防止个子信道之间干扰，频分复用的所有用户同时占有不同的频带资源发送数据。</li>
+</ul>
+</li>
+<li>时分复用TDM<ul>
+<li>时分复用的所有用户在不同的时间占用同样的频带。</li>
+</ul>
+</li>
+<li>波分复用WDM</li>
+</ol>
+</li>
+</ul>
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/21.png" class title="This is an image">
+<ol>
+<li><p>码分复用CDM</p>
+<ul>
+<li><p>码分复用常称为码分多址，它是在扩频通信技术的基础上发展的一种无线通信技术。</p>
+</li>
+<li><p>与FDM和TDM不同，CDMA的每个用户可以在相同的时间使用相同的频带进行通信。</p>
+</li>
+<li><p>CDMA最初用于军事通信，这种系统发射的信号有很强的抗干扰能力，其频道类似于白噪声，不宜让敌人发现。</p>
+</li>
+</ul>
+</li>
+</ol>
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/22.png" class title="This is an image">
+<pre><code> * 分给每个站的码片序列必须各不相同，实际常采用的是伪随机码序列。
  * 分配给每个站的码片序列必须相互正交，即各码片序列相应的码片向量之间的规格化内积为0.
-</code></pre><img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/23.png title="This is an image"> <img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/24.png title="This is an image"> <img data-src=/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/25.png title="This is an image"><h2 id=注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络><a href=#注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络 class=headerlink title=注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络)></a><strong>注：</strong>（以上内容来自<a target=_blank rel=noopener href="https://www.icourse163.org/learn/HNKJ-1461816178?tid=1468294445#/learn/announce">中国MOOC慕课湖南科技大学计算机网络</a>)</h2></div><div class=reward-container><div>Thank you.</div><button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">捐助</button><div id=qr style="display: none;"><div style="display: inline-block;"><img src=/images/s.jpg alt="DSK 微信支付"><p>微信支付</p></div></div></div><div><ul class=post-copyright><li class=post-copyright-author><strong>本文作者：</strong>DSK</li><li class=post-copyright-link><strong>本文链接：</strong> <a href="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/" title=计算机网络-物理层(二)8-29>http://xd06.github.io/2022/08/30/计算机网络-物理层(二)8-29/</a></li><li class=post-copyright-license><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel=noopener target=_blank><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div><footer class=post-footer><div class=post-tags><a href="/tags/%E7%BD%91%E7%BB%9C/" rel=tag><i class="fa fa-tag"></i># 网络</a></div><div><div><div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div></div></div><div class=post-widgets><div class=wp_rating><div id=wpac-rating></div></div></div><div class=post-nav><div class=post-nav-item><a href="/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/" rel=prev title=计算机网络体系-物理层（8-28）><i class="fa fa-chevron-left"></i> 计算机网络体系-物理层（8-28）</a></div><div class=post-nav-item><a href="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/" rel=next title=计算机网络-数据链路(一)8-30>计算机网络-数据链路(一)8-30 <i class="fa fa-chevron-right"></i></a></div></div></footer></article></div><div class=comments id=valine-comments></div><script>
+</code></pre><img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/23.png" class title="This is an image">
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/24.png" class title="This is an image">
+<img data-src="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/25.png" class title="This is an image">
+<h2 id="注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络"><a href="#注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络" class="headerlink" title="注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络)"></a><strong>注：</strong>（以上内容来自<a target="_blank" rel="noopener" href="https://www.icourse163.org/learn/HNKJ-1461816178?tid=1468294445#/learn/announce">中国MOOC慕课湖南科技大学计算机网络</a>)</h2>
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>Thank you.</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    捐助
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/s.jpg" alt="DSK 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>DSK
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://xd06.github.io/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%BA%8C)8-29/" title="计算机网络-物理层(二)8-29">http://xd06.github.io/2022/08/30/计算机网络-物理层(二)8-29/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+     
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag"><i class="fa fa-tag"></i># 网络</a>
+          </div>
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+  
+</div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82(%E4%B8%80)8-28/" rel="prev" title="计算机网络体系-物理层（8-28）">
+      <i class="fa fa-chevron-left"></i> 计算机网络体系-物理层（8-28）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%B8%80)8-30/" rel="next" title="计算机网络-数据链路(一)8-30">
+      计算机网络-数据链路(一)8-30 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
   window.addEventListener('tabs:register', () => {
     let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
@@ -71,7 +546,134 @@
       localStorage.setItem('comments_active', commentClass);
     });
   }
-</script></div><div class="toggle sidebar-toggle"><span class="toggle-line toggle-line-first"></span> <span class="toggle-line toggle-line-middle"></span> <span class="toggle-line toggle-line-last"></span></div><aside class=sidebar><div class=sidebar-inner><ul class="sidebar-nav motion-element"><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class="post-toc-wrap sidebar-panel"><div class="post-toc motion-element"><ol class=nav><li class="nav-item nav-level-2"><a class=nav-link href=#1-%E7%BC%96%E7%A0%81%E4%B8%8E%E8%B0%83%E5%88%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5><span class=nav-number>1.</span> <span class=nav-text>1.编码与调制的基本概念</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#2-%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F><span class=nav-number>2.</span> <span class=nav-text>2.常用的编码方式</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#3-%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%B8%A6%E9%80%9A%E8%B0%83%E5%88%B6%E6%96%B9%E6%B3%95%E5%92%8C%E6%B7%B7%E5%90%88%E8%B0%83%E5%88%B6%E6%96%B9%E6%B3%95><span class=nav-number>3.</span> <span class=nav-text>3.基本的带通调制方法和混合调制方法</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#%E4%BF%A1%E9%81%93%E7%9A%84%E6%9E%81%E9%99%90%E5%AE%B9%E9%87%8F><span class=nav-number>4.</span> <span class=nav-text>信道的极限容量</span></a><ol class=nav-child><li class="nav-item nav-level-3"><a class=nav-link href=#%E5%A5%88%E6%B0%8F%E5%87%86%E6%B5%8B><span class=nav-number>4.1.</span> <span class=nav-text>奈氏准测</span></a></li><li class="nav-item nav-level-3"><a class=nav-link href=#%E9%A6%99%E5%86%9C%E5%85%AC%E5%BC%8F><span class=nav-number>4.2.</span> <span class=nav-text>香农公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class=nav-link href=#%E7%9C%9F%E9%A2%98><span class=nav-number>5.</span> <span class=nav-text>真题</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#%E4%BF%A1%E9%81%93%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF><span class=nav-number>6.</span> <span class=nav-text>信道复用技术</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#%E6%B3%A8%EF%BC%9A%EF%BC%88%E4%BB%A5%E4%B8%8A%E5%86%85%E5%AE%B9%E6%9D%A5%E8%87%AA%E4%B8%AD%E5%9B%BDMOOC%E6%85%95%E8%AF%BE%E6%B9%96%E5%8D%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C><span class=nav-number>7.</span> <span class=nav-text>注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络)</span></a></li></ol></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image alt=DSK src=/images/time.jpg><p class=site-author-name itemprop=name>DSK</p><div class=site-description itemprop=description>没有追逐的人生毫无意义</div></div><div><a target=_blank class=social-link href=/atom.xml style="color: burlywood;"><span class=icon><i class="fa fa-rss"></i></span> <span class=label>RSS</span></a></div><div class="site-state-wrap motion-element"><nav class=site-state><div class="site-state-item site-state-posts"><a href="/archives/"><span class=site-state-item-count>14</span> <span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/"><span class=site-state-item-count>2</span> <span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/"><span class=site-state-item-count>4</span> <span class=site-state-item-name>标签</span></a></div></nav></div><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/XD06 title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;XD06" rel=noopener target=_blank><i class="fab fa-github fa-fw"></i>GitHub</a></span> <span class=links-of-author-item><a href=mailto:2383032306@qq.com title="E-Mail → mailto:2383032306@qq.com" rel=noopener target=_blank><i class="fa fa-envelope fa-fw"></i>E-Mail</a></span></div><div class="cc-license motion-element" itemprop=license><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class=cc-opacity rel=noopener target=_blank><img src=/images/cc-by-nc-sa.svg alt="Creative Commons"></a></div><div class="links-of-blogroll motion-element"><div class=links-of-blogroll-title><i class="fa fa-link fa-fw"></i> Links</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href="http://yoursite.com/" title=http:&#x2F;&#x2F;yoursite.com rel=noopener target=_blank>Title</a></li></ul></div></div><iframe frameborder=no border=0 marginwidth=0 marginheight=0 width=330 height=450 src="//music.163.com/outchain/player?type=0&id=4874884189&auto=1&height=430"></iframe></div></aside><div id=sidebar-dimmer></div></div></main><footer class=footer><div class=footer-inner><div class=copyright>&copy; <span itemprop=copyrightYear>2022</span> <span class=with-love><i class="fa fa-heart"></i></span> <span class=author itemprop=copyrightHolder>true</span> <span class=post-meta-divider>|</span> <span class=post-meta-item-icon><i class="fa fa-chart-area"></i></span> <span title=站点总字数>9k</span> <span class=post-meta-divider>|</span> <span class=post-meta-item-icon><i class="fa fa-coffee"></i></span> <span title=站点阅读时长>8 分钟</span></div><span id=sitetime></span><script language=javascript>
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%BC%96%E7%A0%81%E4%B8%8E%E8%B0%83%E5%88%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">1.编码与调制的基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">2.常用的编码方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%B8%A6%E9%80%9A%E8%B0%83%E5%88%B6%E6%96%B9%E6%B3%95%E5%92%8C%E6%B7%B7%E5%90%88%E8%B0%83%E5%88%B6%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">3.基本的带通调制方法和混合调制方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E9%81%93%E7%9A%84%E6%9E%81%E9%99%90%E5%AE%B9%E9%87%8F"><span class="nav-number">4.</span> <span class="nav-text">信道的极限容量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%88%E6%B0%8F%E5%87%86%E6%B5%8B"><span class="nav-number">4.1.</span> <span class="nav-text">奈氏准测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%99%E5%86%9C%E5%85%AC%E5%BC%8F"><span class="nav-number">4.2.</span> <span class="nav-text">香农公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9C%9F%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">真题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E9%81%93%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="nav-number">6.</span> <span class="nav-text">信道复用技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%EF%BC%9A%EF%BC%88%E4%BB%A5%E4%B8%8A%E5%86%85%E5%AE%B9%E6%9D%A5%E8%87%AA%E4%B8%AD%E5%9B%BDMOOC%E6%85%95%E8%AF%BE%E6%B9%96%E5%8D%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-number">7.</span> <span class="nav-text">注：（以上内容来自中国MOOC慕课湖南科技大学计算机网络)</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="DSK"
+      src="/images/time.jpg">
+  <p class="site-author-name" itemprop="name">DSK</p>
+  <div class="site-description" itemprop="description">没有追逐的人生毫无意义</div>
+</div>
+  <div class="">
+    <a target="_blank" class="social-link" href="/atom.xml" style="color: burlywood;">
+      <span class="icon">
+        <i class="fa fa-rss"></i>
+      </span>
+      <span class="label">RSS</span>
+    </a>
+  </div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/XD06" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;XD06" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2383032306@qq.com" title="E-Mail → mailto:2383032306@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://yoursite.com/" title="http:&#x2F;&#x2F;yoursite.com" rel="noopener" target="_blank">Title</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=4874884189&auto=1&height=430"></iframe>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">true</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">9k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">8 分钟</span>
+</div>
+<span id="sitetime"></span>
+<script language=javascript>
 	function siteTime(){
 		window.setTimeout("siteTime()", 1000);
 		var seconds = 1000;
@@ -107,7 +709,42 @@
 		document.getElementById("sitetime").innerHTML=" 已运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
 	}
 	siteTime();
-</script><div class=powered-by>由 <a href="https://hexo.io/" class=theme-link rel=noopener target=_blank>Hexo</a> & <a href="https://pisces.theme-next.org/" class=theme-link rel=noopener target=_blank>NexT.Pisces</a> 强力驱动</div></div></footer></div><script src=//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js></script><script src=//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js></script><script src=//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js></script><script src=//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js></script><script src=//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js></script><script src=//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js></script><script src=/js/utils.js></script><script src=/js/schemes/pisces.js></script><script src=/js/next-boot.js></script><script src=/js/bookmark.js></script><script>
+</script>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
 var pjax = new Pjax({
   selectors: [
     'head title',
@@ -164,7 +801,13 @@ window.addEventListener('pjax:success', () => {
   }
   NexT.utils.updateSidebarPosition();
 });
-</script><script data-pjax>
+</script>
+
+
+
+
+  
+  <script data-pjax>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -188,7 +831,11 @@ window.addEventListener('pjax:success', () => {
 	    if (!canonicalURL) canonicalURL = window.location.href;
 	    //Assign script content. Replace current URL with the canonical URL
       !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
-  </script><script data-pjax>
+  </script>
+
+
+
+  <script data-pjax>
   if (CONFIG.page.isPost) {
     wpac_init = window.wpac_init || [];
     wpac_init.push({
@@ -207,7 +854,32 @@ window.addEventListener('pjax:success', () => {
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
     })();
   }
-  </script><script src=/js/local-search.js></script><div id=pjax><script>
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+
+<script>
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   NexT.utils.getScript('//cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js', () => {
     var GUEST = ['nick', 'mail', 'link'];
@@ -229,8 +901,11 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       lang       : '' || 'zh-cn',
       path       : location.pathname,
       recordIP   : true,
-      serverURLs : ''
+      serverURLs : 'https://eCLp4cdo.api.lncldglobal.com'
     });
   }, window.Valine);
 });
-</script></div><script src=/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+</script>
+
+    </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
