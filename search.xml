@@ -14,7 +14,8 @@
 <li>实现网络层的任务，需要解决几个主要任务：<ol>
 <li>向运输层提供怎样的的服务（可靠或不可靠传输）</li>
 <li>网络层寻址问题</li>
-<li>路由选择问题</li>
+<li>路由选择问题<span id="more"></span>
+</li>
 </ol>
 </li>
 </ul>
@@ -27,7 +28,6 @@
 <li>网际协议IP，传输控制协议TCP、TCP/IP体系结构是由“因特网之父”Robert Kahn 和Vint Cerf 二人共同研究，第一个版本（1974年5月）</li>
 </ul>
 <img data-src="/2022/09/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%BD%91%E7%BB%9C%E5%B1%82(%E4%B8%80)9-6/1.png" class title="This is an image">
-<span id="more"></span>
 <h2 id="异构网络互连"><a href="#异构网络互连" class="headerlink" title="异构网络互连"></a>异构网络互连</h2><ul>
 <li>将一些网络的拓扑、性能以及所使用的网络协议都不尽相同的网络进行互连，让ip网上的主机进行通信时，就好像在一个单一的网络上通信一样，它们看不见互连的各网络的具体的细节。</li>
 </ul>
