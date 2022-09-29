@@ -32,13 +32,13 @@
 </style>
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 6.2.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/XD06/images/time1.jpg">
-  <link rel="icon" type="image/png" sizes="32x32" href="/XD06/images/time1.jpg">
-  <link rel="icon" type="image/png" sizes="16x16" href="/XD06/images/12.ico">
-  <link rel="mask-icon" href="/XD06/images/12.ico" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/time1.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/time1.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/12.ico">
+  <link rel="mask-icon" href="/images/12.ico" color="#222">
   <meta name="google-site-verification" content="hDzZBJRfrI4qI6Q38mEh3OtP2PZltscT39F_N3SuCLs">
 
-<link rel="stylesheet" href="/XD06/css/main.css">
+<link rel="stylesheet" href="/css/main.css">
 
 <link rel="stylesheet" href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic|Zhi Mang Xing:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
@@ -48,40 +48,40 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"xd06.gitee.io","root":"/XD06/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":300,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"xd06.gitee.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":300,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":true,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="以太网的发展  100BASE-T以太网是指在双绞线上传输的基带信号的速率为100Mb&#x2F;s的以太网，也称为快速以太网。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络-数据链路层(七)9-5">
-<meta property="og:url" content="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/index.html">
+<meta property="og:url" content="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/index.html">
 <meta property="og:site_name" content="未曾停下脚步">
 <meta property="og:description" content="以太网的发展  100BASE-T以太网是指在双绞线上传输的基带信号的速率为100Mb&#x2F;s的以太网，也称为快速以太网。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/1.png">
-<meta property="og:image" content="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/2.png">
-<meta property="og:image" content="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/3.png">
-<meta property="og:image" content="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/4.png">
-<meta property="og:image" content="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/5.png">
-<meta property="og:image" content="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/6.png">
-<meta property="og:image" content="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/7.png">
-<meta property="og:image" content="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/8.png">
-<meta property="og:image" content="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/9.png">
-<meta property="og:image" content="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/10.png">
-<meta property="og:image" content="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/11.png">
-<meta property="og:image" content="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/12.png">
-<meta property="og:image" content="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/13.png">
-<meta property="og:image" content="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/14.png">
-<meta property="og:image" content="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/15.png">
-<meta property="og:image" content="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/16.png">
+<meta property="og:image" content="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/1.png">
+<meta property="og:image" content="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/2.png">
+<meta property="og:image" content="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/3.png">
+<meta property="og:image" content="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/4.png">
+<meta property="og:image" content="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/5.png">
+<meta property="og:image" content="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/6.png">
+<meta property="og:image" content="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/7.png">
+<meta property="og:image" content="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/8.png">
+<meta property="og:image" content="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/9.png">
+<meta property="og:image" content="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/10.png">
+<meta property="og:image" content="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/11.png">
+<meta property="og:image" content="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/12.png">
+<meta property="og:image" content="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/13.png">
+<meta property="og:image" content="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/14.png">
+<meta property="og:image" content="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/15.png">
+<meta property="og:image" content="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/16.png">
 <meta property="article:published_time" content="2022-09-05T14:22:00.000Z">
 <meta property="article:modified_time" content="2022-09-06T05:18:16.805Z">
 <meta property="article:author" content="DSK">
 <meta property="article:tag" content="网络">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/1.png">
+<meta name="twitter:image" content="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/1.png">
 
-<link rel="canonical" href="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/">
+<link rel="canonical" href="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/">
 
 
 <script id="page-configurations">
@@ -125,7 +125,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/XD06/atom.xml" title="未曾停下脚步" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="未曾停下脚步" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -144,7 +144,7 @@
 
   <div class="site-meta">
 
-    <a href="/XD06/" class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">未曾停下脚步</h1>
       <span class="logo-line-after"><i></i></span>
@@ -166,42 +166,42 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/XD06/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/XD06/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/XD06/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/XD06/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/XD06/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">18</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">18</span></a>
 
   </li>
         <li class="menu-item menu-item-友情链接">
 
-    <a href="/XD06/links/" rel="section"><i class="fa fa-link fa-fw"></i>友情链接</a>
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>友情链接</a>
 
   </li>
         <li class="menu-item menu-item-message">
 
-    <a href="/XD06/message/" rel="section"><i class="fa fa-envelope-open-text fa-fw"></i>留言</a>
+    <a href="/message/" rel="section"><i class="fa fa-envelope-open-text fa-fw"></i>留言</a>
 
   </li>
         <li class="menu-item menu-item-photos">
 
-    <a href="/XD06/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>photos</a>
+    <a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>photos</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -263,10 +263,10 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/">
+    <link itemprop="mainEntityOfPage" href="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/XD06/images/time.jpg">
+      <meta itemprop="image" content="/images/time.jpg">
       <meta itemprop="name" content="DSK">
       <meta itemprop="description" content="没有追逐的人生毫无意义">
     </span>
@@ -296,12 +296,12 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/XD06/categories/%E6%9C%BA%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">机网</span></a>
+                  <a href="/categories/%E6%9C%BA%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">机网</span></a>
                 </span>
             </span>
 
           
-            <span id="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/" class="post-meta-item leancloud_visitors" data-flag-title="计算机网络-数据链路层(七)9-5" title="阅读次数">
+            <span id="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/" class="post-meta-item leancloud_visitors" data-flag-title="计算机网络-数据链路层(七)9-5" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -323,8 +323,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -353,7 +353,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="以太网的发展"><a href="#以太网的发展" class="headerlink" title="以太网的发展"></a>以太网的发展</h2><img data-src="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/1.png" class title="This is an image">
+        <h2 id="以太网的发展"><a href="#以太网的发展" class="headerlink" title="以太网的发展"></a>以太网的发展</h2><img data-src="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/1.png" class title="This is an image">
 <ul>
 <li>100BASE-T以太网是指在双绞线上传输的基带信号的速率为100Mb/s的以太网，也称为快速以太网。</li>
 </ul>
@@ -380,7 +380,7 @@
 </ul>
 </li>
 </ul>
-<img data-src="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/2.png" class title="This is an image">
+<img data-src="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/2.png" class title="This is an image">
 </li>
 <li><p>10吉比特以太网：</p>
 <ul>
@@ -405,12 +405,12 @@
 </ul>
 </li>
 </ul>
-<img data-src="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/3.png" class title="This is an image">
+<img data-src="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/3.png" class title="This is an image">
 <ul>
 <li>在本BSS内各站点之间的通信以及本BSS外的站点之间的通信，都必须经过本BSS内的AP进行转发。</li>
 </ul>
-<img data-src="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/4.png" class title="This is an image">
-<img data-src="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/5.png" class title="This is an image">
+<img data-src="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/4.png" class title="This is an image">
+<img data-src="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/5.png" class title="This is an image">
 <p>802.11无线局域网的ad hoc模式允许网络中的站点在其通信范围内直接通信，也就是支持站点间的单跳通信，而标准中并没有包括多跳路由功能，所以，802.11无线局域网的ad hoc模式应用较少。</p>
 <h2 id="802-11无线局域网的物理层"><a href="#802-11无线局域网的物理层" class="headerlink" title="802.11无线局域网的物理层"></a>802.11无线局域网的物理层</h2><ul>
 <li>它的物理层十分的复杂，依据工作的频段，调制方式，传输速率等，可分为多种物理层标准。</li>
@@ -421,24 +421,24 @@
 <li>因为传输介质的不同，802.11无线局域网不能简单的使用共享以太网使用的CSMA/CD协议，而是采用了一种名为CSMA/CA的协议，就是载波监听多址接入和碰撞避免（Carrier Sense Multiple Access/Collsion Avoidance，CSMA/CA）</li>
 <li>CSMA/CA仍采用CSMA/CD协议中的CSMA，以”先听后说“的方式来减少碰撞，将”碰撞检测CD“改为了”碰撞检测CA“</li>
 </ul>
-<img data-src="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/6.png" class title="This is an image">
-<h2 id="CSMA-CA协议的基本工作原理"><a href="#CSMA-CA协议的基本工作原理" class="headerlink" title="CSMA/CA协议的基本工作原理"></a>CSMA/CA协议的基本工作原理</h2><img data-src="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/7.png" class title="This is an image">
+<img data-src="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/6.png" class title="This is an image">
+<h2 id="CSMA-CA协议的基本工作原理"><a href="#CSMA-CA协议的基本工作原理" class="headerlink" title="CSMA/CA协议的基本工作原理"></a>CSMA/CA协议的基本工作原理</h2><img data-src="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/7.png" class title="This is an image">
 <p>等待时间间隔DIFS间隔是考虑到可能有其他站有高优先级的帧要发送</p>
-<img data-src="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/8.png" class title="This is an image">
+<img data-src="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/8.png" class title="This is an image">
 <p>短帧间间隔（Short Interframe Space，SIFS）的长度为28微秒，是最短的帧间间隔，用来分隔属于一次对话的各帧，使用SIFS的帧类型有ACK帧。CTS帧等。</p>
-<img data-src="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/9.png" class title="This is an image">
-<img data-src="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/10.png" class title="This is an image">
-<img data-src="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/11.png" class title="This is an image">
-<img data-src="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/12.png" class title="This is an image">
-<h2 id="802-11无线局域网的MAC帧"><a href="#802-11无线局域网的MAC帧" class="headerlink" title="802.11无线局域网的MAC帧"></a>802.11无线局域网的MAC帧</h2><img data-src="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/13.png" class title="This is an image">
-<img data-src="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/14.png" class title="This is an image">
+<img data-src="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/9.png" class title="This is an image">
+<img data-src="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/10.png" class title="This is an image">
+<img data-src="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/11.png" class title="This is an image">
+<img data-src="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/12.png" class title="This is an image">
+<h2 id="802-11无线局域网的MAC帧"><a href="#802-11无线局域网的MAC帧" class="headerlink" title="802.11无线局域网的MAC帧"></a>802.11无线局域网的MAC帧</h2><img data-src="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/13.png" class title="This is an image">
+<img data-src="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/14.png" class title="This is an image">
 <ul>
 <li>其中的持续期字段用于实现CSMA/CD的虚拟载波监听和信道预约机制，在数据帧，RTS帧和CTS帧中用该字段指出将要持续占用信道的时长。</li>
 <li>序号控制：用来实现802.11的可靠传输，对数据帧进行编号。</li>
 <li>地址字段的内容和使用情况取决于帧控制字段中的”去往DS“（倒分配系统）和”来自DS“（分配系统）这两个字段的值</li>
 </ul>
-<img data-src="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/15.png" class title="This is an image">
-<img data-src="/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/16.png" class title="This is an image">
+<img data-src="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/15.png" class title="This is an image">
+<img data-src="/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/16.png" class title="This is an image">
 <p>思维导图：</p>
 <p><a target="_blank" rel="noopener" href="https://kdocs.cn/l/cgV0rfS0qZEA">第3章 数据链路层 课程小结（思维导图）-1</a></p>
 <p><a target="_blank" rel="noopener" href="https://kdocs.cn/l/ciOEeLV6ffuJ">第3章 数据链路层 课程小结（思维导图）-2</a></p>
@@ -460,7 +460,7 @@
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/XD06/images/s.jpg" alt="DSK 微信支付">
+        <img src="/images/s.jpg" alt="DSK 微信支付">
         <p>微信支付</p>
       </div>
 
@@ -476,7 +476,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://xd06.gitee.io/XD06/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/" title="计算机网络-数据链路层(七)9-5">https://xd06.gitee.io/XD06/2022/09/05/计算机网络-数据链路层(七)9-5/</a>
+    <a href="https://xd06.gitee.io/2022/09/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5/" title="计算机网络-数据链路层(七)9-5">https://xd06.gitee.io/2022/09/05/计算机网络-数据链路层(七)9-5/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -490,7 +490,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/XD06/tags/%E7%BD%91%E7%BB%9C/" rel="tag"><i class="fa fa-tag"></i><i class="fa fa-tag"></i> 网络</a>
+              <a href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag"><i class="fa fa-tag"></i><i class="fa fa-tag"></i> 网络</a>
           </div>
 <div>
   
@@ -514,11 +514,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/XD06/2022/09/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E5%85%AD)/" rel="prev" title="计算机网络-数据层(六)9-4">
+    <a href="/2022/09/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E5%85%AD)/" rel="prev" title="计算机网络-数据层(六)9-4">
       <i class="fa fa-chevron-left"></i> 计算机网络-数据层(六)9-4
     </a></div>
       <div class="post-nav-item">
-    <a href="/XD06/2022/09/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%BD%91%E7%BB%9C%E5%B1%82(%E4%B8%80)9-6/" rel="next" title="计算机网络-网络层(一)9-6">
+    <a href="/2022/09/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%BD%91%E7%BB%9C%E5%B1%82(%E4%B8%80)9-6/" rel="next" title="计算机网络-网络层(一)9-6">
       计算机网络-网络层(一)9-6 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -587,12 +587,12 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="DSK"
-      src="/XD06/images/time.jpg">
+      src="/images/time.jpg">
   <p class="site-author-name" itemprop="name">DSK</p>
   <div class="site-description" itemprop="description">没有追逐的人生毫无意义</div>
 </div>
   <div class="">
-    <a target="_blank" class="social-link" href="/XD06/atom.xml" style="color: burlywood;">
+    <a target="_blank" class="social-link" href="/atom.xml" style="color: burlywood;">
       <span class="icon">
         <i class="fa fa-rss"></i>
       </span>
@@ -602,20 +602,20 @@
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/XD06/archives/">
+          <a href="/archives/">
         
           <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-            <a href="/XD06/categories/">
+            <a href="/categories/">
           
         <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-            <a href="/XD06/tags/">
+            <a href="/tags/">
           
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
@@ -631,7 +631,7 @@
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/XD06/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
@@ -844,21 +844,21 @@
 
   
   <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
-  <script src="/XD06/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
 
-<script src="/XD06/js/utils.js"></script>
+<script src="/js/utils.js"></script>
 
 
-<script src="/XD06/js/schemes/pisces.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
-<script src="/XD06/js/next-boot.js"></script>
+<script src="/js/next-boot.js"></script>
 
-<script src="/XD06/js/bookmark.js"></script>
+<script src="/js/bookmark.js"></script>
 
   <script>
 var pjax = new Pjax({
@@ -973,7 +973,7 @@ window.addEventListener('pjax:success', () => {
   </script>
 
   
-<script src="/XD06/js/local-search.js"></script>
+<script src="/js/local-search.js"></script>
 
 
 
@@ -1024,4 +1024,4 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 </script>
 
     </div>
-<script src="/XD06/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/XD06/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
