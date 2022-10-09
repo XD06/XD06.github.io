@@ -1320,7 +1320,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #6fff6b;
+  background: #17a4ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2844,7 +2844,7 @@ mjx-container + br {
   white-space: nowrap;
 }
 body {
-  background: url("http://cdn-hw-static.shanhutech.cn/bizhi/staticwp/202208/2c1fcb88de7ea4a1f12d4f23f3142056--1023256475.jpg");
+  background: url("http://cdn-ali-img-staticbz.shanhutech.cn/bizhi/staticwp/202003/fc111da823ad7857c23d4a5fa5d94cd0--988584831.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
