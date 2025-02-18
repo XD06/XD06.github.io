@@ -2,8 +2,7 @@ name: Pages
 
 on:
   push:
-    branches:
-      - main # default branch
+    branches: [main]
 
 jobs:
   build:
@@ -11,30 +10,37 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          # If your repository depends on submodule, please see: https://github.com/actions/checkout
           submodules: recursive
+
       - name: Use Node.js 22
         uses: actions/setup-node@v4
         with:
-          # Examples: 20, 18.19, >=16.20.2, lts/Iron, lts/Hydrogen, *, latest, current, node
-          # Ref: https://github.com/actions/setup-node#supported-version-syntax
           node-version: "22"
+
       - name: Cache NPM dependencies
         uses: actions/cache@v4
         with:
           path: node_modules
-          key: ${{ runner.OS }}-npm-cache
+          key: ${{ runner.OS }}-npm-${{ hashFiles('package-lock.json') }}
           restore-keys: |
-            ${{ runner.OS }}-npm-cache
+            ${{ runner.OS }}-npm-
+
       - name: Install Dependencies
-        run: npm install
+        run: npm ci # 更严格的依赖安装（推荐使用 npm ci 替代 npm install）
+
       - name: Build
         run: npm run build
+
+      - name: Fix SPA Routing (Optional)
+        run: |
+          cp public/index.html public/404.html  # 处理 SPA 路由问题
+        if: success() # 仅在构建成功后执行
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+
   deploy:
     needs: build
     permissions:
