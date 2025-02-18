@@ -66,7 +66,7 @@ jobs:
             <p>🚀您的网站已成功部署！</p>
             <p>🔗 访问地址：<a href="${{ steps.deployment.outputs.page_url }}">${{ steps.deployment.outputs.page_url }}</a></p>
             <p>📅 部署时间：${{ steps.deployment.outputs.deployment_time }}</p>
-          to: 2218761360@qq.com, dsk306173@outlook.com  # 替换为你要接收通知的邮箱
+          to: 2383032306@qq.com, dsk306173@outlook.com  # 替换为你要接收通知的邮箱
           from: ${{ secrets.SMTP_USER }}  # 发件人（需与SMTP_USER一致）
           content_type: "text/html"  # 支持 HTML 格式
         if: success()  # 仅在部署成功时发送
