@@ -53,20 +53,87 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
+      - name: Generate Timestamp
+        id: time
+        run: |
+          DEPLOY_TIME=$(date '+%Y-%m-%d %H:%M:%S')
+          echo "DEPLOY_TIME=$DEPLOY_TIME" >> $GITHUB_OUTPUT
         uses: actions/deploy-pages@v4
       - name: Send Email Notification
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: ${{ secrets.SMTP_HOST }}
-          server_port: ${{ secrets.SMTP_PORT }}
-          username: ${{ secrets.SMTP_USER }}
-          password: ${{ secrets.SMTP_PASS }}
-          subject: "🚀 GitHub Pages 部署成功通知"
+    # ...SMTP配置...
+          subject: "🎉 GitHub Pages 部署成功！"
           body: |
-            <p>🚀您的网站已成功部署！</p>
-            <p>🔗 访问地址：<a href="${{ steps.deployment.outputs.page_url }}">${{ steps.deployment.outputs.page_url }}</a></p>
-            <p>📅 部署时间：${{ steps.deployment.outputs.deployment_time }}</p>
+              <html>
+              <head>
+              <style>
+                .container { max-width: 600px; margin: 20px auto; font-family: Arial, sans-serif; }
+                .header { 
+                background: linear-gradient(135deg, #4CAF50, #45a049); 
+                color: white; 
+                padding: 20px; 
+                border-radius: 10px 10px 0 0;
+                text-align: center;
+              }
+              .content { 
+              padding: 25px; 
+              background: #f8f9fa; 
+              border-radius: 0 0 10px 10px; 
+              border: 1px solid #e9ecef;
+              }
+              .button {
+              display: inline-block;
+              padding: 12px 25px;
+              background: #4CAF50;
+              color: white !important;
+              text-decoration: none;
+              border-radius: 5px;
+              margin: 15px 0;
+              }
+              .details { 
+              margin-top: 20px; 
+              color: #6c757d;
+              }
+              .footer { 
+              margin-top: 25px; 
+              text-align: center; 
+              color: #868e96;
+              }
+              </style>
+              </head>
+              <body>
+              <div class="container">
+              <div class="header">
+              <h1>🚀 部署成功！</h1>
+              </div>
+              <div class="content">
+              <p>您的网站已通过 GitHub Actions 自动部署完成</p>
+            
+              <a href="${{ steps.deployment.outputs.page_url }}" class="button">
+              点击访问网站
+              </a>
+
+              <div class="details">
+                <p><strong>📅 部署时间：</strong>${{ steps.time.outputs.DEPLOY_TIME }}</p>
+                <p><strong>🔗 仓库地址：</strong>
+                  <a href="${{ github.server_url }}/${{ github.repository }}">
+                    ${{ github.repository }}
+                  </a>
+                </p>
+                <p><strong>📝 最近提交：</strong><br>
+                  ${{ github.event.head_commit.message }}
+                </p>
+              </div>
+
+              <div class="footer">
+                <small>本邮件由 GitHub Actions 自动发送，请勿直接回复</small>
+              </div>
+              </div>
+              </div>
+              </body>
+              </html>
+          content_type: "text/html"
           to: 2383032306@qq.com, dsk306173@outlook.com  # 替换为你要接收通知的邮箱
-          from: ${{ secrets.SMTP_USER }}  # 发件人（需与SMTP_USER一致）
-          content_type: "text/html"  # 支持 HTML 格式
+          from: ${{ secrets.SMTP_USER }}  # 发件人（需与SMTP_USER一致
         if: success()  # 仅在部署成功时发送
