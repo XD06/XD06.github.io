@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美观的视频播放器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .video-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .video-player {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #000;
+        }
+
+        .video-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .video-container:hover .video-controls {
+            opacity: 1;
+        }
+
+        .video-controls button {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 0 5px;
+            transition: background-color 0.3s;
+        }
+
+        .video-controls button:hover {
+            background-color: #ff4500;
+        }
+
+        .video-controls input[type="range"] {
+            width: 100%;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video id="myVideo" class="video-player" controls>
+            <source src="https://cdn.img2ipfs.com/ipfs/QmXXuvFomwp2G81vqGSiJDDkeDiH9p64cD15wEu1X1Zr2j?filename=20250218225612817.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 视频标签。
+        </video>
+        <div class="video-controls">
+            <button id="playPauseBtn">播放</button>
+            <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('myVideo');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const volumeControl = document.getElementById('volumeControl');
+
+        playPauseBtn.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                playPauseBtn.textContent = '暂停';
+            } else {
+                video.pause();
+                playPauseBtn.textContent = '播放';
+            }
+        });
+
+        volumeControl.addEventListener('input', () => {
+            video.volume = volumeControl.value;
+        });
+    </script>
+</body>
+</html>

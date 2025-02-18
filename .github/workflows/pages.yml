@@ -7,13 +7,13 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ fromJSON('["ubuntu-latest", "self-hosted"]')[github.repository == 'github/docs-internal'] }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           # If your repository depends on submodule, please see: https://github.com/actions/checkout
-          submodules: true
+          submodules: recursive
       - name: Use Node.js 22
         uses: actions/setup-node@v4
         with:
@@ -27,10 +27,6 @@ jobs:
           key: ${{ runner.OS }}-npm-cache
           restore-keys: |
             ${{ runner.OS }}-npm-cache
-      #- name: install git
-      # run: npm install -g git
-    #- name: install theme
-    # run: git clone https://github.com/next-theme/hexo-theme-next themes/next
       - name: Install Dependencies
         run: npm install
       - name: Build
@@ -47,7 +43,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ${{ fromJSON('["ubuntu-latest", "self-hosted"]')[github.repository == 'github/docs-internal'] }}
+    runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
