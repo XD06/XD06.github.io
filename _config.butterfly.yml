@@ -482,6 +482,8 @@ search:
     # Unescape html strings to the readable one.
     unescape: false
     CDN:
+	css: /css/style.css
+	js: /js/main/js
 
   # Docsearch
   # https://docsearch.algolia.com/

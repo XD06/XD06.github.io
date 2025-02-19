@@ -1,86 +1,130 @@
-name: Pages
-
+name: Pages 
 on:
   push:
     branches: [main]
-
+ 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    runs-on: ubuntu-latest 
     steps:
-      - uses: actions/checkout@v4
+      # 强制清理旧文件（关键修复）
+      - name: Clean Residual Files 
+        run: |
+          rm -rf public 
+          
+ 
+      - uses: actions/checkout@v4 
         with:
-          submodules: recursive
-
-      - name: Use Node.js 22
-        uses: actions/setup-node@v4
+          submodules: recursive 
+          fetch-depth: 0  # 获取完整提交历史 
+ 
+      - name: Use Node.js 22 
+        uses: actions/setup-node@v4 
         with:
           node-version: "22"
-
-      - name: Cache NPM dependencies
-        uses: actions/cache@v4
+          cache: 'npm'
+ 
+      # 增强版缓存策略 
+      - name: Cache Dependencies 
+        uses: actions/cache@v4 
         with:
-          path: node_modules
-          key: ${{ runner.OS }}-npm-${{ hashFiles('package-lock.json') }}
+          path: |
+            node_modules
+            public
+            .cache 
+          key: ${{ runner.os  }}-${{ hashFiles('package-lock.json')  }}-${{ github.run_id  }}
           restore-keys: |
-            ${{ runner.OS }}-npm-
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Fix SPA Routing (Optional)
-        run: cp public/index.html public/404.html
-        if: success()
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public
-
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      # 步骤1：部署到 GitHub Pages
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-      # 步骤2：生成时间戳（新增独立步骤）
-      - name: Generate Timestamp
-        id: time
+            ${{ runner.os  }}-${{ hashFiles('package-lock.json')  }}-
+ 
+      - name: Install Dependencies 
         run: |
-          DEPLOY_TIME=$(date '+%Y-%m-%d %H:%M:%S')
-          echo "DEPLOY_TIME=$DEPLOY_TIME" >> $GITHUB_OUTPUT
+          npm ci --prefer-offline 
+          npm install hexo-cli -g  # 全局安装Hexo[1](https://blog.csdn.net/chaosweet/article/details/144715256)
+ 
+      # 构建前校验 
+      - name: Validate Configuration 
+        run: |
+          if [ ! -f _config.yml ]; then 
+            echo "::error::Missing Hexo config file!"
+            exit 1 
+          fi 
+     - name: Generate static files 
+        run: hexo clean && hexo generate 
 
-      # 步骤3：发送邮件通知（修正缩进和参数）
-      - name: Send Email Notification
-        uses: dawidd6/action-send-mail@v3
+     - name: Generate version hash 
+        id: version 
+        run: |
+          VERSION_HASH=$(date +%s | sha256sum | head -c 6)
+          echo "VERSION_HASH=${VERSION_HASH}" >> $GITHUB_ENV 
+
+     - name: Replace asset paths 
+        run: |
+          find public -type f \( -name "*.html" -o -name "*.css" \) \
+            -exec sed -i "s/\.\(css\|js\)\('/.\1?v=${VERSION_HASH}'/g" {} \;
+
+     - name: Build with Hexo 
+        run: |
+          hexo clean  # Hexo专用清理命令[1](https://blog.csdn.net/chaosweet/article/details/144715256)
+          hexo generate --debug 
+          # 生成版本哈希文件 
+          date +%s > public/version.txt 
+ 
+      # 增强型SPA路由处理 
+      - name: Fix Routing 
+        run: |
+          find ./public -name '*.html' -exec sed -i 's/<head>/<head><base href="\/">/g' {{}} \;
+          cp public/index.html public/404.html 
+ 
+      - name: Upload Artifact 
+        uses: actions/upload-pages-artifact@v3 
+        with:
+          path: ./public 
+          retention-days: 1  # 缩短产物保留时间 
+ 
+  deploy:
+    needs: build 
+    permissions:
+      pages: write 
+      id-token: write 
+    environment:
+      name: github-pages 
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Deploy to GitHub Pages 
+        id: deployment 
+        uses: actions/deploy-pages@v4 
+        with:
+          keep_history: false  # 禁用旧版本保留[3](https://blog.csdn.net/baidu_25464429/article/details/80805237)
+ 
+      # 强制刷新CDN缓存 
+      - name: Purge CDN Cache 
+        run: |
+          curl -X PURGE "https://XD06.github.io" > /dev/null 2>&1 
+          curl -X PURGE "https://XD06.github.io/*" > /dev/null 2>&1 
+ 
+      - name: Generate Timestamp 
+        id: time 
+        run: |
+          DEPLOY_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          echo "DEPLOY_TIME=$DEPLOY_TIME" >> $GITHUB_OUTPUT 
+ 
+      - name: Send Notification 
+        uses: dawidd6/action-send-mail@v3 
         if: success()
         with:
-          # SMTP 配置（需在仓库 Secrets 中设置）
           server_address: ${{ secrets.SMTP_HOST }}
           server_port: ${{ secrets.SMTP_PORT }}
           username: ${{ secrets.SMTP_USER }}
           password: ${{ secrets.SMTP_PASS }}
-          # 邮件内容
-          subject: "🎉 GitHub Pages 部署成功！"
-          to: 2383032306@qq.com, dsk306173@outlook.com
-          from: ${{ secrets.SMTP_USER }}
-          content_type: "text/html"
-          body: |
+          subject: "✅ 部署成功：${{ github.repository }}"
+          to: 2383032306@qq.com, dsk306173@outlook.com 
+          from: "GitHub Bot <${{ secrets.SMTP_USER }}>"
+          html_body: |
+            <!DOCTYPE html>
             <html>
-            <head>
-              <style>
+            <style>
                 .container { max-width: 600px; margin: 20px auto; font-family: Arial, sans-serif; }
                 .header { 
                   background: linear-gradient(135deg, #4CAF50, #45a049); 
@@ -115,24 +159,89 @@ jobs:
                 }
               </style>
             </head>
-            <body>
+            <body style="font-family: system-ui; max-width: 600px; margin: auto;">
               <div class="container">
                 <div class="header">
                   <h1>🚀 部署成功！</h1>
                 </div>
                 <div class="content">
-                  <p>您的网站已通过 GitHub Actions 自动部署完成</p>
-                  <a href="${{ steps.deployment.outputs.page_url }}" class="button">点击访问网站</a>
-                  <div class="details">
-                    <p><strong>📅 部署时间：</strong>${{ steps.time.outputs.DEPLOY_TIME }}</p>
-                    <p><strong>🔗 仓库地址：</strong>
-                      <a href="${{ github.server_url }}/${{ github.repository }}">${{ github.repository }}</a>
-                    </p>
-                    <p><strong>📝 最近提交：</strong><br>${{ github.event.head_commit.message }}</p>
-                  </div>
-                  <div class="footer">
-                    <small>本邮件由 GitHub Actions 自动发送，请勿直接回复</small>
-                  </div>
+                <h2 style="color: #2cbe4e;">部署状态报告</h2>
+                    <p>📦 仓库：<code>${{ github.repository }}</code></p>
+                    <p>🕒部署时间：${{ steps.time.outputs.DEPLOY_TIME  }}</p>
+                    <p>🌐访问地址：<a href="${{ steps.deployment.outputs.page_url  }}">${{ steps.deployment.outputs.page_url  }}</a></p>
+                    <p>📝最新提交：<br><em>$${{ github.event.head_commit.message }}</em></p>
+                    <hr><div class="footer">
+                  <small>本邮件由 GitHub Actions 自动发送，请勿直接回复</small>
+                </div>
+                </div>
+              </div>
+            </body>
+            </html>
+
+ 
+      - name: Send Failure Notification 
+        if: failure()
+        uses: dawidd6/action-send-mail@v3 
+        with:
+          server_address: ${{ secrets.SMTP_HOST }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USER }}
+          password: ${{ secrets.SMTP_PASS }}
+          subject: "❌ GitHub Pages 部署失败！"
+          to: 2383032306@qq.com, dsk306173@outlook.com 
+          from: ${{ secrets.SMTP_USER }}
+          html_body: |
+            <!DOCTYPE html>
+            <html>
+            <style>
+                .container { max-width: 600px; margin: 20px auto; font-family: Arial, sans-serif; }
+                .header { 
+                  background: red; 
+                  color: white; 
+                  padding: 20px; 
+                  border-radius: 10px 10px 0 0;
+                  text-align: center;
+                }
+                .content { 
+                  padding: 25px; 
+                  background: #f8f9fa; 
+                  border-radius: 0 0 10px 10px; 
+                  border: 1px solid #e9ecef;
+                }
+                .button {
+                  display: inline-block;
+                  padding: 12px 25px;
+                  background: #4CAF50;
+                  color: white !important;
+                  text-decoration: none;
+                  border-radius: 5px;
+                  margin: 15px 0;
+                }
+                .details { 
+                  margin-top: 20px; 
+                  color: #6c757d;
+                }
+                .footer { 
+                  margin-top: 25px; 
+                  text-align: center; 
+                  color: #868e96;
+                }
+              </style>
+            </head>
+            <body style="font-family: system-ui; max-width: 600px; margin: auto;">
+              <div class="container">
+                <div class="header">
+                  <h1>🚀 部署失败！</h1>
+                </div>
+                <div class="content">
+                <h2 style="color: #2cbe4e;">部署状态报告</h2>
+                    p>错误发生在步骤：${{ job.status }}</p>
+                <p>🕒 触发时间：${{ steps.time.outputs.DEPLOY_TIME }}</p>
+                <p>📝 最后提交信息：${{ github.event.head_commit.message }}</p>
+                <p>🔗 查看错误日志：<a href="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}">日志链接</a></p>
+              </div> <h2 style="color: #d32f2f;">部署失败警告</h2>
+                  <small>本邮件由 GitHub Actions 自动发送，请勿直接回复</small>
+                </div>
                 </div>
               </div>
             </body>

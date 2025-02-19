@@ -13,8 +13,8 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
-permalink: :year/:month/:day/:title/
+url: https://XD06.github.io
+permalink: :title.html
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -102,3 +102,37 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+#解决浏览器缓存问题
+hash:
+  enable: true
+cache_hash:
+  enable: true
+  prepend: /
+  manifest: 'asset-hash.json'
+  exts: '.js,.css'
+cache_control:
+  html: 'no-cache, no-store,max-age=0'
+  assets: 'public,max-age=31536000'
+filter_assets: 
+  css: sha256
+  js: sha256
+
+# Security
+encrypt: # hexo-blog-encrypt
+  abstract: 有东西被加密了, 请输入密码查看.
+  message: 您好, 这里需要密码.
+  tags:
+  - {name: tagName, password: 密码A}
+  - {name: tagName, password: 密码B}
+  theme: xray
+  wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.
+  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.
+exclude:
+  -.nojekyll
+hexo-daily-news:
+  enable: true
+  apiUrl: 'https://v2.alapi.cn/api/zaobao'
+  token: 'your-api-token'
+version: '1.0.0'
+timestamp: <%= new Date().getTime() %>

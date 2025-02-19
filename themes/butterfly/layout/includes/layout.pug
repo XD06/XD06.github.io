@@ -10,6 +10,30 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
   head
     include ./head.pug
   body
+	block content 
+  // 你的内容 
+ 
+// 添加 JavaScript 代码 
+script.
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js',  { scope: '/' })
+      .then(registration => {
+        registration.onupdatefound  = () => {
+          const installingWorker = registration.installing; 
+          installingWorker.onstatechange  = () => {
+            if (installingWorker.state  === 'installed') {
+              caches.keys().then(cacheNames  => {
+                cacheNames.forEach(cacheName  => {
+                  if (cacheName.startsWith('static-v'))  {
+                    caches.delete(cacheName); 
+                  }
+                });
+              });
+            }
+          };
+        };
+      });
+  }
     !=partial('includes/loading/index', {}, {cache: true})
 
     if theme.background
@@ -35,3 +59,5 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
 
     include ./rightside.pug
     include ./additional-js.pug
+link(rel='stylesheet', href='/css/index.css?v=#{version}') 
+script(src='/js/main.js?t=#{timestamp}') 
