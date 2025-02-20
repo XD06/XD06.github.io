@@ -1,0 +1,221 @@
+name: Pages 
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+ 
+env:  # 新增全局时区设置 [[时区统一性]]
+  TZ: Asia/Shanghai 
+ 
+jobs:
+  build:
+    timeout-minutes: 15 
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Clean Residual Files 
+        run: |
+          rm -rf public 
+          
+ 
+      - uses: actions/checkout@v4 
+        with:
+          submodules: recursive 
+          fetch-depth: 0  # 获取完整提交历史 
+ 
+      - name: Use Node.js 22 
+        uses: actions/setup-node@v4 
+        with:
+          node-version: "22"
+          cache: 'npm'
+ 
+      # 增强版缓存策略 
+      - name: Cache Dependencies 
+        uses: actions/cache@v4 
+        with:
+          path: |
+            node_modules
+            public
+            .cache 
+          key: ${{ runner.os  }}-${{ hashFiles('package-lock.json')  }}-${{ github.run_id  }}
+          restore-keys: |
+            ${{ runner.os  }}-${{ hashFiles('package-lock.json')  }}-
+ 
+      - name: Install Dependencies 
+        run: |
+          npm ci --prefer-offline 
+          npm install hexo-cli -g  # 全局安装Hexo[1](https://blog.csdn.net/chaosweet/article/details/144715256)
+ 
+      # 构建前校验 
+      - name: Validate Configuration 
+        run: |
+          if [ ! -f _config.yml ]; then 
+            echo "::error::Missing Hexo config file!"
+            exit 1 
+          fi 
+      - name: Generate static files 
+        run: hexo clean && hexo generate 
+
+      - name: Generate version hash 
+        id: version 
+        run: |
+          VERSION_HASH=$(date +%s | sha256sum | head -c 6)
+          echo "VERSION_HASH=${VERSION_HASH}" >> $GITHUB_ENV 
+
+      - name: Replace asset paths 
+        run: |
+          find public -type f \( -name "*.html" -o -name "*.css" \) \
+            -exec sed -i "s/\.\(css\|js\)\('/.\1?v=${VERSION_HASH}'/g" {} \;
+
+      - name: Build with Hexo 
+        run: |
+          hexo clean  # Hexo专用清理命令[1](https://blog.csdn.net/chaosweet/article/details/144715256)
+          hexo generate --debug 
+          # 生成版本哈希文件 
+          date +%s > public/version.txt 
+ 
+      # 增强型SPA路由处理 
+      - name: Fix Routing 
+        run: |
+          find ./public -name '*.html' -exec sed -i 's/<head>/<head><base href="\/">/g' {{}} \;
+          cp public/index.html public/404.html 
+ 
+      - name: Upload Artifact 
+        uses: actions/upload-pages-artifact@v3 
+        with:
+          path: ./public 
+          retention-days: 1  # 缩短产物保留时间 
+    
+      # ...（原有 build 步骤保持不变）...
+ 
+  deploy:
+    needs: build
+    outputs: 
+      page_url: ${{ steps.deploy_step.outputs.page_url  }}
+    permissions:
+      pages: write 
+      id-token: write 
+    environment:
+      name: github-pages 
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Deploy to GitHub Pages 
+        id: deploy_step 
+        uses: actions/deploy-pages@v4 
+        with:
+          keep_history: false  # 禁用旧版本保留[3](https://blog.csdn.net/baidu_25464429/article/details/80805237)
+ 
+      # 强制刷新CDN缓存 
+      - name: Purge CDN Cache 
+        run: |
+          curl -X PURGE "https://XD06.github.io" > /dev/null 2>&1 
+          curl -X PURGE "https://XD06.github.io/*" > /dev/null 2>&1 
+ 
+      - name: Generate Timestamp 
+        id: time 
+        run: |
+          DEPLOY_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          echo "DEPLOY_TIME=$DEPLOY_TIME" >> $GITHUB_OUTPUT  
+    # ...（原有 deploy 步骤保持不变）...
+ 
+  notifications:
+    name: Global Notifications 
+    runs-on: ubuntu-latest 
+    needs: [build, deploy]
+    if: always()
+    steps:
+      - name: Generate Local Time 
+        id: time 
+        run: |
+          DEPLOY_TIME=$(date +"%Y-%m-%d %H:%M:%S")  # 时区已通过全局 env 生效 
+          echo "DEPLOY_TIME=$DEPLOY_TIME" >> $GITHUB_OUTPUT 
+      - name: Display URL
+        run: |
+          echo "Page URL: ${{ needs.deploy.outputs.page_url  }}"  # ✅ 正确引用路径 
+ 
+      # 新增敏感信息过滤 [[敏感信息过滤]]
+      - name: Sanitize Logs 
+        if: failure()
+        run: |
+          sed -i 's/password=.*/password=*****/g' $GITHUB_STEP_SUMMARY 
+          sed -i 's/token=.*/token=*****/g' $GITHUB_STEP_SUMMARY 
+ 
+      # 重构后的成功通知（完整版）
+      - name: Success Notification 
+        if: success() && needs.build.result  == 'success' && needs.deploy.result  == 'success'
+        uses: dawidd6/action-send-mail@v3 
+        with:
+          server_address: ${{ secrets.SMTP_HOST }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USER }}
+          password: ${{ secrets.SMTP_PASS }}
+          subject: "✅ 全局部署成功：${{ github.workflow  }}"
+          to: 2383032306@qq.com,dsk306173@outlook.com  
+          from: "GitHub Bot <${{ secrets.SMTP_USER }}>"
+          html_body: |
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>
+            @media (max-width: 600px) {
+              .debug-tips li { padding: 8px; border-left: 3px solid #d32f2f; }
+              pre { overflow-x: auto; white-space: pre-wrap; }
+            }
+            </style>
+            </head>
+            <div class="container">
+              <div class="header" style="background:#4CAF50;">
+                <h1>🚀 全流程部署成功</h1>
+              </div>
+              <div class="content">
+                <h3>核心元数据</h3>
+                <p>📦 仓库：<a href= "https://github.com/${{ github.repository  }}">点击链接</a></p>
+                <p>🌿 触发分支：${{ github.ref_name  }}</p>
+                <p>🕒 部署时间：${{ steps.time.outputs.DEPLOY_TIME  }}</p>
+                <p>👤 提交者：${{ github.actor  }}</p>
+                <p>📜 提交哈希：<code>${{ github.sha  }}</code></p>
+                <hr>
+                <h3>操作详情</h3>
+                <p>📂 工作流文件：.github/workflows/${{ github.workflow  }}</p>
+                <p>🔗 访问地址：<a href="${{ needs.deploy.outputs.page_url  }}">${{needs.deploy.outputs.page_url  }}</a></p>
+                <p>📝 提交信息：<br><em>${{ github.event.head_commit.message  }}</em></p>
+              </div>
+             </div>
+            </html>
+      # 强化版失败通知 [[邮件模板优化]]
+      - name: Failure Notification 
+        if: failure()
+        uses: dawidd6/action-send-mail@v3 
+        with:
+          server_address: ${{ secrets.SMTP_HOST }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USER }}
+          password: ${{ secrets.SMTP_PASS }}
+          subject: "❌ 全局部署失败：${{ github.workflow  }}"
+          to: 2383032306@qq.com,dsk306173@outlook.com  
+          from: "GitHub Bot <${{ secrets.SMTP_USER }}>"
+          html_body: |
+            <div class="container">
+              <div class="header" style="background:#d32f2f;">
+                <h1>🛑 关键部署失败</h1>
+              </div>
+              <div class="content">
+                <h3>失败定位</h3>
+                <p>📦 仓库：${{ github.repository  }}</p>
+                <p>🔧 失败阶段：${{ join(needs.*.result, ' → ') }}</p>
+                <p>🕒 失败时间：${{ steps.time.outputs.DEPLOY_TIME  }}</p>
+                <hr>
+                <h3>调试信息</h3>
+                <p>📜 完整日志：<a href="https://github.com/${{  github.repository  }}/actions/runs/${{ github.run_id  }}">点击查看</a></p>
+                <p>🔍 错误摘要：<br><pre>{{ "${{ toJson(job) }}" | replace('\\n', '<br>') }}</pre></p>
+                <div class="debug-tips">
+                  <h4>常见故障排查：</h4>
+                  <ul>
+                    <li>检查 <code>package-lock.json</code>  是否提交</li>
+                    <li>验证 GitHub Pages 分支权限</li>
+                    <li>查看 Hexo 生成日志中的警告</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
