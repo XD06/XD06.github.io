@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="en" data-theme="light"> <head> <meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://xd06.github.io/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://xd06.github.io/img/butterfly-icon.png">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xd06.github.io/img/butterfly-icon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://xd06.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css?v=22486bda"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: ''
+}</script><link rel="stylesheet" href="/custom-media.css?v=d7e73224"><meta name="generator" content="Hexo 7.3.0"></head><body> <!-- 在</body>标签之前添加 --><div class="image-overlay"> <img class="enlarged-image" src><div class="close-overlay"> × </div></div><div id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hexo</span></a></span><div id="menus"></div></nav><div id="page-site-info"><h1 id="site-title"></h1></div></header><main class="layout" id="content-inner"> <div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/%E7%A4%BA%E4%BE%8B.html" title="示例">示例</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-02-18T22:07:20.000Z" title="Created 2025-02-19 06:07:20">2025-02-19</time></span></div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/%E3%80%90%E6%AF%8F%E6%97%A5%E6%97%A9%E6%8A%A5%E3%80%91-2025-02-19%20-%20%E6%98%9F%E6%9C%9F%E4%B8%89.html" title="【每日早报】-2025-02-19 - 星期三"><img class="post-bg" src="https://file.alapi.cn/60s/202502191739901602_head.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【每日早报】-2025-02-19 - 星期三"></a></div><div class="recent-post-info"><a class="article-title" href="/%E3%80%90%E6%AF%8F%E6%97%A5%E6%97%A9%E6%8A%A5%E3%80%91-2025-02-19%20-%20%E6%98%9F%E6%9C%9F%E4%B8%89.html" title="【每日早报】-2025-02-19 - 星期三">【每日早报】-2025-02-19 - 星期三</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-02-18T16:00:00.000Z" title="Created 2025-02-19 00:00:00">2025-02-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%AF%8F%E6%97%A5%E6%97%A9%E6%8A%A5/">每日早报</a></span></div><div class="content">                       每日早报             </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/%E7%99%BD%E6%A1%83%E9%9C%B2%E9%9C%B2.html" title="白桃露露">白桃露露</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-02-16T05:29:13.000Z" title="Created 2025-02-16 13:29:13">2025-02-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%A6%8F%E5%88%A9/">福利</a></span></div><div class="content">  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/test.html" title="test_githubaction">test_githubaction</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2025-02-15T16:00:00.000Z" title="Created 2025-02-16 00:00:00">2025-02-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%A6%8F%E5%88%A9/">福利</a></span></div><div class="content">This is a testname : 黄金二逼王  </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/%E5%92%92%E6%9C%AF%E5%9B%9E%E6%88%98.html" title="咒术回战">咒术回战</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-10-08T16:00:00.000Z" title="Created 2022-10-09 00:00:00">2022-10-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%A3%81%E7%BA%B8/">壁纸</a></span></div><div class="content">咒术回战“你要在众人的簇拥下死去”                </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%BD%91%E7%BB%9C%E5%B1%82(%E4%B8%80)9-6.html" title="计算机网络-网络层(一)9-6">计算机网络-网络层(一)9-6</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-09-05T16:00:00.000Z" title="Created 2022-09-06 00:00:00">2022-09-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9C%BA%E7%BD%91/">机网</a></span></div><div class="content">网络层的概述 网络层的主要任务是实现网络互连，进而实现数据包在各网络之间的传播。 实现网络层的任务，需要解决几个主要任务： 向运输层提供怎样的的服务（可靠或不可靠传输） 网络层寻址问题 路由选择问题        因特网（Internet）是全世界用户数量最多的互联网，使用TCP/IP协议栈 由于TCP/IP协议栈的网络层使用网际协议IP，它是整个协议栈的核心协议。在TCP/IP协议栈中网络层常称为网际层。  网际协议IP 网际协议（Internet Protocol，IP）是TCP/IP体系结构网际层中的核心协议。 网际协议IP，传输控制协议TCP、TCP/IP体系结构是由“因特网之父”Robert Kahn 和Vint Cerf...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82(%E4%B8%83)9-5.html" title="计算机网络-数据链路层(七)9-5">计算机网络-数据链路层(七)9-5</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-09-05T14:22:00.000Z" title="Created 2022-09-05 22:22:00">2022-09-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9C%BA%E7%BD%91/">机网</a></span></div><div class="content">以太网的发展   100BASE-T以太网是指在双绞线上传输的基带信号的速率为100Mb/s的以太网，也称为快速以太网。     “100”指的是速率，“BASE”指的是基带信号，“T”指的是传输媒体双绞线。  仍然使用IEEE802.3的帧格式和CSMA/CD协议，以太网的最小帧长不变，仍然为64字节。  网段最大电缆长度从1000m缩短到100m 争用期缩短为5.12微秒 帧间最小间隔缩短为0.96微秒   还可以使用以太网交换机来提供比集线器更好的服务质量，即在全双工方式下无碰撞工作  吉比特以太网：  速率为1000Mb/s（1Gb/s） 使用IEEE...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E5%85%AD).html" title="计算机网络-数据层(六)9-4">计算机网络-数据层(六)9-4</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-09-03T16:00:00.000Z" title="Created 2022-09-04 00:00:00">2022-09-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9C%BA%E7%BD%91/">机网</a></span></div><div class="content">共享式以太网与交换式以太网的对比 集线器和交换机在广播帧的转发效果，看起来是相同的，但是原理不同。  对于集线器来说，当它收到单播帧或者是广播帧，它所做的是向除接收该帧的接口外的接口进行转发出去，而交换机工作在数据链路层，识别帧的结构，进行明确转发或盲目或丢弃该帧。  多对主机同时通信，对于集线器的以太网可能会发生信号的碰撞，而交换式以太网中的交换机对收到的帧存储转发，能够实现多对接口的高速并行交换，不会发生信号的碰撞。  使用集线式以太网会扩大广播域，也扩大了碰撞域。对于交换式以太网会扩大广播域，但是原本的碰撞域还是独立。     例题     以太网的MAC帧格式 DIX Ethernet V2 的帧格式和IEEE...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/%E5%88%86%E4%BA%AB%E5%A3%81%E7%BA%B8(%E4%B8%89).html" title="分享壁纸（三）">分享壁纸（三）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-09-03T03:22:00.000Z" title="Created 2022-09-03 11:22:00">2022-09-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%A3%81%E7%BA%B8/">壁纸</a></span></div><div class="content">人物(二)           注：（以上图来自电脑桌面壁纸大全3g壁纸 和cgwallpapers)</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF(%E4%BA%94).html" title="计算机网络-数据链路(五)9-3">计算机网络-数据链路(五)9-3</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-09-02T16:00:00.000Z" title="Created 2022-09-03 00:00:00">2022-09-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9C%BA%E7%BD%91/">机网</a></span></div><div class="content">在物理层扩展以太网扩展站点与集线器之间的距离 共享式以太网中两站点之间不能太远，不然信号会衰减到CSMA/CD协议无法正常工作。早期使用粗同轴电缆或细同轴电缆共享总线以太网时，为了提高网络的地理位置覆盖范围，常用的是工作在物理层的转换器。 在IEEE...</div></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png?v=28fa72a4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"></div><div class="author-info-name">John Doe</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E7%A4%BA%E4%BE%8B.html" title="示例">示例</a><time datetime="2025-02-18T22:07:20.000Z" title="Created 2025-02-19 06:07:20">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E3%80%90%E6%AF%8F%E6%97%A5%E6%97%A9%E6%8A%A5%E3%80%91-2025-02-19%20-%20%E6%98%9F%E6%9C%9F%E4%B8%89.html" title="【每日早报】-2025-02-19 - 星期三"><img src="https://file.alapi.cn/60s/202502191739901602_head.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【每日早报】-2025-02-19 - 星期三"></a><div class="content"><a class="title" href="/%E3%80%90%E6%AF%8F%E6%97%A5%E6%97%A9%E6%8A%A5%E3%80%91-2025-02-19%20-%20%E6%98%9F%E6%9C%9F%E4%B8%89.html" title="【每日早报】-2025-02-19 - 星期三">【每日早报】-2025-02-19 - 星期三</a><time datetime="2025-02-18T16:00:00.000Z" title="Created 2025-02-19 00:00:00">2025-02-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E7%99%BD%E6%A1%83%E9%9C%B2%E9%9C%B2.html" title="白桃露露">白桃露露</a><time datetime="2025-02-16T05:29:13.000Z" title="Created 2025-02-16 13:29:13">2025-02-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/test.html" title="test_githubaction">test_githubaction</a><time datetime="2025-02-15T16:00:00.000Z" title="Created 2025-02-16 00:00:00">2025-02-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/%E5%92%92%E6%9C%AF%E5%9B%9E%E6%88%98.html" title="咒术回战">咒术回战</a><time datetime="2022-10-08T16:00:00.000Z" title="Created 2022-10-09 00:00:00">2022-10-09</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%A3%81%E7%BA%B8/"><span class="card-category-list-name">壁纸</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9C%BA%E7%BD%91/"><span class="card-category-list-name">机网</span><span class="card-category-list-count">12</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%AF%8F%E6%97%A5%E6%97%A9%E6%8A%A5/"><span class="card-category-list-name">每日早报</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%A6%8F%E5%88%A9/"><span class="card-category-list-name">福利</span><span class="card-category-list-count">2</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E6%AF%8F%E6%97%A5%E6%97%A9%E6%8A%A5/" style="font-size: 1.1em; color: #999">每日早报</a> <a href="/tags/test/" style="font-size: 1.1em; color: #999">test</a> <a href="/tags/%E7%AC%AC%E4%B8%80%E7%AF%87/" style="font-size: 1.1em; color: #999">第一篇</a> <a href="/tags/%E7%A6%8F%E5%88%A9/" style="font-size: 1.1em; color: #999">福利</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 1.5em; color: #99a9bf">网络</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 1.1em; color: #999">日常</a> <a href="/tags/%E5%85%BB%E7%9C%BC/" style="font-size: 1.3em; color: #99a1ac">养眼</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>Archives</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/02/">
+            <span class="card-archive-list-date">
+              February 2025
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2022/10/">
+            <span class="card-archive-list-date">
+              October 2022
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2022/09/">
+            <span class="card-archive-list-date">
+              September 2022
+            </span>
+            <span class="card-archive-list-count">7</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2022/08/">
+            <span class="card-archive-list-date">
+              August 2022
+            </span>
+            <span class="card-archive-list-count">11</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">23</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastpushdate="2025-02-20T06:19:24.185Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">©2019 - 2025 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.3</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=8d350783"></script><script src="/js/main.js?v=ab1dddd2"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><script async="async" data-pjax="data-pjax" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

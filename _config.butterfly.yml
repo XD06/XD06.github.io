@@ -11,16 +11,21 @@
 
 nav:
   # Navigation bar logo image
-  logo:
+  logo: /img/author.png
   display_title: true
   # Whether to fix navigation bar
   fixed: false
 
 menu:
-  # Home: / || fas fa-home
-  # List||fas fa-list:
-  #   Music: /music/ || fas fa-music
-  #   Movie: /movies/ || fas fa-video
+   Home: / || fas fa-home
+   Archives: /archives/ || fas fa-archive
+   Tags: /tags/ || fas fa-tags
+   Categories: /categories/ || fas fa-folder-open
+   List||fas fa-list:
+     Music: /music/ || fas fa-music
+     Movie: /movies/ || fas fa-video
+   Link: /link/ || fas fa-link
+   About: /about/ || fas fa-heart
 
 # --------------------------------------
 # Code Blocks Settings
@@ -29,7 +34,7 @@ menu:
 code_blocks:
   # Code block theme: darker / pale night / light / ocean / false
   theme: light
-  macStyle: false
+  macStyle: true
   # Code block height limit (unit: px)
   height_limit: false
   word_wrap: false
@@ -45,53 +50,53 @@ code_blocks:
 # Formal:
 #   icon: link || the description || color
 social:
-  # fab fa-github: https://github.com/xxxxx || Github || '#24292e'
-  # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
+   fab fa-github: https://github.com/xd06 || Github || '#24292e'
+   fas fa-envelope: 2383032306@qq.com || Email || '#4a7dbe'
 
 # --------------------------------------
 # Image Settings
 # --------------------------------------
 
-favicon: /img/favicon.png
+favicon: /img/author.png
 
 avatar:
-  img: /img/butterfly-icon.png
+  img: /img/author.png
   effect: false
 
 # Disable all banner images
 disable_top_img: false
 
 # If the banner of page not setting, it will show the default_top_img
-#default_top_img: https://jsd.cdn.zzko.cn/gh/XD06/picx-images-hosting@master/sex/1739683035808.9kgb1pxbrn.jpg
-
+default_top_img: https://jsd.cdn.zzko.cn/gh/XD06/picx-images-hosting@master/wopaper/4.7lk4inz7av.webp
 # The banner image of index page
-index_img: https://jsd.cdn.zzko.cn/gh/XD06/picx-images-hosting@master/sex/wallhaven-6dv6xq_2560x1440.45t68v81i.png
+index_img: https://i.111666.best/image/eQmNfvGCAByCl0JhqggFeL.jpeg
+
 
 # The banner image of archive page
-archive_img:
+archive_img: https://i.111666.best/image/ahltblVZOWc1SBbBgxJYiP.png
 
 # Note: tag page, not tags page
-tag_img: 
+tag_img: https://i.111666.best/image/ahltblVZOWc1SBbBgxJYiP.png
 
 # The banner image of tag page, you can set the banner image for each tag
 # Format:
 #  - tag name: xxxxx
-tag_per_img:
+tag_per_img: https://i.111666.best/image/ahltblVZOWc1SBbBgxJYiP.png
 
 # Note: category page, not categories page
-category_img:
+category_img: https://i.111666.best/image/ahltblVZOWc1SBbBgxJYiP.png
 
 # The banner image of category page, you can set the banner image for each category
 # Format:
 #  - category name: xxxxx
-category_per_img:
+category_per_img: https://i.111666.best/image/ahltblVZOWc1SBbBgxJYiP.png
 
 # The background image of footer
-footer_img: 
+footer_img: transparent
 
 # Website Background
 # Can set it to color or image url
-background:
+background: transparent
 
 cover:
   # Disable the cover or not
@@ -100,7 +105,9 @@ cover:
   archives_enable: true
   # When cover is not set, the default cover is displayed
   default_cover:
-    # - xxx.jpg
+     - https://i.111666.best/image/3kCeQh21LvWjx9Mwozx4h5.png
+     - https://i.111666.best/image/ERZThQLVO6mLl9y66ggjPC.png
+     - https://i.111666.best/image/DVKncYZrX9yc0UrajVxtzg.png
 
 # Replace Broken Images
 error_img:
@@ -109,9 +116,9 @@ error_img:
 
 # A simple 404 page
 error_404:
-  enable: false
+  enable: true
   subtitle: 'Page Not Found'
-  background: /img/error-page.png
+  background: https://jsd.cdn.zzko.cn/gh/XD06/picx-images-hosting@master/sex/1-(40).23202wlxqa.jpg
 
 post_meta:
   # Home Page
@@ -127,7 +134,7 @@ post_meta:
     # Choose: left / center
     position: left
     # Choose: created / updated / both
-    date_type: both
+    date_type: created
     # Choose: date / relative
     date_format: date
     categories: true
@@ -147,12 +154,12 @@ index_top_img_height:
 
 # The subtitle on homepage
 subtitle:
-  enable: false
+  enable: true
   # Typewriter Effect
   effect: true
   # Customize typed.js
   # https://github.com/mattboldt/typed.js/#customization
-  typed_option:
+  typed_option: 
   # Source - Call the third-party service API (Chinese only)
   # It will show the source first, then show the content of sub
   # Choose: false/1/2/3
@@ -160,9 +167,11 @@ subtitle:
   # 1 - hitokoto.cn
   # 2 - yijuzhan.com
   # 3 - jinrishici.com
-  source: false
+  source: 3
   # If you close the typewriter effect, the subtitle will only show the first line of sub
-  sub:
+  sub: 
+    - 何去何从，还未可知
+    - 蒲公英的种子
 
 # Article layout on the homepage
 # 1: Cover on the left, info on the right
@@ -180,7 +189,7 @@ index_layout: 3
 # 3: auto_excerpt (default)
 # false: do not show the article introduction
 index_post_content:
-  method: 3
+  method: 1
   # If you set method to 2 or 3, the length need to config
   length: 500
 
@@ -190,7 +199,7 @@ index_post_content:
 
 toc:
   post: true
-  page: false
+  page: true
   number: true
   expand: false
   # Only for post
@@ -206,7 +215,7 @@ post_copyright:
 
 # Sponsor/reward
 reward:
-  enable: false
+  enable: true
   text:
   QR_code:
     # - img: /img/wechat.jpg
@@ -236,11 +245,11 @@ related_post:
 # 1: The 'next post' will link to old post
 # 2: The 'next post' will link to new post
 # false: disable pagination
-post_pagination: 1
+post_pagination: 2
 
 # Displays outdated notice for a post
 noticeOutdate:
-  enable: false
+  enable: true
   # Style: simple / flat
   style: flat
   # When will it be shown
@@ -256,7 +265,8 @@ noticeOutdate:
 footer:
   owner:
     enable: true
-    since: 2019
+    since: 2022
+#自定义页脚文本（例如备案号），支持html
   custom_text:
   # Copyright of theme and framework
   copyright: true
@@ -284,7 +294,7 @@ aside:
       enable: true
       icon: fab fa-github
       text: Follow Me
-      link: https://github.com/xxxxxx
+      link: https://github.com/xd06
   card_announcement:
     enable: true
     content: This is my Blog
@@ -313,7 +323,7 @@ aside:
     enable: true
     # If set 0 will show all
     limit: 40
-    color: false
+    color: true
     # Order of tags, random/name/length
     orderby: random
     # Sort of order. 1, asc for ascending; -1, desc for descending
@@ -387,7 +397,7 @@ darkmode:
   end:
 
 # Show scroll percent in scroll-to-top button
-rightside_scroll_percent: false
+rightside_scroll_percent: true
 
 # Don't modify the following settings unless you know how they work
 # Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
@@ -409,7 +419,7 @@ anchor:
   # Click the headline to scroll and update the anchor
   click_to_scroll: false
 
-photofigcaption: false
+photofigcaption: true
 
 copy:
   enable: true
@@ -420,7 +430,7 @@ copy:
 
 # Need to install the hexo-wordcount plugin
 wordcount:
-  enable: false
+  enable: true
   # Display the word count of the article in post meta
   post_wordcount: true
   # Display the time to read the article in post meta
@@ -444,7 +454,7 @@ busuanzi:
 math:
   # Choose: mathjax, katex
   # Leave it empty if you don't need math
-  use:
+  use: mathjax
   per_page: true
   hide_scrollbar: false
 
@@ -465,8 +475,8 @@ math:
 search:
   # Choose: algolia_search / local_search / docsearch
   # leave it empty if you don't need search
-  use:
-  placeholder:
+  use: local_search
+  placeholder: 请输入要搜索的内容......
 
   # Algolia Search
   algolia_search:
@@ -476,14 +486,12 @@ search:
   # Local Search
   local_search:
     # Preload the search data when the page loads.
-    preload: false
+    preload: true
     # Show top n results per article, show all results by setting to -1
     top_n_per_article: 1
     # Unescape html strings to the readable one.
     unescape: false
     CDN:
-	css: /css/style.css
-	js: /js/main/js
 
   # Docsearch
   # https://docsearch.algolia.com/
@@ -765,7 +773,7 @@ tag_ui:
 rounded_corners_ui: true
 
 # Stretches the lines so that each line has equal width
-text_align_justify: false
+text_align_justify: true
 
 # Add a mask to the header and footer
 mask:
@@ -790,9 +798,9 @@ display_mode: light
 
 # Configuration for beautifying the content of the article
 beautify:
-  enable: false
+  enable: true
   # Specify the field to beautify (site or post)
-  field: post
+  field: site
   # Specify the icon to be used as a prefix for the title, such as '\f0c1'
   title_prefix_icon:
   # Specify the color of the title prefix icon, such as '#F47466'
@@ -821,10 +829,10 @@ hr_icon:
 # Typewriter Effect
 # https://github.com/disjukr/activate-power-mode
 activate_power_mode:
-  enable: false
+  enable: true
   colorful: true
   shake: true
-  mobile: false
+  mobile: true
 
 # Background effects
 # --------------------------------------
@@ -849,7 +857,7 @@ canvas_fluttering_ribbon:
 # canvas_nest
 # https://github.com/hustcc/canvas-nest.js
 canvas_nest:
-  enable: false
+  enable: true
   # Color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
   color: '0,0,255'
   # The opacity of line (0~1)
@@ -890,7 +898,7 @@ clickShowText:
 # https://github.com/francoischalifour/medium-zoom
 # https://fancyapps.com/fancybox/
 # Leave it empty if you don't need lightbox
-lightbox:
+lightbox: fancybox
 
 # --------------------------------------
 # Tag Plugins settings
@@ -898,7 +906,7 @@ lightbox:
 
 # Series
 series:
-  enable: false
+  enable: true
   # Order by title or date
   orderBy: 'title'
   # Sort of order. 1, asc for ascending; -1, desc for descending
@@ -908,7 +916,7 @@ series:
 # ABCJS - The ABC Music Notation Plugin
 # https://github.com/paulrosen/abcjs
 abcjs:
-  enable: false
+  enable: true
   per_page: true
 
 # Mermaid
@@ -961,21 +969,21 @@ note:
 
 # https://github.com/MoOx/pjax
 pjax:
-  enable: false
+  enable: true
   # Exclude the specified pages from pjax, such as '/music/'
   exclude:
-    # - /xxxxxx/
+     - /music/
 
 # Inject the css and script (aplayer/meting)
 aplayerInject:
-  enable: false
+  enable: true
   per_page: true
 
 # Snackbar - Toast Notification
 # https://github.com/polonel/SnackBar
 # position: top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
 snackbar:
-  enable: false
+  enable: true
   position: bottom-left
   # The background color of Toast Notification in light mode and dark mode
   bg_light: '#49b1f5'
@@ -983,7 +991,7 @@ snackbar:
 
 # Instant.page
 # https://instant.page/
-instantpage: false
+instantpage: true
 
 # Lazyload
 # https://github.com/verlok/vanilla-lazyload
@@ -992,13 +1000,13 @@ lazyload:
   # Specify the field to use lazyload (site or post)
   field: post
   placeholder:
-  blur: true
+  blur: false
 
 # PWA
 # See https://github.com/JLHwung/hexo-offline
 # ---------------
 pwa:
-  enable: false
+  enable: true
   manifest:
   apple_touch_icon:
   favicon_32_32:
@@ -1029,9 +1037,12 @@ css_prefix: true
 # Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
 inject:
   head:
-     - <link rel="stylesheet" href="/custom-media.css">
+    # - <link rel="stylesheet" href="/xxx.css">
   bottom:
-    # - <script src="xxxx"></script>
+       - <div class="aplayer no-destroy" data-id="12271028064" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"data-preload='auto' data-mini='true'> </div>
+       - <script>（function（w，d， s， id） {if（typeof（w.webpushr）！=='undefined'） return;w.webpushr=w.webpushr||function（）{（w.webpushr.q=w.webpushr.q||[]）.push（参数）};var js， fjs = d.getElementsByTagName（s）[0];js = d.createElement（s）;js.id = id;js.async=1;js.src = “https://cdn.webpushr.com/app.min.js”;} fjs.parentNode.appendChild（js）;（window，document， 'script'， 'webpushr-jssdk'））;webpushr（'setup'，{'key'：'BCfgC9ropZTwpqLFw0rc6b8DI-kXtykQ0d5ikp96BSp8x1YuYWUeu-rN2YVQQXAwoFgvRpyrDTOEMgTS-mTrQNs' }）;</script>
+       - <script src="/service-worker.js"></script>
+
 
 # CDN Settings
 # Don't modify the following settings unless you know how they work
@@ -1044,7 +1055,7 @@ CDN:
   third_party_provider: jsdelivr
 
   # Add version number to url, true or false
-  version: false
+  version: true
 
   # Custom format
   # For example: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
