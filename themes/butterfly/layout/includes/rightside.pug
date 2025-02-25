@@ -29,12 +29,14 @@ mixin rightsideItem(array)
         if commentsJsLoad
           a#to_comment(href="#post-comment" title=_p("rightside.scroll_to_comment"))
             i.fas.fa-comments
+      when 'bg'  
+        button(type="button" title='切换背景' onclick="toggleWinbox()")
+          i.fas.fa-display
 
 #rightside
   - const { enable, hide, show } = theme.rightside_item_order
   - const hideArray = enable ? hide && hide.split(',') : ['readmode','translate','darkmode','hideAside']
-  - const showArray = enable ? show && show.split(',') : ['toc','chat','comment']
-
+  - const showArray = enable ? show && show.split(',') : ['toc','chat','comment','bg']
 
   #rightside-config-hide
     if hideArray

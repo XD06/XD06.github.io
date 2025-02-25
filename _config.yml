@@ -9,13 +9,14 @@ description: '个人博客'
 keywords: 
 author: dsk
 language: zh-CN
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://XD06.github.io
+url: https://dskblog.top
 permalink: :title.html
 permalink_defaults:
+root: /
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
@@ -106,7 +107,7 @@ deploy:
   site_id: c42a1b21-9378-4f7b-97d2-9c109f86c65c
 - type: git
   repo: https://github.com/XD06/XD06.github.io
-  branch: gh-pages
+  branch: main
 
 
 search:
