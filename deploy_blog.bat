@@ -7,4 +7,7 @@ if errorlevel 1 pause
 call hexo g
 @echo 部署netlify·····
 call hexo deploy
+call git add .
+call git commit -m 'update'
+call git push -f origin main
 pause

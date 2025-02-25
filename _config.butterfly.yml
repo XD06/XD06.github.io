@@ -17,15 +17,15 @@ nav:
   fixed: false
 
 menu:
-   Home: / || fas fa-home
-   Archives: /archives/ || fas fa-archive
-   Tags: /tags/ || fas fa-tags
-   Categories: /categories/ || fas fa-folder-open
-   List||fas fa-list:
-     Music: /music/ || fas fa-music
-     Movie: /movies/ || fas fa-video
-   Link: /link/ || fas fa-link
-   About: /about/ || fas fa-heart
+   首页: / || fas fa-home
+   归档: /archives/ || fas fa-archive
+   标签: /tags/ || fas fa-tags
+   分类: /categories/ || fas fa-folder-open
+   列表||fas fa-list:
+     音乐: /music/ || fas fa-music
+     视频: /movies/ || fas fa-video
+   友链: /link/ || fas fa-link
+   关于: /about/ || fas fa-heart
 
 # --------------------------------------
 # Code Blocks Settings
@@ -167,7 +167,7 @@ subtitle:
   # 1 - hitokoto.cn
   # 2 - yijuzhan.com
   # 3 - jinrishici.com
-  source: 3
+  source: 1
   # If you close the typewriter effect, the subtitle will only show the first line of sub
   sub: 
     - 何去何从，还未可知
@@ -415,11 +415,11 @@ rightside_item_order:
 
 anchor:
   # When you scroll, the URL will update according to header id.
-  auto_update: false
+  auto_update: true
   # Click the headline to scroll and update the anchor
   click_to_scroll: false
 
-photofigcaption: true
+photofigcaption: false
 
 copy:
   enable: true
@@ -454,19 +454,19 @@ busuanzi:
 math:
   # Choose: mathjax, katex
   # Leave it empty if you don't need math
-  use: mathjax
+  use: katex
   per_page: true
   hide_scrollbar: false
 
   mathjax:
     # Enable the contextual menu
-    enableMenu: true
+    enableMenu: 
     # Choose: all / ams / none, This controls whether equations are numbered and how
     tags: none
 
   katex:
     # Enable the copy KaTeX formula
-    copy_tex: false
+    copy_tex: true
 
 # --------------------------------------
 # Search
@@ -747,7 +747,7 @@ site_verification:
 
 # theme_color:
 #   enable: true
-#   main: "#49B1F5"
+#   main: "orange"
 #   paginator: "#00c4b6"
 #   button_hover: "#FF7242"
 #   text_selection: "#00c4b6"
@@ -777,12 +777,12 @@ text_align_justify: true
 
 # Add a mask to the header and footer
 mask:
-  header: true
-  footer: true
+  header: false
+  footer: false
 
 # Loading Animation
 preloader:
-  enable: false
+  enable: true
   # source
   # 1. fullpage-loading
   # 2. pace (progress bar)
@@ -800,7 +800,7 @@ display_mode: light
 beautify:
   enable: true
   # Specify the field to beautify (site or post)
-  field: site
+  field: post
   # Specify the icon to be used as a prefix for the title, such as '\f0c1'
   title_prefix_icon:
   # Specify the color of the title prefix icon, such as '#F47466'
@@ -851,13 +851,13 @@ canvas_ribbon:
 
 # Fluttering Ribbon
 canvas_fluttering_ribbon:
-  enable: false
-  mobile: false
+  enable: true
+  mobile: true
 
 # canvas_nest
 # https://github.com/hustcc/canvas-nest.js
 canvas_nest:
-  enable: true
+  enable: false
   # Color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
   color: '0,0,255'
   # The opacity of line (0~1)
@@ -1006,7 +1006,7 @@ lazyload:
 # See https://github.com/JLHwung/hexo-offline
 # ---------------
 pwa:
-  enable: true
+  enable: false
   manifest:
   apple_touch_icon:
   favicon_32_32:
