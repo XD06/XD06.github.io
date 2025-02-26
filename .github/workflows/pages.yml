@@ -40,7 +40,8 @@ jobs:
 
       - name: Install Dependencies 
         run: |
-          npm install && npm run build
+          npm install
+          npm install hexo
 
       - name: Validate Configuration 
         run: |
