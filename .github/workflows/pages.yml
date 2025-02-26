@@ -42,7 +42,7 @@ jobs:
         run: |
           npm config set registry https://registry.npmmirror.com/
           npm install
-          npm install hexo-cli-g 
+          npm install hexo-cli -g 
 
       - name: Validate Configuration 
         run: |
