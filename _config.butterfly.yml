@@ -1008,7 +1008,7 @@ instantpage: true
 lazyload:
   enable: true
   # Specify the field to use lazyload (site or post)
-  field: site
+  field: post
   placeholder:
   blur: false
 
@@ -1077,8 +1077,8 @@ CDN:
   custom_format:
 
   option:
-    typed: https://tc.qdqqd.com/N0BLpc.js?1
-    pjax: https://cdn.jsdelivr.net/npm/pjax/pjax.js
+    # typed: https://tc.qdqqd.com/N0BLpc.js?1
+    # pjax: https://cdn.jsdelivr.net/npm/pjax/pjax.js
     # abcjs_basic_js:
     # activate_power_mode:
     # algolia_js:
