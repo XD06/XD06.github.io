@@ -40,8 +40,7 @@ jobs:
 
       - name: Install Dependencies 
         run: |
-          npm ci --prefer-offline 
-          npm install hexo-cli -g  
+          npm install && npm run build
 
       - name: Validate Configuration 
         run: |
@@ -83,8 +82,6 @@ jobs:
   deploy:
     needs: build
     if: success()
-    outputs: 
-      page_url: ${{ steps.deploy_step.outputs.page_url  }}
     permissions:
       pages: write 
       id-token: write 
@@ -94,7 +91,7 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
       - name: Deploy to GitHub Pages 
-        id: deploy_step 
+        id: deployment
         uses: actions/deploy-pages@v4 
         with:
           keep_history: false  

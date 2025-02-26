@@ -7,4 +7,5 @@ if errorlevel 1 pause
 call hexo g
 @echo 启动服务器中·····
 call hexo s -4001
+start http://local:4000
 pause

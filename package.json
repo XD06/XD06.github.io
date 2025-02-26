@@ -17,6 +17,7 @@
     "hexo-butterfly-artitalk": "^1.0.5",
     "hexo-butterfly-charts": "^1.1.6",
     "hexo-butterfly-extjs": "^1.4.17",
+    "hexo-butterfly-swiper": "^1.0.12",
     "hexo-daily-news": "^1.0.1",
     "hexo-deployer-netlify": "^0.0.7",
     "hexo-douban": "^2.3.6",
@@ -38,5 +39,8 @@
     "hexo-theme-landscape": "^1.0.0",
     "hexo-wordcount": "^6.0.1",
     "typed.js": "^2.1.0"
+  },
+  "devDependencies": {
+    "hexo-server-live": "^0.2.12"
   }
 }
