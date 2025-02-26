@@ -41,7 +41,8 @@ jobs:
       - name: Install Dependencies 
         run: |
           npm install
-          npm install hexo
+          npm ci --prefer-offline
+          npm install hexo-cli-g 
 
       - name: Validate Configuration 
         run: |
