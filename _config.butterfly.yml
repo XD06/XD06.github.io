@@ -178,7 +178,7 @@ subtitle:
   # 1 - hitokoto.cn
   # 2 - yijuzhan.com
   # 3 - jinrishici.com
-  source: false
+  source: 1
   # If you close the typewriter effect, the subtitle will only show the first line of sub
   sub: 
     - 何去何从，还未可知
@@ -758,7 +758,7 @@ site_verification:
 
 theme_color:
   enable: true
-  main: '#FFFFFF'
+  main: orange
   paginator: "#00c4b6"
   button_hover: "#FF7242"
   text_selection: "#00c4b6"
