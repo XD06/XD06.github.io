@@ -368,7 +368,7 @@ aside:
     # Time difference between publish date and now
     # Formal: Month/Day/Year Time or Year/Month/Day Time
     # Leave it empty if you don't enable this feature
-    runtime_date: Year/Month/Day Time
+    runtime_date:  2022-06-17 00:00:00
 
 # --------------------------------------
 # Bottom right button
@@ -1052,10 +1052,10 @@ inject:
       - <link rel="stylesheet" href="/css/mbg.css?v=2">
   bottom:
       - <script defer src="/js/mbg.js?v1"></script>
-      - <script src="/js/webpushr-sw.js?v=2"></script> 
+      - <script src="/js/webpushr-sw.js?v=2"></script>
+      - <script>（function（w，d， s， id） {if（typeof（w.webpushr）！=='undefined'） return;w.webpushr=w.webpushr||function（）{（w.webpushr.q=w.webpushr.q||[]）.push（参数）};var js， fjs = d.getElementsByTagName（s）[0];js = d.createElement（s）;js.id = id;js.async=1;js.src = “https://cdn.webpushr.com/app.min.js”;} fjs.parentNode.appendChild（js）;（window，document， 'script'， 'webpushr-jssdk'））;webpushr（'设置'，{'key'：'BJNGWXPB2ZzwJMvqv_rNqMl-Prl6AMj93NePtdH4sb5nNfw_wM5nD46cQyxC1QIdSSuUG1YnwRLnK4IbmFF7VP4' }）;</script> 
     #  - <script src="https://tc.qdqqd.com/oTEaFo.js" data-pjax="" defer=""></script>
       - <div class="aplayer no-destroy" data-id="12271028064" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-lrctype="1" data-preload="none" data-autoplay="true" muted></div>
-      - <script>（function（w，d， s， id） {if（typeof（w.webpushr）！=='undefined'） return;w.webpushr=w.webpushr||function（）{（w.webpushr.q=w.webpushr.q||[]）.push（参数）};var js， fjs = d.getElementsByTagName（s）[0];js = d.createElement（s）;js.id = id;js.async=1;js.src = “https://cdn.webpushr.com/app.min.js”;} fjs.parentNode.appendChild（js）;（window，document， 'script'， 'webpushr-jssdk'））;webpushr（'setup'，{'key'：'BCfgC9ropZTwpqLFw0rc6b8DI-kXtykQ0d5ikp96BSp8x1YuYWUeu-rN2YVQQXAwoFgvRpyrDTOEMgTS-mTrQNs' }）;</script>
       - <script src="https://cdn.jsdelivr.net/gh/nextapps-de/winbox/dist/winbox.bundle.min.js?v=3"></script>
     
 
