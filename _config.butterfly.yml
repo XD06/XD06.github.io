@@ -18,6 +18,7 @@ nav:
 
 menu:
    首页: / || fas fa-home
+   #换景: / || <i class="fa-solid fa-images"></i>
    归档: /archives/ || fas fa-archive
    标签: /tags/ || fas fa-tags
    分类: /categories/ || fas fa-folder-open
@@ -92,11 +93,11 @@ category_img: https://file.uhsea.com/2502/c3d1a5b221d4c90c7f57c8bf3842c157MK.png
 category_per_img: https://file.uhsea.com/2502/ba9f30274eff3e33f9ace829a2cc703dGZ.png
 
 # The background image of footer
-footer_img: transparent
+footer_img:
 
 # Website Background
 # Can set it to color or image url
-background: https://file.uhsea.com/2502/72351b7da738197a703d9e7caa81161c2J.png
+background: 
 
 cover:
   # Disable the cover or not
@@ -178,7 +179,7 @@ subtitle:
   # 1 - hitokoto.cn
   # 2 - yijuzhan.com
   # 3 - jinrishici.com
-  source: false
+  source: 3
   # If you close the typewriter effect, the subtitle will only show the first line of sub
   sub: 
     - 何去何从，还未可知
@@ -229,12 +230,12 @@ reward:
   enable: true
   text:
   QR_code:
-    # - img: /img/wechat.jpg
-    #   link:
-    #   text: wechat
-    # - img: /img/alipay.jpg
-    #   link:
-    #   text: alipay
+    - img: /img/wechat.jpg
+      link:
+      text: wechat
+    - img: /img/alipay.jpg
+      link:
+      text: alipay
 
 # Post edit
 # Easily browse and edit blog source code online.
@@ -267,8 +268,8 @@ noticeOutdate:
   limit_day: 365
   # Position: top / bottom
   position: top
-  message_prev: It has been
-  message_next: days since the last update, the content of the article may be outdated.
+  message_prev: 已经过了
+  message_next: 天自上次更新，文章内容可能已经过时。
 
 # --------------------------------------
 # Footer Settings
@@ -367,7 +368,7 @@ aside:
     # Time difference between publish date and now
     # Formal: Month/Day/Year Time or Year/Month/Day Time
     # Leave it empty if you don't enable this feature
-    runtime_date:
+    runtime_date: Year/Month/Day Time
 
 # --------------------------------------
 # Bottom right button
@@ -392,6 +393,7 @@ translate:
 
 # Read Mode
 readmode: true
+bg: true
 
 # Dark Mode
 darkmode:
@@ -418,7 +420,7 @@ rightside_item_order:
   # Default: readmode,translate,darkmode,hideAside
   hide:
   # Default: toc,chat,comment
-  show:
+  show: bg,darkmode,readmode,toc,hideAside
 
 # --------------------------------------
 # Global Settings
@@ -811,7 +813,7 @@ display_mode: light
 beautify:
   enable: true
   # Specify the field to beautify (site or post)
-  field: post
+  field: site
   # Specify the icon to be used as a prefix for the title, such as '\f0c1'
   title_prefix_icon:
   # Specify the color of the title prefix icon, such as '#F47466'
@@ -820,9 +822,9 @@ beautify:
 # Global font settings
 # Don't modify the following settings unless you know how they work
 font:
-  global_font_size:
+  global_font_size: var(--global-font)
   code_font_size:
-  font_family:
+  font_family: 
   code_font_family:
 
 # Font settings for the site title and site subtitle
@@ -853,9 +855,9 @@ activate_power_mode:
 canvas_ribbon:
   enable: false
   # The size of ribbon
-  size: 150
+  size: 200
   # The opacity of ribbon (0 ~ 1)
-  alpha: 0.6
+  alpha: 0.5
   zIndex: -1
   click_to_change: false
   mobile: false
@@ -1008,7 +1010,7 @@ instantpage: true
 lazyload:
   enable: true
   # Specify the field to use lazyload (site or post)
-  field: site
+  field: post
   placeholder:
   blur: false
 
@@ -1047,16 +1049,15 @@ css_prefix: true
 # Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
 inject:
   head:
-      - <link rel="stylesheet" href="/css/mbg.css">
-      - <link rel="stylesheet" href="/css/transparent.css">
+      - <link rel="stylesheet" href="/css/mbg.css?v=2">
   bottom:
-      - <script src="https://tc.qdqqd.com/oTEaFo.js" data-pjax="" defer=""></script>
-      - <div class="aplayer no-destroy" data-id="12271028064" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-lrctype="1" data-preload="none" data-autoplay="true" muted></div>
+      - <script defer src="/js/mbg.js?v1"></script>
+      - <script src="/js/webpushr-sw.js?v=2"></script> 
+    #  - <script src="https://tc.qdqqd.com/oTEaFo.js" data-pjax="" defer=""></script>
+      - <div class="aplayer no-destroy" data-id="12271028064" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-lrctype="1" data-preload="none" data-autoplay="true" muted></div>
       - <script>（function（w，d， s， id） {if（typeof（w.webpushr）！=='undefined'） return;w.webpushr=w.webpushr||function（）{（w.webpushr.q=w.webpushr.q||[]）.push（参数）};var js， fjs = d.getElementsByTagName（s）[0];js = d.createElement（s）;js.id = id;js.async=1;js.src = “https://cdn.webpushr.com/app.min.js”;} fjs.parentNode.appendChild（js）;（window，document， 'script'， 'webpushr-jssdk'））;webpushr（'setup'，{'key'：'BCfgC9ropZTwpqLFw0rc6b8DI-kXtykQ0d5ikp96BSp8x1YuYWUeu-rN2YVQQXAwoFgvRpyrDTOEMgTS-mTrQNs' }）;</script>
-      - <script src="/js/service-worker.js?2"></script>
-      - <script src="https://cdn.jsdelivr.net/gh/nextapps-de/winbox/dist/winbox.bundle.min.js?3"></script>
-      - <script src="/js/mbg.js?1"></script> 
-
+      - <script src="https://cdn.jsdelivr.net/gh/nextapps-de/winbox/dist/winbox.bundle.min.js?v=3"></script>
+    
 
 # CDN Settings
 # Don't modify the following settings unless you know how they work
@@ -1076,8 +1077,8 @@ CDN:
   custom_format:
 
   option:
-    typed: https://tc.qdqqd.com/N0BLpc.js?1
-    pjax: https://cdn.jsdelivr.net/npm/pjax/pjax.js
+    # typed: 
+    # pjax: https://cdn.jsdelivr.net/npm/pjax/pjax.js
     # abcjs_basic_js:
     # activate_power_mode:
     # algolia_js:
@@ -1102,7 +1103,7 @@ CDN:
     # fancybox:
     # fancybox_css:
     # fireworks:
-    # fontawesome:
+    fontawesome: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css
     # gitalk:
     # gitalk_css:
     # giscus:
@@ -1121,14 +1122,12 @@ CDN:
     # prismjs_autoloader:
     # prismjs_js:
     # prismjs_lineNumber_js:
-
     # sharejs:
     # sharejs_css:
     # snackbar:
     # snackbar_css:
     # translate:
     # twikoo:
- 
     # utils:
     # valine:
     # waline_css:
