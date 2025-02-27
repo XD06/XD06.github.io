@@ -1,10 +1,11 @@
-// 存数据
 // name：命名 data：数据
 function saveData(name, data) {
     localStorage.setItem(name, JSON.stringify({ 'time': Date.now(), 'data': data }))
 }
 let styleConfig = {
-    fontFamily: 'inherit'
+    fontFamily: 'inherit',
+    themeColor: window.Butterfly_CONFIG?.theme_color?.main || '#49b1f5', // 新增主题色配置
+    darkThemeColor: '#1a1a1a' // 暗黑模式颜色
 };
 
 // 初始化字体设置
@@ -15,6 +16,16 @@ function initFont() {
         document.documentElement.style.setProperty('--global-font', `'${saved}'`); // 添加引号
     }
 }
+
+// 初始化主题颜色
+function initThemeColor() {
+    const savedColor = loadData('themeColorConfig', 1440);
+    if (savedColor) {
+        styleConfig.themeColor = savedColor;
+    }
+    document.documentElement.style.setProperty('--theme-main', styleConfig.themeColor);
+    document.documentElement.style.setProperty('--theme-dark-main', styleConfig.darkThemeColor);
+}
 function updateFont(value) {
     styleConfig.fontFamily = value;
     applyFontStyle();
@@ -23,6 +34,12 @@ function updateFont(value) {
 function applyFontStyle() {
     document.documentElement.style.setProperty('--global-font', styleConfig.fontFamily);
     saveData('fontConfig', styleConfig.fontFamily);
+}
+// 应用主题颜色
+function applyThemeColor(color) {
+    styleConfig.themeColor = color;
+    document.documentElement.style.setProperty('--theme-main', color);
+    saveData('themeColorConfig', color);
 }
 
 // 取数据
@@ -49,15 +66,33 @@ try {
 // 切换背景函数
 // 此处的flag是为了每次读取时都重新存储一次,导致过期时间不稳定
 // 如果flag为0则存储,即设置背景. 为1则不存储,即每次加载自动读取背景.
+// 修改changeBg函数
 function changeBg(s, flag) {
-    let bg = document.getElementById('web_bg')
-    if (s.charAt(0) == '#') {
-        bg.style.backgroundColor = s
-        bg.style.backgroundImage = 'none'
-    } else bg.style.backgroundImage = s
-    if (!flag) { saveData('blogbg', s) }
+    const bgElement = document.getElementById('web_bg') || createBgElement()
+    // 添加URL格式验证
+    if (s.startsWith('url(')) {
+        bgElement.style.backgroundImage = s
+        bgElement.style.backgroundColor = 'unset'
+    } else if (s.startsWith('#')) {
+        bgElement.style.backgroundColor = s
+        bgElement.style.backgroundImage = 'unset'
+    } else if (s.startsWith('linear-gradient')) {
+        bgElement.style.backgroundImage = s
+        bgElement.style.backgroundColor = 'unset'
+    }
+    if (!flag) saveData('blogbg', s)
+    
+    // 强制重绘
+    bgElement.style.display = 'none'
+    bgElement.offsetHeight // 触发重绘
+    bgElement.style.display = 'block'
 }
-
+function createBgElement() {
+    const bgElement = document.createElement('div')
+    bgElement.id = 'web_bg'
+    document.body.prepend(bgElement)
+    return bgElement
+  }
 // 以下为2.0新增内容
 
 // 创建窗口
@@ -99,11 +134,11 @@ function createWinbox() {
     <p><button onclick="localStorage.removeItem('blogbg');location.reload();" style="background:#5fcdff;display:block;width:100%;padding: 15px 0;border-radius:6px;color:white;"><i class="fa-solid fa-arrows-rotate"></i> 点我恢复默认背景</button></p>
     <h2 id="图片（手机）"><a href="#图片（手机）" class="headerlink" title="图片（手机）"></a>图片（手机）</h2>
     <div class="bgbox">
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://pic1.imgdb.cn/item/67bf4fd8d0e0a243d4065cd7.png)" class="pimgbox" onclick="changeBg('url(https\://pic1.imgdb.cn/item/67bf4fd8d0e0a243d4065cd7.png)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://pic1.imgdb.cn/item/67bf4fd8d0e0a243d4065cd8.jpg)" class="pimgbox" onclick="changeBg('url(https\://pic1.imgdb.cn/item/67bf4fd8d0e0a243d4065cd8.jpg)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://pic1.imgdb.cn/item/67bf4fd9d0e0a243d4065cd9.jpg)" class="pimgbox" onclick="changeBg('url(https\://pic1.imgdb.cn/item/67bf4fd9d0e0a243d4065cd9.jpg)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://pic1.imgdb.cn/item/67bf4fd9d0e0a243d4065cda.png)" class="pimgbox" onclick="changeBg('url(https\://pic1.imgdb.cn/item/67bf4fd9d0e0a243d4065cda.png)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://pic1.imgdb.cn/item/67bf4fd9d0e0a243d4065cdb.jpg)" class="pimgbox" onclick="changeBg('url(https\://pic1.imgdb.cn/item/67bf4fd9d0e0a243d4065cdb.jpg)')"></a>
+    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://pic1.imgdb.cn/item/67bf4fd8d0e0a243d4065cd7.png)" class="pimgbox" onclick="changeBg('url(https\\://pic1.imgdb.cn/item/67bf4fd8d0e0a243d4065cd7.png)')"></a>
+    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://pic1.imgdb.cn/item/67bf4fd8d0e0a243d4065cd8.jpg)" class="pimgbox" onclick="changeBg('url(https\\://pic1.imgdb.cn/item/67bf4fd8d0e0a243d4065cd8.jpg)')"></a>
+    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://pic1.imgdb.cn/item/67bf4fd9d0e0a243d4065cd9.jpg)" class="pimgbox" onclick="changeBg('url(https\\://pic1.imgdb.cn/item/67bf4fd9d0e0a243d4065cd9.jpg)')"></a>
+    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://pic1.imgdb.cn/item/67bf4fd9d0e0a243d4065cda.png)" class="pimgbox" onclick="changeBg('url(https\\://pic1.imgdb.cn/item/67bf4fd9d0e0a243d4065cda.png)')"></a>
+    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://pic1.imgdb.cn/item/67bf4fd9d0e0a243d4065cdb.jpg)" class="pimgbox" onclick="changeBg('url(https\\://pic1.imgdb.cn/item/67bf4fd9d0e0a243d4065cdb.jpg)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" 
    style="background-image:url(https://dsk.dskblog.top/wopaper/【哲风壁纸】二次元美女-动漫美女.67xlezlyjf.webp)" 
    class="pimgbox" 
@@ -181,10 +216,29 @@ function toggleWinbox() {
     if (document.querySelector('#changeBgBox')) winbox.toggleClass('hide');
     else createWinbox();
 }
+// 重置主题颜色
+function resetThemeColor() {
+    const defaultColor = window.Butterfly_CONFIG?.theme_color?.main || '#49b1f5';
+    applyThemeColor(defaultColor);
+    document.getElementById('colorPicker').value = defaultColor;
+}
 // 在文件末尾添加以下代码
 document.addEventListener('DOMContentLoaded', function() {
     // 初始化字体设置
     initFont();
+    initThemeColor(); // 新增颜色初始化
+    const darkModeObserver = new MutationObserver(() => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        document.documentElement.style.setProperty(
+            '--theme-main',
+            isDark ? styleConfig.darkThemeColor : styleConfig.themeColor
+        );
+    });
+    
+    darkModeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-theme']
+    });
     
     // 绑定字体选择器（需要确保select元素有正确ID）
     const fontSelector = document.getElementById('fontSelector');
@@ -198,3 +252,4 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn('未找到字体选择器元素');
     }
 });
+
