@@ -49,21 +49,21 @@ jobs:
             echo "::error::Missing Hexo config file!"
             exit 1 
           fi 
-     - name: Generate static files 
+      - name: Generate static files 
         run: hexo clean && hexo generate 
 
-     - name: Generate version hash 
+      - name: Generate version hash 
         id: version 
         run: |
           VERSION_HASH=$(date +%s | sha256sum | head -c 6)
           echo "VERSION_HASH=${VERSION_HASH}" >> $GITHUB_ENV 
 
-     - name: Replace asset paths 
+      - name: Replace asset paths 
         run: |
           find public -type f \( -name "*.html" -o -name "*.css" \) \
             -exec sed -i "s/\.\(css\|js\)\('/.\1?v=${VERSION_HASH}'/g" {} \;
 
-     - name: Build with Hexo 
+      - name: Build with Hexo 
         run: |
           hexo clean  # Hexo专用清理命令[1](https://blog.csdn.net/chaosweet/article/details/144715256)
           hexo generate --debug 
