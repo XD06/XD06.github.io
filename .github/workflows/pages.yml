@@ -96,7 +96,7 @@ jobs:
         id: deployment 
         uses: actions/deploy-pages@v4 
         with:
-          keep_history: false  # 禁用旧版本保留[3](https://blog.csdn.net/baidu_25464429/article/details/80805237)
+          keep_history: false  # 禁用旧版本留[3](https://blog.csdn.net/baidu_25464429/article/details/80805237)
  
       # 强制刷新CDN缓存 
       - name: Purge CDN Cache 
