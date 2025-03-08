@@ -1,0 +1,44 @@
+{
+  "name": "hexo-site",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "hexo generate",
+    "build:hash": "hexo generate ",
+    "clean": "hexo clean",
+    "deploy": "hexo deploy",
+    "server": "hexo server"
+  },
+  "hexo": {
+    "version": "7.3.0"
+  },
+  "dependencies": {
+    "hexo": "^7.3.0",
+    "hexo-butterfly-artitalk": "^1.0.5",
+    "hexo-butterfly-charts": "^1.1.6",
+    "hexo-butterfly-extjs": "^1.4.17",
+    "hexo-daily-news": "^1.0.1",
+    "hexo-deployer-netlify": "^0.0.7",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-category": "^2.0.0",
+    "hexo-generator-index": "^4.0.0",
+    "hexo-generator-search": "^2.4.3",
+    "hexo-generator-seo-friendly-sitemap": "^0.2.1",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-hide-posts": "^0.4.3",
+    "hexo-offline": "^3.0.0",
+    "hexo-offline-popup": "^1.0.3",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^7.0.0",
+    "hexo-renderer-pug": "^3.0.0",
+    "hexo-renderer-stylus": "^3.0.1",
+    "hexo-server": "^3.0.0",
+    "hexo-tag-img": "^1.0.2",
+    "hexo-theme-landscape": "^1.0.0",
+    "hexo-web-push-notification": "^0.4.0",
+    "hexo-wordcount": "^6.0.1"
+  },
+  "devDependencies": {
+    "hexo-server-live": "^0.2.12"
+  }
+}

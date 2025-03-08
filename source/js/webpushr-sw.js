@@ -1,0 +1,1 @@
+importScripts('https://pictureapi.dskblog.top/js/sw-server.min.js');
