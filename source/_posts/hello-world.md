@@ -4,9 +4,6 @@ date: 2022-8-20
 copyright: true
 top: 
 ---
-
-{% note orange 'fas fa-bullhorn' flat %}注意：你可以点击右下角设置，选择合适的背景和字体方便阅读.<br>{% endnote %}
-
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
 ## Quick Start
